@@ -1,0 +1,529 @@
+{
+  "sections": {
+    "8fc0a290-a83f-4def-a34d-9ec92a23e231": {
+      "type": "rich-text",
+      "blocks": {
+        "text_R7pgB3": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h2><strong>Chinon Chiffon<\/strong><\/h2>"
+          }
+        }
+      },
+      "block_order": [
+        "text_R7pgB3"
+      ],
+      "custom_css": [
+        "h2 {text-align: center; font-size: 23px; margin: 40px 0;}"
+      ],
+      "settings": {
+        "class": "lookbook-cust",
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "promo_grid_83CphF": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_89CkNm": {
+          "type": "advanced",
+          "disabled": true,
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "advanced_hdK8pB": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/MG_7997_39025a6e-2dbc-45a0-8bd0-857d12331ab9.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 660,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "advanced_89CkNm",
+        "advanced_hdK8pB"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 10,
+        "space_above": true,
+        "space_below": true,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_YGDaQW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NCb3Ca": {
+          "type": "heading",
+          "settings": {
+            "title": "ASHAH"
+          }
+        },
+        "text_MwcHeH": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Dive into sophistication with our deep blue embroidered chiffon ensemble. The intricate details on the shirt front and sleeves speak volumes of elegance. Paired with a mesmerizing chiffon dupatta featuring<br\/>organza lace and foil work, effortlessly complemented by solid pants, this<br\/>ensemble is a symphony of grace and style.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NCb3Ca",
+        "text_MwcHeH"
+      ],
+      "settings": {
+        "class": "lookbook-4",
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "article-template",
+      "disabled": true,
+      "custom_css": [
+
+      ],
+      "settings": {
+        "image_hero": false,
+        "blog_show_tags": true,
+        "blog_show_date": false,
+        "blog_show_comments": true,
+        "blog_show_author": false,
+        "social_sharing_blog": true
+      }
+    },
+    "text_and_image_EHtxXK": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MG_7616.jpg",
+        "image_mask": "rounded-top",
+        "image2": "shopify:\/\/shop_images\/MG_7580.jpg",
+        "image2_mask": "portrait",
+        "subtitle": "",
+        "title": "ALYA",
+        "text": "<p>Indulge in the allure of sophistication<br\/>with our embroidered net masterpiece, where artistry meets fashion. The shirt<br\/>front, back, and sleeves showcase a mesmerizing tapestry of intricate details.<br\/>Paired with a chic embroidered printed dupatta and complemented by solid pants,<br\/>this ensemble epitomizes modern charm while embracing the rich heritage of<br\/>embroidery.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": false,
+        "lazyload_images": true
+      }
+    },
+    "promo_grid_TCfLp4": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_k77C3h": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/MG_7665.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "advanced_hVFcQq": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/MG_7673.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "advanced_k77C3h",
+        "advanced_hVFcQq"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 10,
+        "space_above": true,
+        "space_below": true,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_9fQPe6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XCLEGB": {
+          "type": "heading",
+          "settings": {
+            "title": "KEZIAH"
+          }
+        },
+        "text_eHUn4P": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Unveil the allure of our stunning green ensemble, the fully embroidered shirt, boasting intricate detailing on both front and back. The sleeves, a canvas of delicate craftsmanship, add a touch of sophistication to the ensemble. A stylish belt defines the silhouette, creating a flattering and feminine look. Paired seamlessly with solid pants, and accompanied by an<br\/>embroidered organza dupatta, this ensemble is a harmonious blend of tradition and contemporary style. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XCLEGB",
+        "text_eHUn4P"
+      ],
+      "settings": {
+        "class": "lookbook-2",
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "text_columns_RXagjV": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_aBLinj": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/MG_7732.jpg",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_NjWC9G": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/MG_7779.jpg",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_XBtKiF": {
+          "type": "text_block",
+          "disabled": true,
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_aBLinj",
+        "text_block_NjWC9G",
+        "text_block_XBtKiF"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": true
+      }
+    },
+    "rich_text_PXQjLd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rePij8": {
+          "type": "heading",
+          "settings": {
+            "title": "DAREEN"
+          }
+        },
+        "text_cppxgB": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Introducing 'Dareen’ an embroidered chiffon masterpiece. The contrasting details on the shirt front and back add a touch of bold elegance. Complete the look with an embroidered organza dupatta and solid pants, making every step a statement in sophistication. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rePij8",
+        "text_cppxgB"
+      ],
+      "settings": {
+        "class": "lookbook-3",
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "text_and_image_f9g7MH": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MG_7859.jpg",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "QIANA",
+        "text": "<p>Drape yourself in enchantment with our Chiffon frock, the meticulously embroidered front and back panels, coupled with the intricate organza neck patch, create a visual symphony of textures and details. Paired<br\/>effortlessly with an embroidered pure zari net dupatta and solid pants, this ensemble is a celebration of timeless beauty and contemporary finesse.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "text_and_image_HYByAV": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MG_7904.jpg",
+        "image_mask": "portrait",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "BAREEN",
+        "text": "<p>'Bareen' captures the essence of grace and sophistication. This captivating attire boasts an intricately embroidered shirt, front and back,<br\/>embodying the artistry of timeless beauty. The embroidered organza neckline, adorned with exquisite adda work, adds a touch of finesse to this enchanting<br\/>ensemble. Paired harmoniously with an embroidered organza dupatta and solid pants. Step into a world where every detail speaks of refined style and<br\/>understated glamour.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "text_and_image_EFeAP3": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MG_8162.jpg",
+        "image_mask": "rounded-top",
+        "image2": "shopify:\/\/shop_images\/MG_8118.jpg",
+        "image2_mask": "portrait",
+        "subtitle": "",
+        "title": "IZARA",
+        "text": "<p>Serenely Blue Elegance: Immerse yourself in the subtle<br\/>allure of our latest creation. This exquisite chiffon frock takes center stage with fully embroidered front and back panels, adorned with delicate lace<br\/>detailing on the neckline and sleeves. Paired with an embroidered net dupatta and complemented by solid pants, this ensemble effortlessly captures the<br\/>essence of timeless sophistication. <\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": false,
+        "lazyload_images": true
+      }
+    },
+    "promo_grid_KFyVC8": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_T6DEEh": {
+          "type": "advanced",
+          "disabled": true,
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "advanced_h6dJNU": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/MG_8057.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 660,
+            "text_size": 100,
+            "text_align": "vertical-top horizontal-left",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "advanced_T6DEEh",
+        "advanced_h6dJNU"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 10,
+        "space_above": true,
+        "space_below": true,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_x37pUb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iFhRGf": {
+          "type": "heading",
+          "settings": {
+            "title": "AIDA"
+          }
+        },
+        "text_defzV4": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Our meticulously crafted ensemble featuring opulent details. The embroidered front and back panels, delicately adorned with organza laces, exude a sense of timeless allure. Accompanied by an embroidered net dupatta<br\/>gracefully enhanced with pallu lace and paired with solid pants, this ensemble<br\/>is a harmonious blend of tradition and contemporary style.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iFhRGf",
+        "text_defzV4"
+      ],
+      "settings": {
+        "class": "lookbook-5",
+        "align_text": "left",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "text_and_image_BeP4HX": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MG_8253.jpg",
+        "image_mask": "rounded-wave",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Damiyah",
+        "text": "<p>Embrace<br\/>the artistry of embroidery and sequins with our stunning ensemble. Adorned with<br\/>Intricate details, from the organza neckline to the embroidered front and back.<br\/><\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "text_and_image_6DMByb": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MG_8425.jpg",
+        "image_mask": "rounded-top",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Kiah",
+        "text": "<p>Step<br\/>into elegance with our Embroidered Georgette Chiffon creation, the front, back,<br\/>and sleeves are adorned with intricate embroidery in contrasting hues, creating<br\/>a captivating symphony of colors and textures.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "8fc0a290-a83f-4def-a34d-9ec92a23e231",
+    "promo_grid_83CphF",
+    "rich_text_YGDaQW",
+    "main",
+    "text_and_image_EHtxXK",
+    "promo_grid_TCfLp4",
+    "rich_text_9fQPe6",
+    "text_columns_RXagjV",
+    "rich_text_PXQjLd",
+    "text_and_image_f9g7MH",
+    "text_and_image_HYByAV",
+    "text_and_image_EFeAP3",
+    "promo_grid_KFyVC8",
+    "rich_text_x37pUb",
+    "text_and_image_BeP4HX",
+    "text_and_image_6DMByb"
+  ]
+}

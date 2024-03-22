@@ -1,0 +1,169 @@
+{% assign class = section.settings.custom-class %}
+<div class="cust-{{ class }} mry-bottom-navbar  parent-section template-{{ section.id }} {{ section.index0 }}" id="mry-id">
+  <section class="Mahnosh-slider" aria-label="Splide Basic HTML Example" id="splide">
+		<ul class="splide__list-mahnosh vertical-slider">
+            {% for block in section.blocks %}
+              {% case block.type %}
+              {% when 'slideshow' %}
+			<li class="splide__slide-slider {% if block.type == 'slideshow' %} active-slideshow{% endif %} {% if block.settings.enable_js_header %}header-color-white{% else %}header-color-black{% endif %}" id="{% if block.type == 'slideshow' %}active-slideshow{% endif %}">
+              <a href="#" class="super-block">
+              {% assign image-pr = block.settings.image %}
+              {% assign mob-img = block.settings.mob-image %}
+              <img width="" height="" src="{{ image-pr | img_url: "master" }}" class="{% if mob-img != blank %}hide-dextop{% endif %}"/>
+              {% if mob-img != blank %}
+               <img width="" height="" src="{{ mob-img | img_url: "master" }}" class="{% if image-pr != blank %}hide-mobile{% endif %}"/>
+                {% endif %}
+                </a>
+              <div class="content-box-pr">
+                {% assign title = block.settings.title %}
+                {% assign paragraph = block.settings.paragrapgh %}
+                {% assign button = block.settings.btn-text %}
+                {% assign url  = block.settings.url %}
+                <h2>{{ title }}</h2>
+                <p>{{ paragraph }}</p>
+                <a class="btn-pr" href="{{ url }}">{{ button }} </a>
+              </div>
+            </li>
+          {% when 'video-section' %}
+                <li class="splide__slide-slider {% if block.type == 'video-section' %} active-video-slide{% endif %}" id="{% if block.type == 'video-section' %}active-videio-slide{% endif %}">
+<div class="video-section">
+  <video width="100%" class="video-js" autoplay muted control>
+    <source src="{{ block.settings.video_url }}" type="video/mp4">
+    <source src="{{ block.settings.caption }}" type="video/ogg">
+  </video>
+  <div class="button_cont">
+    <button class="muteButton" type="button" onclick="toggleMute()"><img src="https://cdn.shopify.com/s/files/1/0562/8503/6605/files/untitled_27.png?v=1708413344" /></button>
+    <button class="playPauseButton" onclick="togglePlayback()">
+        <img src="https://cdn.shopify.com/s/files/1/0562/8503/6605/files/pause.png?v=1709029726" />
+    </button>
+  </div>
+</div>
+                </li>
+          {% endcase %}
+            {% endfor %}
+		</ul>
+</section>
+</div> 
+  <script>
+    $(document).ready(function(){
+  $('ul.splide__list-mahnosh.vertical-slider').slick({
+    vertical: true,
+    verticalSwiping: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows: true,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 2000
+  });
+});
+  </script>
+{% schema %}
+  {
+    "name": "home vertical slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "custom-class",
+        "label": "Custom Class"
+      },
+      {
+        "type": "range",
+        "id": "height",
+        "min": 320,
+        "max": 900,
+        "step": 10,
+        "unit": "px",
+        "label": "Banner Height",
+        "default": 400
+    },
+      {
+        "type": "text",
+        "id": "newsletter_heading1",
+        "label": "Newsletter Heading"
+      },
+      {
+        "type": "link_list",
+        "id": "bottom_navbar",
+        "label": "Bottom Navbar",
+        "default": "main-menu"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "slideshow",
+        "name": "slideshow",
+        "limit": 5,
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image"
+          },
+          {
+            "type": "image_picker",
+            "label": "mobile image",
+            "id": "mob-image"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "textarea",
+            "id": "paragrapgh",
+            "label": "paragrapgh"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "btn url"
+          },
+          {
+            "type": "text",
+            "id": "btn-text",
+            "label": "button"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_js_header",
+            "label": "Enable White Color For Header"
+         }
+        ]
+      },
+        {
+        "type": "video-section",
+        "name": "Video",
+        "settings": [
+          {
+        "type": "text",
+        "label": "Video URL",
+        "id": "video_url",
+        "default": "https://www.youtube.com/watch?v=VIDEO_ID"
+         },
+         {
+        "type": "text",
+        "label": "Caption (optional)",
+        "id": "caption",
+        "default": "Watch this amazing video!"
+         }
+        ]
+      }
+    ],
+      "presets": [
+    {
+      "name": "home vertical slider",
+      "blocks": [
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "8fc0a290-a83f-4def-a34d-9ec92a23e231": {
+      "type": "rich-text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "article-template",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "image_hero": false,
+        "blog_show_tags": true,
+        "blog_show_date": false,
+        "blog_show_comments": true,
+        "blog_show_author": false,
+        "social_sharing_blog": true
+      }
+    }
+  },
+  "order": [
+    "8fc0a290-a83f-4def-a34d-9ec92a23e231",
+    "main"
+  ]
+}

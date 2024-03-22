@@ -1,0 +1,228 @@
+<script src="{{ 'jquery.main.js' | asset_url }}" defer="defer"></script>
+
+<style>
+  .scroll-reveal-section {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 50px 0;
+
+    .item {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        height: 80vh;
+        margin-bottom: -80vh;
+      }
+
+      &:last-of-type {
+        &:after { display: none; }
+        margin-bottom: 0;
+
+      }
+    }
+
+    .image-holder {
+      position: sticky;
+      top: 0;
+      float: left;
+      overflow: hidden;
+      width: 50%;
+      height: 80vh;
+    }
+
+    .text-holder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      min-height: 80vh;
+      margin-left: 50%;
+      padding: 1em;
+      text-align: center;
+      font-family: "Proza Libre", sans-serif;
+      font-size: 15px;
+    }
+  }
+
+  .scroll-reveal-section img {
+    display: block;
+    width: 100%;
+    height: min( min(50vw - 3rem , 575px) , min(50vw - 3rem , 575px) / 0.6666666666666666 );
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .scroll-reveal-section h1 {
+    font-family: Palatino, 'Palatino Linotype', 'Book Antiqua', serif;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 0.18em;
+  }
+
+  .scroll-reveal-section.slick-slider {
+    display: none;
+  }
+
+  .scroll-reveal-section .text {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 991px) {
+    .scroll-reveal-section {
+      display: none;
+
+      .image-holder {
+        width: 100%;
+        height: auto;
+        float: none;
+        position: static;
+        padding: 0 20px;
+      }
+
+      .text-holder {
+        width: 100%;
+        min-height: auto;
+        margin-left: 0;
+        transition: all 500ms ease-out;
+        transform: translateY(30px);
+        opacity: 0;
+      }
+    }
+
+    .scroll-reveal-section img {
+      width: min(56vw, 27.5rem);
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .scroll-reveal-section.slick-slider {
+      display: block;
+    }
+
+    .scroll-reveal-section .slick-slide.slick-active .text-holder {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .scroll-reveal-section .slick-dots {
+      position: static;
+    }
+
+    .scroll-reveal-section .slick-dots li {
+      height: auto;
+      width: auto;
+    }
+
+    .scroll-reveal-section .slick-dots li button {
+      background: #000;
+      border-radius: 100%;
+      opacity: 0.4;
+      width: 6px !important;
+      height: 6px !important;
+      padding: 0;
+    }
+
+    .scroll-reveal-section .slick-dots li.slick-active {
+      height: auto;
+      width: auto;
+    }
+
+    .scroll-reveal-section .slick-dots li.slick-active button {
+      opacity: 1;
+    }
+  }
+</style>
+
+<div class="scroll-reveal-section">
+  {% for block in section.blocks %}
+    <div class="item">
+      <div class="image-holder">
+        <img src="{{ block.settings.spotted-img | img_url: 'master' }}">
+      </div>
+
+      <div class="text-holder">
+        <h1>{{ block.settings['spotted-heading'] }}</h1>
+        <p>
+          {{ block.settings['spotted-text'] }}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="scroll-reveal-section slick-slider">
+  {% for block in section.blocks %}
+    <div class="item">
+      <div class="image-holder">
+        <img src="{{ block.settings.spotted-img | img_url: 'master' }}">
+      </div>
+
+      <div class="text-holder">
+        <h1>{{ block.settings['spotted-heading'] }}</h1>
+        <p>
+          {{ block.settings['spotted-text'] }}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="scroll-filler"></div>
+
+{% schema %}
+  {
+    "name": "Spotted Mobile Ready",
+    "settings": [
+      {
+         "type":"text",
+         "id":"testi-title",
+         "label":"Spotted",
+         "default":"Spotted"
+      }
+    ],
+    "blocks" :[
+      {
+        "type":"image_picker",
+         "name":"Spotted Image",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"spotted-img",
+               "label":"Add image for Spotted"
+            },
+            {
+               "type":"text",
+               "id":"spotted-heading",
+               "label":"Heading"
+            },
+            {
+               "type":"text",
+               "id":"spotted-text",
+               "label":"Text"
+            }
+         ]
+      }
+    ],
+  "max_blocks": 5,
+  "presets":[
+      {
+         "name":"Spoted",
+         "category":"Text",
+         "blocks":[
+            {
+               "type":"image_picker"
+            },
+            {
+               "type":"image_picker"
+            },
+            {
+               "type":"image_picker"
+            }
+         ]
+      }
+   ]
+}
+{% endschema %}

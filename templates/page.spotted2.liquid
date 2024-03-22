@@ -1,0 +1,173 @@
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"
+  integrity="sha512-Pa4Jto+LuCGBHy2/POQEbTh0reuoiEXQWXGn8S7aRlhcwpVkO8+4uoZVSOqUjdCsE+77oygfu2Tl+7qGHGIWsw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+{% section 'spotted-2' %}
+
+{% section 'feature-product-1' %}
+
+<script>
+  $("input[name$='Add on']").hide();
+  $(".custom_size_option_addon").hide();
+  $(".lbl_errormsg").show();
+  $(".radio-size-options").hide();
+  $("#infiniteoptions-container").show();
+  // $(".payment-buttons").show();
+  $(".fn-unst-note").show();
+  $(document).ready(function() {
+
+    $("input[name$='Type']").click(function() {
+      var clickedValue = $(this).val(),
+          hasInfiniteOptions = $(".product-single__form").find("#infiniteoptions-container").length,
+          infiniteChecked,
+          isRadio;
+     console.log(hasInfiniteOptions)
+      if(clickedValue == 'Unstitched'){
+        $(".Additional-Information").hide();
+       $("#add").prop("checked", false);
+
+
+        if(hasInfiniteOptions > 0){
+          $("#infiniteoptions-container").children().each(function(i){
+          	var infiniteInput = $(this).find("input[type='hidden']").val(),
+                  isHidden = $(this).find("input").attr("type");
+            console.log("val" + infiniteInput)
+            if(isHidden == 'hidden'){
+            if(infiniteInput){
+               infiniteChecked = true;
+            }
+            }
+          })
+          if(infiniteChecked){
+            console.log("hide everything")
+            $(".lbl_errormsg").show();
+            $(".radio-size-options").hide();
+            $("#add").prop("checked", false);
+            $("#infiniteoptions-container").show();
+            // $(".payment-buttons").hide();
+        	  $(".fn-unst-note").show();
+          }
+
+          else{
+          	console.log("Nothing is checked, can add")
+              $("#add").prop("checked", false);
+            $("#infiniteoptions-container").show();
+             $("#add-on").prop("checked", false);
+            $("input[name|='properties[Style]']").prop("checked", false);
+            $("input[name|='properties[Size]']").prop("checked", false);
+            $("input[name$='Add On']").hide();
+            $(".radio-size-options").hide();
+            $(".Additional-Information").hide();
+        	  $('#additional-information').val('');
+            $(".lbl_errormsg").hide();
+            $(".payment-buttons").show();
+            $(".fn-unst-note").show();
+          }
+        }
+        else{
+
+            $("#infiniteoptions-container").show();
+          $("#add").prop("checked", false);
+            $("input[name|='properties[Style]']").prop("checked", false);
+            $("input[name|='properties[Size]']").prop("checked", false);
+            $(".radio-size-options").hide();
+          $("input[name$='Add On']").hide();
+            $(".Additional-Information").hide();
+            $('#additional-information').val('');
+            $(".lbl_errormsg").hide();
+            $(".payment-buttons").show();
+            $(".fn-unst-note").show();
+        }
+      }
+      else{
+      	console.log("stitched")
+          $("#add").prop("checked", true);
+          $(".radio-size-options").show();
+           $("input[name$='Add On']").show();
+           $(".custom_size_option_addon").hide();
+          $("#XS").prop("checked", true);
+          $("#longshirt").prop("checked", true);
+          $("#lehngacholi").prop("checked", true);
+          $("#frontopenmaxi").prop("checked", true);
+          $("#longmaxi").prop("checked", true);
+          $(".lbl_errormsg").hide();
+          $(".additional-bag").show();
+          $(".additional-cancan").show();
+
+
+          $("#infiniteoptions-container").show();
+          $("input[name='properties[Style]']").first().prop("checked", true);
+          $(".fn-unst-note").hide();
+        	$(".payment-buttons").show();
+
+      }
+    });
+  });
+
+  $(".Additional-Information").hide();
+  $(document).ready(function() {
+    $("input[name$='properties[Size]']").click(function() {
+      var test = $(this).val();
+      if (test == "Custom Size") {
+        $(".custom_size_option_addon").show();
+      } else {
+        $(".custom_size_option_addon").hide();
+        $('#additional-information').val('');
+      }
+    });
+  });
+
+  function myFunction(x) {
+    if (x.matches) { // If media query matches
+      $('#desk-nav-header').html('');
+    } else {
+      $('#mob-nav-header').html('');
+    }
+  }
+
+  var x = window.matchMedia("(max-width: 767px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
+
+  $(".bg_css_stitched").click(function(){
+      $(".yard").css("display", "none");
+  })
+  $(".bg_css_stitched").click(function(){
+      $(".full-sleeves-lining").css("display", "none");
+
+  })
+
+  $(".bg_css_unstitched").click(function(){
+      $(".yard").css("display", "block");
+  })
+  $(".bg_css_unstitched").click(function(){
+      $(".cstm-size-diagram-container").css("display", "none");
+  })
+  $(".bg_css_unstitched").click(function(){
+      $(".cstm-size-diagram-container").css("display", "none");
+  })
+  $(".bg_css_stitched").click(function(){
+      $(".cstm-size-diagram-container").css("display", "block");
+  })
+
+  $(".bg_css_stitched").click(function(){
+      $(".full-sleeves-lining").css("display", "none");
+
+  })
+
+  // $(".bg_css_unstitched").click(function(){
+  //     $(".full-sleeves-lining").css("display", "none");
+  // })
+  $(document).ready(function(){
+      $(".bg_css_stitched").click(function(){
+          $(".spb-productoptionbackground").prop("checked", false);
+
+      });
+  //     $(".bg_css_stitched").click(function(){
+  //         $(".yard").prop("checked", false);
+  //     });
+  });
+</script>

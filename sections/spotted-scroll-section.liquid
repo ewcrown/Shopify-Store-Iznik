@@ -1,0 +1,265 @@
+<script src="{{ 'jquery.main.js' | asset_url }}" defer="defer"></script>
+
+<style>
+  .scroll-reveal-section {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 50px;
+
+    .item {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        height: 100vh;
+        margin-bottom: -100vh;
+      }
+
+      &:last-of-type {
+        &:after { display: none; }
+        margin-bottom: 0;
+
+      }
+    }
+
+    .image-holder {
+      position: sticky;
+      top: 0;
+      float: left;
+      overflow: hidden;
+      width: 50%;
+      height: 100vh;
+    }
+
+    .text-holder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      min-height: 120vh;
+      margin-left: 50%;
+      padding: 1em;
+      text-align: center;
+      font-family: "Proza Libre", sans-serif;
+      font-size: 15px;
+    }
+  }
+
+  .scroll-reveal-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .scroll-reveal-section h1 {
+    font-family: Palatino, 'Palatino Linotype', 'Book Antiqua', serif;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 0.18em;
+  }
+
+  .scroll-reveal-section.slick-slider {
+    display: none;
+  }
+
+  @media (max-width: 991px) {
+    .scroll-reveal-section {
+      display: none;
+
+      .image-holder {
+        width: 100%;
+        height: auto;
+        float: none;
+        position: static;
+      }
+
+      .text-holder {
+        width: 100%;
+        min-height: auto;
+        margin-left: 0;
+        transition: all 500ms ease-out;
+        transform: translateY(30px);
+        opacity: 0;
+      }
+    }
+
+    .scroll-reveal-section.slick-slider {
+      display: block;
+    }
+
+    .scroll-reveal-section .slick-slide.slick-active .text-holder {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .scroll-reveal-section .slick-dots {
+      position: static;
+    }
+
+    .scroll-reveal-section .slick-dots li {
+      height: auto;
+      width: auto;
+    }
+
+    .scroll-reveal-section .slick-dots li button {
+      background: #000;
+      border-radius: 100%;
+      opacity: 0.4;
+      width: 6px !important;
+      height: 6px !important;
+      padding: 0;
+    }
+
+    .scroll-reveal-section .slick-dots li.slick-active {
+      height: auto;
+      width: auto;
+    }
+
+    .scroll-reveal-section .slick-dots li.slick-active button {
+      opacity: 1;
+    }
+  }
+</style>
+
+<div class="scroll-reveal-section">
+  {% for block in section.blocks %}
+    <div class="item">
+      <div class="image-holder">
+        <img src="{{ block.settings.spotted-img | img_url: 'master' }}">
+      </div>
+
+      <div class="text-holder">
+        <h1>{{ block.settings['spotted-heading'] }}</h1>
+        <p>
+          {{ block.settings['spotted-text'] }}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="scroll-reveal-section slick-slider">
+  <div class="item">
+    <div class="image-holder">
+      <img src="https://cdn.shopify.com/s/files/1/0303/2796/3779/files/Snapshot_15.png?v=1699358925">
+    </div>
+
+    <div class="text-holder">
+      <h1>Heading</h1>
+      <p>
+        Every piece tells a story of artistry & tradition.We love how our influencers elegantly style Iznik outfits – a
+        statement of elegance & grace.
+      </p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="image-holder">
+      <img src="https://cdn.shopify.com/s/files/1/0303/2796/3779/files/Snapshot_10.png?v=1699359086">
+    </div>
+
+    <div class="text-holder">
+      <h1>Heading</h1>
+      <p>
+        Maham yahub making a statement in our article – 𝑳𝒆𝒊𝒍𝒂, which features elaborate tilla & sequins work on shirt,
+        perfectly complemented by an opulent embroidered velvet shawl & solid pants.
+      </p>
+    </div>
+  </div>
+
+  <!--
+    <div class="item">
+      <div class="image-holder">
+        <img src="https://cdn.shopify.com/s/files/1/0303/2796/3779/files/vlcsnap-2023-10-30-15h50m14s482_d51a4170-6f4c-4fdd-8968-cf3696e19a11.jpg?v=1699366653">
+      </div>
+
+      <div class="text-holder">
+        <h1>Heading</h1>
+        <p>
+          We adore Aimen Hussain minimalistic glam look this festive season in our article from chiffon collection –
+          𝑹𝒐𝒔𝒂𝒍𝒊𝒆, features a mesmerizing deep red maxi with beautiful floral embroidery, paired with embroidered net
+          dupatta & solid pants.
+        </p>
+      </div>
+    </div>
+  -->
+
+  <div class="item">
+    <div class="image-holder">
+      <img src="https://cdn.shopify.com/s/files/1/0303/2796/3779/files/Snapshot_21.png?v=1699359465">
+    </div>
+
+    <div class="text-holder">
+      <h1>Heading</h1>
+      <p>
+        Rafy Minhas looks absolutely stunning in 𝑴𝒂𝒉𝒕𝒂𝒃, printed khaddar outfit. The intricate design and embroidery on
+        the fabric create a captivating ensemble that exudes elegance and style.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="scroll-filler"></div>
+
+{% section 'featured-product' %}
+
+{% schema %}
+  {
+    "name": "Spotted Mobile Ready",
+    "settings": [
+      {
+         "type":"text",
+         "id":"testi-title",
+         "label":"Spotted",
+         "default":"Spotted"
+      }
+    ],
+    "blocks" :[
+      {
+        "type":"image_picker",
+         "name":"Spotted Image",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"spotted-img",
+               "label":"Add image for Spotted"
+            },
+            {
+               "type":"text",
+               "id":"spotted-heading",
+               "label":"Heading"
+            },
+            {
+               "type":"text",
+               "id":"spotted-text",
+               "label":"Text"
+            }
+         ]
+      }
+    ],
+  "presets":[
+      {
+         "name":"Spoted",
+         "category":"Text",
+         "blocks":[
+            {
+               "type":"image_picker"
+            },
+            {
+               "type":"image_picker"
+            },
+            {
+               "type":"image_picker"
+            }
+         ]
+      }
+   ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

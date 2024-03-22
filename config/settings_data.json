@@ -1,0 +1,1274 @@
+{
+  "current": {
+    "color_body_bg": "#ffffff",
+    "color_body_text": "#000000",
+    "color_price": "#1c1d1d",
+    "color_savings_text": "#ff4e4e",
+    "color_borders": "#e8e8e1",
+    "color_button": "#111111",
+    "color_button_text": "#ffffff",
+    "color_cart_dot": "#ff4f33",
+    "color_small_image_bg": "#e5e5e5",
+    "color_large_image_bg": "#0f0f0f",
+    "color_header": "#ffffff",
+    "color_header_text": "#000000",
+    "color_announcement": "#0f0f0f",
+    "color_announcement_text": "#ffffff",
+    "color_footer": "#ffffff",
+    "color_footer_text": "#000000",
+    "color_drawer_background": "#ffffff",
+    "color_drawer_text": "#000000",
+    "color_drawer_border": "#e8e8e1",
+    "color_drawer_button": "#111111",
+    "color_drawer_button_text": "#ffffff",
+    "color_modal_overlays": "#e6e6e6",
+    "color_image_overlay": "#000000",
+    "color_image_overlay_opacity": 0,
+    "color_image_overlay_text_shadow": 24,
+    "type_header_font_family": "palatino_n4",
+    "type_header_spacing": "100",
+    "type_header_base_size": 36,
+    "type_header_line_height": 1,
+    "type_header_capitalize": true,
+    "type_headers_align_text": true,
+    "type_base_font_family": "proza_libre_n4",
+    "type_base_spacing": "25",
+    "type_base_size": 14,
+    "type_base_line_height": 1.6,
+    "type_body_align_text": true,
+    "type_navigation_style": "heading",
+    "type_navigation_size": 14,
+    "type_navigation_capitalize": false,
+    "type_product_style": "heading",
+    "type_collection_font": "body",
+    "type_collection_size": 24,
+    "button_style": "square",
+    "icon_weight": "4px",
+    "icon_linecaps": "miter",
+    "product_save_type": "percent",
+    "quick_shop_enable": false,
+    "quick_shop_text": "Quick view",
+    "product_grid_image_size": "portrait",
+    "product_hover_image": true,
+    "collection_grid_style": "overlaid",
+    "collection_grid_shape": "square",
+    "collection_grid_image": "collection",
+    "collection_grid_text_align": "center",
+    "collection_grid_tint": "#000000",
+    "collection_grid_opacity": 20,
+    "collection_grid_gutter": true,
+    "cart_type": "drawer",
+    "cart_icon": "bag",
+    "cart_notes_enable": true,
+    "cart_terms_conditions_enable": false,
+    "social_facebook_link": "https:\/\/www.facebook.com\/iznikfashion",
+    "social_instagram_link": "https:\/\/www.instagram.com\/iznikfashion\/",
+    "social_snapchat_link": "https:\/\/www.snapchat.com\/add\/iznik_fashions",
+    "social_tiktok_link": "https:\/\/www.tiktok.com\/@iznikfashion",
+    "social_tumblr_link": "https:\/\/wa.me\/+923060412412",
+    "social_youtube_link": "https:\/\/www.youtube.com\/@iznikfashions9075",
+    "favicon": "shopify:\/\/shop_images\/Iznik_logo.png",
+    "show_breadcrumbs": false,
+    "checkout_logo_image": "shopify:\/\/shop_images\/iznik-Logo-6.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#f5f5f5",
+    "checkout_accent_color": "#000000",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#ff6d6d",
+    "breadcrumb": false,
+    "sections": {
+      "collection-header": {
+        "type": "collection-header",
+        "settings": {
+          "enable": true,
+          "collection_image_enable": true,
+          "parallax": true
+        }
+      },
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "blocks": {
+          "newsletter-popup-0": {
+            "type": "header",
+            "settings": {
+              "reminder_label": "Get 10% off"
+            }
+          }
+        },
+        "block_order": [
+          "newsletter-popup-0"
+        ],
+        "settings": {
+          "disable_for_account_holders": true,
+          "popup_seconds": 5,
+          "popup_days": 30,
+          "popup_title": "Sign up and save",
+          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+          "image_position": "left",
+          "show_social_icons": false,
+          "enable_newsletter": true,
+          "button_label": "Optional button",
+          "button_link": ""
+        }
+      },
+      "giftcard-header": {
+        "type": "giftcard-header",
+        "settings": {
+          "desktop_logo_width": 200,
+          "mobile_logo_width": 140
+        }
+      },
+      "spotted": {
+        "type": "spotted",
+        "blocks": {
+          "c7e9fb91-0307-471c-920a-08ef08fcd9ba": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/4_0fd94b16-4ea7-4590-a661-f3a6eb5d88af.png",
+              "spotted-heading": "Unveil Timeless Sophistication",
+              "spotted-text": "Step into the realm of sheer elegance with our mesmerizing ensemble, where every detail speaks volumes of refined craftsmanship. Delicately adorned with meticulously embroidered organza neckline, highlighted by intricate front and back foil lace accents, this attire is a masterpiece of sophistication."
+            }
+          },
+          "9fffd56c-4c22-47a0-a601-1134339bb6c0": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/9_0405d4b9-dc61-4d4b-8aad-81561d83913a.png",
+              "spotted-heading": "",
+              "spotted-text": "Complemented flawlessly with matching printed pants and a sumptuous silk dupatta. Elevate your style with a touch of subtle makeup and minimal jewelry, crafting a look that exudes understated luxury and timeless allure."
+            }
+          }
+        },
+        "block_order": [
+          "c7e9fb91-0307-471c-920a-08ef08fcd9ba",
+          "9fffd56c-4c22-47a0-a601-1134339bb6c0"
+        ],
+        "settings": {
+          "testi-title": "Spotted"
+        }
+      },
+      "featured-product": {
+        "type": "featured-product",
+        "blocks": {
+          "9acd4e43-298f-4220-b813-9230edccffe0": {
+            "type": "price",
+            "settings": {
+            }
+          },
+          "6c94d1a8-d44f-4c0b-a566-5c8a48a2e9b8": {
+            "type": "separator",
+            "settings": {
+            }
+          },
+          "704b8bcd-93f4-4423-9c51-39c4b9fe3a54": {
+            "type": "variant_picker",
+            "settings": {
+              "variant_labels": true,
+              "picker_type": "button",
+              "product_dynamic_variants_enable": true,
+              "color_swatches": false
+            }
+          },
+          "a119308b-fb7a-4978-bae3-92331961f5ab": {
+            "type": "buy_buttons",
+            "settings": {
+              "show_dynamic_checkout": true,
+              "surface_pickup_enable": true
+            }
+          },
+          "35c9480e-3ba7-4b1e-8f81-a8939acfbc38": {
+            "type": "description",
+            "settings": {
+              "is_tab": true
+            }
+          },
+          "2157275c-ef87-4330-ad19-1657ca20b61d": {
+            "type": "tab",
+            "settings": {
+              "title": "Delivery Details",
+              "content": "<p><strong>For Unstitched & Pret<\/strong><\/p><p><strong>Pakistan:<\/strong> 5 to 7 Working Days.<\/p><p><strong>International:<\/strong> 9 to 11 Working Days.<\/p><p><strong>For Stitched:<\/strong> 25 Working Days.<\/p><p>Customized stitching orders may require additional 7 business days for completion.<\/p><p><strong>Note:<\/strong> Any public holidays, Saturdays and Sundays in between the days are non working days.<\/p>",
+              "page": ""
+            }
+          },
+          "5887ce04-57c5-478d-ad3c-88e439fb8c2f": {
+            "type": "contact",
+            "settings": {
+              "title": "Ask a question",
+              "phone": true
+            }
+          },
+          "e1aa0e4c-afc5-4f26-add6-827917d4b735": {
+            "type": "share",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "9acd4e43-298f-4220-b813-9230edccffe0",
+          "6c94d1a8-d44f-4c0b-a566-5c8a48a2e9b8",
+          "704b8bcd-93f4-4423-9c51-39c4b9fe3a54",
+          "a119308b-fb7a-4978-bae3-92331961f5ab",
+          "35c9480e-3ba7-4b1e-8f81-a8939acfbc38",
+          "2157275c-ef87-4330-ad19-1657ca20b61d",
+          "5887ce04-57c5-478d-ad3c-88e439fb8c2f",
+          "e1aa0e4c-afc5-4f26-add6-827917d4b735"
+        ],
+        "settings": {
+          "featured_product": "nkg-09",
+          "divider": false,
+          "sku_enable": false,
+          "image_position": "left",
+          "image_size": "medium",
+          "product_zoom_enable": true,
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "mobile_layout": "partial",
+          "enable_video_looping": true,
+          "product_video_style": "muted"
+        }
+      },
+      "spotted-2": {
+        "type": "spotted-2",
+        "blocks": {
+          "84d635ff-e7a2-4c58-bce9-94d751e0d9a0": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/IMG_9271.png",
+              "spotted-heading": "Serenade of Sophistication",
+              "spotted-text": "Embrace the essence of understated glamour by accessorizing with minimal jewelry, allowing the ensemble's inherent beauty to shine through."
+            }
+          },
+          "ee6c5edb-da17-4b75-9ce4-5445378693f8": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/IMG_9371.png",
+              "spotted-heading": "",
+              "spotted-text": "Whether it's Eid festivities or a cherished celebration, this ensemble embodies the epitome of refined style and timeless allure, ensuring you leave a lasting impression with every step. Revel in the serenade of sophistication and embrace the elegance that transcends time."
+            }
+          }
+        },
+        "block_order": [
+          "84d635ff-e7a2-4c58-bce9-94d751e0d9a0",
+          "ee6c5edb-da17-4b75-9ce4-5445378693f8"
+        ],
+        "settings": {
+          "testi-title": "Spotted"
+        }
+      },
+      "feature-product-1": {
+        "type": "feature-product-1",
+        "blocks": {
+          "d2122ab9-157c-4ac7-8b8f-a3650bdc0acd": {
+            "type": "price",
+            "settings": {
+            }
+          },
+          "eabe86a4-c6c6-47b0-9136-e2272dfd8c05": {
+            "type": "variant_picker",
+            "settings": {
+              "variant_labels": true,
+              "picker_type": "button",
+              "product_dynamic_variants_enable": true,
+              "color_swatches": false
+            }
+          },
+          "dda677f7-614f-466c-8f07-dd3d27c638c1": {
+            "type": "buy_buttons",
+            "settings": {
+              "show_dynamic_checkout": true,
+              "surface_pickup_enable": true
+            }
+          },
+          "8145905d-7844-420a-9adf-5a589cc8bb03": {
+            "type": "description",
+            "settings": {
+              "is_tab": true
+            }
+          },
+          "e00884a9-db3f-4a40-a198-97b513496454": {
+            "type": "tab",
+            "settings": {
+              "title": "Delivery Details",
+              "content": "<p><strong>For Unstitched & Pret<\/strong><\/p><p><strong>Pakistan:<\/strong> 5 to 7 Working Days.<\/p><p><strong>International:<\/strong> 9 to 11 Working Days.<\/p><p><strong>For Stitched:<\/strong> 25 Working Days.<\/p><p>Customized stitching orders may require additional 7 business days for completion.<\/p><p><strong>Note:<\/strong> Any public holidays, Saturdays and Sundays in between the days are non working days.<\/p>",
+              "page": ""
+            }
+          },
+          "4d8c5e65-2b52-4969-ac94-e9064005042e": {
+            "type": "contact",
+            "settings": {
+              "title": "Ask a question",
+              "phone": true
+            }
+          },
+          "74105db7-8bd0-498b-a87a-a1ca83f9afd7": {
+            "type": "share",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "d2122ab9-157c-4ac7-8b8f-a3650bdc0acd",
+          "eabe86a4-c6c6-47b0-9136-e2272dfd8c05",
+          "dda677f7-614f-466c-8f07-dd3d27c638c1",
+          "8145905d-7844-420a-9adf-5a589cc8bb03",
+          "e00884a9-db3f-4a40-a198-97b513496454",
+          "4d8c5e65-2b52-4969-ac94-e9064005042e",
+          "74105db7-8bd0-498b-a87a-a1ca83f9afd7"
+        ],
+        "settings": {
+          "featured_product": "nkg-06",
+          "divider": false,
+          "sku_enable": false,
+          "image_position": "left",
+          "image_size": "medium",
+          "product_zoom_enable": true,
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "mobile_layout": "partial",
+          "enable_video_looping": true,
+          "product_video_style": "muted"
+        }
+      },
+      "spotted-3": {
+        "type": "spotted-3",
+        "blocks": {
+          "792178b1-5e31-4ae2-8e8d-b357b7910a4a": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/7_b107fe84-ee20-4c34-a332-dd2715810961.png",
+              "spotted-heading": "Radiant Eid Reverie: Blossom in Embroidered Lawn Opulence",
+              "spotted-text": "Indulge in sophistication with our latest offering - a meticulously crafted borer embroidered lawn ensemble designed to elevate your Eid celebrations. The shirt boasts captivating contrasting embroidery and delicate lace detailing on the sleeves, exuding an aura of refined elegance."
+            }
+          },
+          "86f8ce29-cecc-44eb-bb44-f5d72417f453": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/8_511c1865-9cd0-4218-913e-4026405e64ad.png",
+              "spotted-heading": "",
+              "spotted-text": "Paired effortlessly with a vibrant printed silk dupatta and sleek solid pants, this ensemble is a harmonious blend of tradition and modernity, ensuring you command attention with unparalleled style and grace."
+            }
+          }
+        },
+        "block_order": [
+          "792178b1-5e31-4ae2-8e8d-b357b7910a4a",
+          "86f8ce29-cecc-44eb-bb44-f5d72417f453"
+        ],
+        "settings": {
+          "testi-title": "Spotted"
+        }
+      },
+      "feature-product-2": {
+        "type": "feature-product-2",
+        "blocks": {
+          "25b29906-94b0-4c8c-9f5a-d696b832aac8": {
+            "type": "price",
+            "settings": {
+            }
+          },
+          "5313833b-da85-41db-aece-89aea7a59b9a": {
+            "type": "buy_buttons",
+            "settings": {
+              "show_dynamic_checkout": true,
+              "surface_pickup_enable": true
+            }
+          },
+          "9e03a663-56ba-42a7-b748-29ab3b9f1377": {
+            "type": "description",
+            "settings": {
+              "is_tab": true
+            }
+          },
+          "5bc5cfec-0d4c-4b83-a028-e30c4f9cfb77": {
+            "type": "tab",
+            "settings": {
+              "title": "Delivery Details",
+              "content": "<p><strong>For Unstitched & Pret<\/strong><\/p><p><strong>Pakistan:<\/strong> 5 to 7 Working Days.<\/p><p><strong>International:<\/strong> 9 to 11 Working Days.<\/p><p><strong>For Stitched:<\/strong> 25 Working Days.<\/p><p>Customized stitching orders may require additional 7 business days for completion.<\/p><p><strong>Note:<\/strong> Any public holidays, Saturdays and Sundays in between the days are non working days.<\/p>",
+              "page": ""
+            }
+          },
+          "98da0c35-e8c7-4b51-ac29-ee631d41511b": {
+            "type": "contact",
+            "settings": {
+              "title": "Ask a question",
+              "phone": true
+            }
+          },
+          "f3848f69-eb41-4b9c-8e7b-1bad304db6be": {
+            "type": "share",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "25b29906-94b0-4c8c-9f5a-d696b832aac8",
+          "5313833b-da85-41db-aece-89aea7a59b9a",
+          "9e03a663-56ba-42a7-b748-29ab3b9f1377",
+          "5bc5cfec-0d4c-4b83-a028-e30c4f9cfb77",
+          "98da0c35-e8c7-4b51-ac29-ee631d41511b",
+          "f3848f69-eb41-4b9c-8e7b-1bad304db6be"
+        ],
+        "settings": {
+          "featured_product": "nkg-12",
+          "divider": false,
+          "sku_enable": false,
+          "image_position": "left",
+          "image_size": "medium",
+          "product_zoom_enable": true,
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "mobile_layout": "full",
+          "enable_video_looping": true,
+          "product_video_style": "muted"
+        }
+      },
+      "spotted-4": {
+        "type": "spotted-4",
+        "blocks": {
+          "d690f7ab-1e01-4daa-a46a-1a6e6f952be8": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/6_78e9c032-3a3f-4a2e-b27f-26f235a48ae9.png",
+              "spotted-heading": "Graceful Eid Glamour",
+              "spotted-text": "This ensemble exudes an aura of regal charm, perfect for making a statement on any occasion, especially Eid celebrations. The rich teal hue adds depth and allure, while the delicate embroidery adds a touch of finesse and grace."
+            }
+          },
+          "128199db-c87c-4078-9787-4cfb13c52988": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/5_8c888081-48ff-49ee-9835-4169cc1c077b.png",
+              "spotted-heading": "",
+              "spotted-text": "Paired with an embroidered chiffon dupatta, this ensemble exudes ethereal charm, draping you in a veil of sheer elegance."
+            }
+          }
+        },
+        "block_order": [
+          "d690f7ab-1e01-4daa-a46a-1a6e6f952be8",
+          "128199db-c87c-4078-9787-4cfb13c52988"
+        ],
+        "settings": {
+          "testi-title": "Spotted"
+        }
+      },
+      "feature-product-3": {
+        "type": "feature-product-3",
+        "blocks": {
+          "2c1ac562-8489-4b7c-bcbd-35cb6b8093e1": {
+            "type": "price",
+            "settings": {
+            }
+          },
+          "fe165066-5bd5-4e21-82c9-9140984fd73a": {
+            "type": "separator",
+            "settings": {
+            }
+          },
+          "ce1db8f1-d694-4cbe-a20b-dc3c541587de": {
+            "type": "variant_picker",
+            "settings": {
+              "variant_labels": true,
+              "picker_type": "button",
+              "product_dynamic_variants_enable": true,
+              "color_swatches": false
+            }
+          },
+          "62e56f92-2e19-4718-8ab1-577e669bd4e5": {
+            "type": "buy_buttons",
+            "settings": {
+              "show_dynamic_checkout": true,
+              "surface_pickup_enable": true
+            }
+          },
+          "6875052b-2a7e-48c7-a063-eb0893139d33": {
+            "type": "description",
+            "settings": {
+              "is_tab": true
+            }
+          },
+          "144cfa55-a44e-4dc8-943b-d95578037a22": {
+            "type": "tab",
+            "settings": {
+              "title": "Delivery Details",
+              "content": "<p><strong>For Unstitched & Pret<\/strong><\/p><p><strong>Pakistan:<\/strong> 5 to 7 Working Days.<\/p><p><strong>International:<\/strong> 9 to 11 Working Days.<\/p><p><strong>For Stitched:<\/strong> 25 Working Days.<\/p><p>Customized stitching orders may require additional 7 business days for completion.<\/p><p><strong>Note:<\/strong> Any public holidays, Saturdays and Sundays in between the days are non working days.<\/p>",
+              "page": ""
+            }
+          },
+          "122700fa-8546-4640-ae3b-cc9fb49576f8": {
+            "type": "contact",
+            "settings": {
+              "title": "Ask a question",
+              "phone": false
+            }
+          },
+          "365f0ba8-10dc-4708-9ca7-c3a389f7f888": {
+            "type": "share",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "2c1ac562-8489-4b7c-bcbd-35cb6b8093e1",
+          "fe165066-5bd5-4e21-82c9-9140984fd73a",
+          "ce1db8f1-d694-4cbe-a20b-dc3c541587de",
+          "62e56f92-2e19-4718-8ab1-577e669bd4e5",
+          "6875052b-2a7e-48c7-a063-eb0893139d33",
+          "144cfa55-a44e-4dc8-943b-d95578037a22",
+          "122700fa-8546-4640-ae3b-cc9fb49576f8",
+          "365f0ba8-10dc-4708-9ca7-c3a389f7f888"
+        ],
+        "settings": {
+          "featured_product": "nkg-07",
+          "divider": false,
+          "sku_enable": false,
+          "image_position": "left",
+          "image_size": "medium",
+          "product_zoom_enable": true,
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "mobile_layout": "partial",
+          "enable_video_looping": true,
+          "product_video_style": "muted"
+        }
+      },
+      "spotted-5": {
+        "type": "spotted-5",
+        "blocks": {
+          "6841609c-7e97-408a-b6f6-b82892522d3c": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/iv-26_marasim.jpg",
+              "spotted-heading": "MARASIM",
+              "spotted-text": "Drape yourself in luxury with our velvet ensemble, a masterpiece of opulence. The spotlight is on the intricate neckline details, adding a touch of sophistication to this regal piece. Paired seamlessly with embroidered sharara pants, the ensemble strikes a perfect balance between tradition and contemporary style."
+            }
+          },
+          "b32353d0-c11b-43c0-a0f4-a86e156b0f97": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/iv-26.jpg",
+              "spotted-heading": "MARASIM",
+              "spotted-text": "The zarri organza dupatta completes the look, adorned with delicate embroidery that adds a layer of ethereal charm."
+            }
+          }
+        },
+        "block_order": [
+          "6841609c-7e97-408a-b6f6-b82892522d3c",
+          "b32353d0-c11b-43c0-a0f4-a86e156b0f97"
+        ],
+        "settings": {
+          "testi-title": "Spotted"
+        }
+      },
+      "feature-product-5": {
+        "type": "feature-product-5",
+        "blocks": {
+          "87fea1aa-3746-43fb-be4a-6f54903e6a6f": {
+            "type": "price",
+            "settings": {
+            }
+          },
+          "d88ce0b8-4047-4a66-b21a-eae4f77277f6": {
+            "type": "separator",
+            "settings": {
+            }
+          },
+          "74af0d3c-46d0-4afc-982d-226e6b2d8332": {
+            "type": "variant_picker",
+            "settings": {
+              "variant_labels": true,
+              "picker_type": "button",
+              "product_dynamic_variants_enable": true,
+              "color_swatches": false
+            }
+          },
+          "a541a97e-41a2-46c6-85be-f484f8881c0e": {
+            "type": "buy_buttons",
+            "settings": {
+              "show_dynamic_checkout": true,
+              "surface_pickup_enable": true
+            }
+          },
+          "d354ac6c-1d99-4441-81a2-2e3d2c5c6457": {
+            "type": "description",
+            "settings": {
+              "is_tab": true
+            }
+          },
+          "77d7e819-f988-420d-b249-01bd90eda228": {
+            "type": "tab",
+            "settings": {
+              "title": "Delivery Details",
+              "content": "<p><strong>For Unstitched & Pret<\/strong><\/p><p><strong>Pakistan:<\/strong> 5 to 7 Working Days.<\/p><p><strong>International:<\/strong> 9 to 11 Working Days.<\/p><p><strong>For Stitched:<\/strong> 25 Working Days.<\/p><p>Customized stitching orders may require additional 7 business days for completion.<\/p><p><strong>Note:<\/strong> Any public holidays, Saturdays and Sundays in between the days are non working days.<\/p>",
+              "page": ""
+            }
+          },
+          "7df65d70-f918-401c-9412-68c7c751e861": {
+            "type": "contact",
+            "settings": {
+              "title": "Ask a question",
+              "phone": false
+            }
+          },
+          "78683b36-8c5e-406c-b9f1-f60cad61cb61": {
+            "type": "share",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "87fea1aa-3746-43fb-be4a-6f54903e6a6f",
+          "d88ce0b8-4047-4a66-b21a-eae4f77277f6",
+          "74af0d3c-46d0-4afc-982d-226e6b2d8332",
+          "a541a97e-41a2-46c6-85be-f484f8881c0e",
+          "d354ac6c-1d99-4441-81a2-2e3d2c5c6457",
+          "77d7e819-f988-420d-b249-01bd90eda228",
+          "7df65d70-f918-401c-9412-68c7c751e861",
+          "78683b36-8c5e-406c-b9f1-f60cad61cb61"
+        ],
+        "settings": {
+          "featured_product": "iv-26-marasim",
+          "divider": false,
+          "sku_enable": false,
+          "image_position": "left",
+          "image_size": "medium",
+          "product_zoom_enable": true,
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "mobile_layout": "partial",
+          "enable_video_looping": true,
+          "product_video_style": "muted"
+        }
+      },
+      "spotted-6": {
+        "type": "spotted-6",
+        "blocks": {
+          "327926a5-5892-4b7d-b889-2367d42bf70d": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/IMG_5185.jpg",
+              "spotted-heading": "BAREEN",
+              "spotted-text": "'Bareen' captures the essence of grace and sophistication. This captivating attire boasts an intricately embroidered shirt, front and back, embodying the artistry of timeless beauty."
+            }
+          },
+          "51ed74ba-d8a4-46f5-872a-5a3e2836ac96": {
+            "type": "image_picker",
+            "settings": {
+              "spotted-img": "shopify:\/\/shop_images\/IMG_5183.jpg",
+              "spotted-heading": "BAREEN",
+              "spotted-text": "The embroidered organza neckline, adorned with exquisite adda work, adds a touch of finesse to this enchanting ensemble."
+            }
+          }
+        },
+        "block_order": [
+          "327926a5-5892-4b7d-b889-2367d42bf70d",
+          "51ed74ba-d8a4-46f5-872a-5a3e2836ac96"
+        ],
+        "settings": {
+          "testi-title": "Spotted"
+        }
+      },
+      "feature-product-6": {
+        "type": "feature-product-6",
+        "blocks": {
+          "53afceca-ced8-48f7-b73e-cc4d87be84a8": {
+            "type": "price",
+            "settings": {
+            }
+          },
+          "4b7d13c0-5daf-4021-8392-7302c160abcd": {
+            "type": "separator",
+            "settings": {
+            }
+          },
+          "a32d00c0-3b31-4aca-95e1-e8875749e003": {
+            "type": "variant_picker",
+            "settings": {
+              "variant_labels": true,
+              "picker_type": "button",
+              "product_dynamic_variants_enable": true,
+              "color_swatches": false
+            }
+          },
+          "1d467866-794c-4493-9950-ecac61d5af5a": {
+            "type": "buy_buttons",
+            "settings": {
+              "show_dynamic_checkout": true,
+              "surface_pickup_enable": true
+            }
+          },
+          "334d2ba5-b4f0-44b9-9b94-d9fad85c85b6": {
+            "type": "description",
+            "settings": {
+              "is_tab": true
+            }
+          },
+          "6744dba7-9a74-448e-8e01-cd590640928c": {
+            "type": "tab",
+            "settings": {
+              "title": "Delivery Details",
+              "content": "<p><strong>For Unstitched & Pret<\/strong><\/p><p><strong>Pakistan:<\/strong> 5 to 7 Working Days.<\/p><p><strong>International:<\/strong> 9 to 11 Working Days.<\/p><p><strong>For Stitched:<\/strong> 25 Working Days.<\/p><p>Customized stitching orders may require additional 7 business days for completion.<\/p><p><strong>Note:<\/strong> Any public holidays, Saturdays and Sundays in between the days are non working days.<\/p>",
+              "page": ""
+            }
+          },
+          "4fbbda62-bc80-4608-aab1-9b1be82a0a4b": {
+            "type": "contact",
+            "settings": {
+              "title": "Ask a question",
+              "phone": false
+            }
+          },
+          "baae43ca-85fa-4167-b3db-17c0585c8b48": {
+            "type": "share",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "53afceca-ced8-48f7-b73e-cc4d87be84a8",
+          "4b7d13c0-5daf-4021-8392-7302c160abcd",
+          "a32d00c0-3b31-4aca-95e1-e8875749e003",
+          "1d467866-794c-4493-9950-ecac61d5af5a",
+          "334d2ba5-b4f0-44b9-9b94-d9fad85c85b6",
+          "6744dba7-9a74-448e-8e01-cd590640928c",
+          "4fbbda62-bc80-4608-aab1-9b1be82a0a4b",
+          "baae43ca-85fa-4167-b3db-17c0585c8b48"
+        ],
+        "settings": {
+          "featured_product": "cc-39-bareen",
+          "divider": false,
+          "sku_enable": false,
+          "image_position": "left",
+          "image_size": "medium",
+          "product_zoom_enable": true,
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "mobile_layout": "partial",
+          "enable_video_looping": true,
+          "product_video_style": "muted"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "6279071938380501511": {
+        "type": "shopify:\/\/apps\/powerful-form-builder\/blocks\/app-embed\/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "16138933890102356706": {
+        "type": "shopify:\/\/apps\/omega-tiktok-pixels\/blocks\/app-embed-block\/0500769c-ab04-46c4-8ebe-26a3fb9f10cb",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "6610233760104865948": {
+        "type": "shopify:\/\/apps\/pushowl\/blocks\/pushowl-app-embed-3d2ff2b5\/fa20c3ba-38bf-43e0-ba5c-431f6ae07d95",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "14060646107696862457": {
+        "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "12393684417940924814": {
+        "type": "shopify:\/\/apps\/pushbot\/blocks\/app-embed\/14d8aa7e-a16e-43d4-a2a0-80fade091ca1",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "18423266570658624584": {
+        "type": "shopify:\/\/apps\/best-currency-converter\/blocks\/doubly\/267afa86-a419-4d5b-a61b-556038e7294d",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_text": "no_text",
+          "button_horizontal_position": "bottom_left",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
+        }
+      },
+      "13951170544780599758": {
+        "type": "shopify:\/\/apps\/tapita-seo-speed\/blocks\/app-embed\/cd37ca7a-40ad-4fdc-afd3-768701482209",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "8767273021611079885": {
+        "type": "shopify:\/\/apps\/scrollify-infinite-scroll\/blocks\/scrolly_embed\/6d269936-1484-4d67-bbc7-f3e2f9a17606",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "11877319286961345690": {
+        "type": "shopify:\/\/apps\/doc-404-broken-links-repair\/blocks\/404-fix-broken-links-widget\/f4f2d416-cb00-4540-bda9-816d588bad3e",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Modern": {
+      "breadcrumb": false,
+      "button_style": "square",
+      "cart_notes_enable": false,
+      "cart_terms_conditions_enable": false,
+      "cart_type": "drawer",
+      "checkout_accent_color": "#111111",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_button_color": "#111111",
+      "checkout_error_color": "#ff6d6d",
+      "checkout_input_background_color_mode": "white",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_sidebar_background_color": "#fafafa",
+      "collection_grid_gutter": true,
+      "collection_grid_image": "product",
+      "collection_grid_opacity": 10,
+      "collection_grid_shape": "square",
+      "collection_grid_style": "overlaid-box",
+      "collection_grid_text_align": "center",
+      "collection_grid_tint": "#000000",
+      "color_announcement": "#0f0f0f",
+      "color_announcement_text": "#ffffff",
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#000000",
+      "color_borders": "#e8e8e1",
+      "color_button": "#111111",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#ff4f33",
+      "color_drawer_background": "#ffffff",
+      "color_drawer_border": "#e8e8e1",
+      "color_drawer_button": "#111111",
+      "color_drawer_button_text": "#ffffff",
+      "color_drawer_text": "#000000",
+      "color_footer": "#ffffff",
+      "color_footer_text": "#000000",
+      "color_header": "#ffffff",
+      "color_header_text": "#000000",
+      "color_image_overlay": "#000000",
+      "color_image_overlay_text_shadow": 20,
+      "color_large_image_bg": "#0f0f0f",
+      "color_modal_overlays": "#e6e6e6",
+      "color_price": "#1c1d1d",
+      "color_savings_text": "#C20000",
+      "color_small_image_bg": "#ffffff",
+      "icon_linecaps": "miter",
+      "icon_weight": "2px",
+      "product_grid_image_size": "natural",
+      "product_hover_image": false,
+      "quick_shop_text": "Quick view",
+      "type_base_font_family": "twentieth_century_n4",
+      "type_base_line_height": 1.4,
+      "type_base_size": 18,
+      "type_base_spacing": "25",
+      "type_body_align_text": true,
+      "type_collection_font": "body",
+      "type_collection_size": 20,
+      "type_header_base_size": 36,
+      "type_header_capitalize": true,
+      "type_header_font_family": "tenor_sans_n4",
+      "type_header_line_height": 1,
+      "type_header_spacing": "0",
+      "type_headers_align_text": true,
+      "type_navigation_capitalize": true,
+      "type_navigation_size": 16,
+      "type_navigation_style": "body",
+      "type_product_style": "body",
+      "sections": {
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {
+            "enable": true,
+            "collection_image_enable": true,
+            "parallax": true
+          }
+        }
+      }
+    },
+    "Clean": {
+      "show_breadcrumbs": true,
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#000000",
+      "color_price": "#1c1d1d",
+      "color_savings_text": "#ff4e4e",
+      "color_borders": "#e8e8e1",
+      "color_button": "#111111",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#ff4f33",
+      "color_small_image_bg": "#e5e5e5",
+      "color_large_image_bg": "#0f0f0f",
+      "color_header": "#ffffff",
+      "color_header_text": "#000000",
+      "color_announcement": "#0f0f0f",
+      "color_announcement_text": "#ffffff",
+      "color_footer": "#ffffff",
+      "color_footer_text": "#000000",
+      "color_drawer_background": "#ffffff",
+      "color_drawer_text": "#000000",
+      "color_drawer_border": "#e8e8e1",
+      "color_drawer_button": "#111111",
+      "color_drawer_button_text": "#ffffff",
+      "color_modal_overlays": "#e6e6e6",
+      "color_image_overlay_opacity": 0,
+      "color_image_overlay_text_shadow": 24,
+      "type_header_font_family": "basic_commercial_n7",
+      "type_header_spacing": "25",
+      "type_header_base_size": 38,
+      "type_header_line_height": 1,
+      "type_header_capitalize": false,
+      "type_headers_align_text": false,
+      "type_base_font_family": "basic_commercial_n4",
+      "type_base_spacing": "25",
+      "type_base_size": 16,
+      "type_base_line_height": 1.6,
+      "type_body_align_text": false,
+      "type_navigation_style": "body",
+      "type_navigation_size": 18,
+      "type_navigation_capitalize": false,
+      "type_product_style": "heading",
+      "type_product_capitalize": false,
+      "type_collection_font": "body",
+      "type_collection_size": 24,
+      "button_style": "square",
+      "icon_weight": "4px",
+      "icon_linecaps": "miter",
+      "quick_shop_text": "Quick view",
+      "product_grid_image_size": "square",
+      "product_hover_image": true,
+      "collection_grid_style": "overlaid",
+      "collection_grid_shape": "square",
+      "collection_grid_image": "collection",
+      "collection_grid_text_align": "center",
+      "collection_grid_tint": "#000000",
+      "collection_grid_opacity": 20,
+      "collection_grid_gutter": true,
+      "cart_type": "drawer",
+      "cart_notes_enable": false,
+      "cart_terms_conditions_enable": false,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#f5f5f5",
+      "checkout_accent_color": "#682d2d",
+      "checkout_button_color": "#682d2d",
+      "checkout_error_color": "#ff6d6d",
+      "product_fixed_image_height": false,
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "1520882467782": {
+              "type": "logo",
+              "settings": {
+                "logo": "",
+                "logo-inverted": "",
+                "desktop_logo_width": 200,
+                "mobile_logo_width": 140
+              }
+            }
+          },
+          "block_order": [
+            "1520882467782"
+          ],
+          "settings": {
+            "main_menu_link_list": "main-menu",
+            "mega_menu_images": true,
+            "main_menu_alignment": "left-center",
+            "header_style": "sticky",
+            "sticky_index": true,
+            "sticky_collection": true,
+            "toolbar_menu": "",
+            "toolbar_social": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1494301487049": {
+              "type": "menu",
+              "settings": {
+                "show_footer_title": false,
+                "menu": "footer",
+                "container_width": 25
+              }
+            },
+            "1494292487693": {
+              "type": "newsletter",
+              "settings": {
+                "show_footer_title": true,
+                "title": "Sign up and save",
+                "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+                "container_width": 30
+              }
+            },
+            "1494301487048": {
+              "type": "logo_social",
+              "settings": {
+                "logo": "",
+                "desktop_logo_height": 50,
+                "container_width": 95
+              }
+            }
+          },
+          "block_order": [
+            "1494301487049",
+            "1494292487693",
+            "1494301487048"
+          ],
+          "settings": {
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true,
+            "show_payment_icons": false,
+            "show_copyright": false,
+            "copyright_text": ""
+          }
+        },
+        "newsletter-popup": {
+          "type": "newsletter-popup",
+          "settings": {
+            "popup_seconds": 5,
+            "popup_days": 30,
+            "popup_title": "Sign up and save",
+            "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+            "popup_image": "",
+            "enable_newsletter": true,
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {
+            "enable": true,
+            "collection_image_enable": true,
+            "parallax": true
+          }
+        },
+        "footer-promotions": {
+          "type": "footer-promotions",
+          "blocks": {
+            "footer-promotions-0": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            },
+            "footer-promotions-1": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            },
+            "footer-promotions-2": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            }
+          },
+          "block_order": [
+            "footer-promotions-0",
+            "footer-promotions-1",
+            "footer-promotions-2"
+          ],
+          "settings": {
+            "hide_homepage": false,
+            "image_size": "wide"
+          }
+        }
+      }
+    },
+    "Bold": {
+      "color_body_bg": "#000000",
+      "color_body_text": "#ffffff",
+      "color_price": "#d1ba98",
+      "color_savings_text": "#b30000",
+      "color_borders": "#2b2a27",
+      "color_button": "#9f8561",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#b30000",
+      "color_small_image_bg": "#000000",
+      "color_large_image_bg": "#111111",
+      "color_header": "#000000",
+      "color_header_text": "#ffffff",
+      "color_announcement": "#cf2424",
+      "color_announcement_text": "#ffffff",
+      "color_footer": "#000000",
+      "color_footer_text": "#ffffff",
+      "color_drawer_background": "#000000",
+      "color_drawer_text": "#ffffff",
+      "color_drawer_border": "#2b2a27",
+      "color_drawer_button": "#9f8561",
+      "color_drawer_button_text": "#ffffff",
+      "color_modal_overlays": "#67635d",
+      "color_image_overlay": "#000000",
+      "color_image_overlay_opacity": 15,
+      "color_image_overlay_text_shadow": 30,
+      "type_header_font_family": "fjalla_one_n4",
+      "type_header_spacing": "150",
+      "type_header_base_size": 45,
+      "type_header_line_height": 1.2,
+      "type_header_capitalize": true,
+      "type_headers_align_text": true,
+      "type_base_font_family": "itc_conduit_n4",
+      "type_base_spacing": "50",
+      "type_base_size": 18,
+      "type_base_line_height": 1.4,
+      "type_body_align_text": true,
+      "type_navigation_style": "heading",
+      "type_navigation_size": 18,
+      "type_product_style": "heading",
+      "type_collection_font": "heading",
+      "type_collection_size": 23,
+      "button_style": "angled",
+      "icon_weight": "5px",
+      "icon_linecaps": "miter",
+      "search_enable": false,
+      "product_save_amount": true,
+      "quick_shop_enable": true,
+      "quick_shop_text": "Quick view",
+      "product_grid_image_size": "square",
+      "product_hover_image": false,
+      "product_content_collapse_1": false,
+      "product_content_collapse_2": true,
+      "product_content_collapse_3": true,
+      "collection_grid_style": "overlaid-box",
+      "collection_grid_shape": "landscape",
+      "collection_grid_image": "collection",
+      "collection_grid_text_align": "bottom-center",
+      "collection_grid_tint": "#000000",
+      "collection_grid_opacity": 10,
+      "collection_grid_gutter": true,
+      "cart_type": "drawer",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_color": "#000000",
+      "checkout_input_background_color_mode": "transparent",
+      "checkout_sidebar_background_color": "#000000",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#ae9878",
+      "checkout_button_color": "#ae9878",
+      "checkout_error_color": "#ff6d6d",
+      "color_image_2": "#cf2424",
+      "color_image_2_opacity": 0,
+      "color_image_1": "#6d1414",
+      "color_image_1_opacity": 0,
+      "type_accent_style": "body",
+      "type_accent_bold": true,
+      "type_accent_capitalize": true,
+      "type_button_font": "heading",
+      "type_button_capitalize": false,
+      "type_header_accent_transform": true,
+      "type_base_accent_transform": true,
+      "collection_grid_font": "heading",
+      "color_image_bg": "#000000",
+      "breadcrumb": true,
+      "color_sale_tag": "#990000",
+      "color_input": "#ffffff",
+      "checkout_banner_background_color": "#ffffff",
+      "checkout_call_to_action_color": "#a26b25",
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "1524768779513": {
+              "type": "logo",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1524768779513"
+          ],
+          "settings": {
+            "main_menu_link_list": "main-menu",
+            "main_menu_alignment": "left-center",
+            "header_style": "normal",
+            "sticky_index": true,
+            "sticky_collection": false,
+            "toolbar_social": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1494292487693": {
+              "type": "newsletter",
+              "settings": {
+              }
+            },
+            "1526406521795": {
+              "type": "menu",
+              "settings": {
+                "menu": "footer",
+                "container_width": 25
+              }
+            },
+            "1525444454442": {
+              "type": "logo_social",
+              "settings": {
+                "container_width": 95
+              }
+            }
+          },
+          "block_order": [
+            "1494292487693",
+            "1526406521795",
+            "1525444454442"
+          ],
+          "settings": {
+            "show_payment_icons": true
+          }
+        },
+        "newsletter-popup": {
+          "type": "newsletter-popup",
+          "settings": {
+          }
+        },
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {
+            "enable": true,
+            "collection_image_enable": false,
+            "parallax": false
+          }
+        }
+      }
+    }
+  }
+}

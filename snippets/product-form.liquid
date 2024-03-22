@@ -1,0 +1,1166 @@
+{%- form 'product', product, id: form_id, class: 'product-single__form' -%}
+<script data-app="esc-out-of-stock" type="text/json">
+[{% for variant in product.variants %}{"id":{{ variant.id }},
+"title":"{{ variant.title | escape }}",
+"option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},
+"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},
+"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},
+"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},
+"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},
+"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},
+"available":{{ variant.available }},"name":"{{ variant.name }} | escape",
+"public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},
+"price":{{ variant.price }},
+"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},
+"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},
+"inventory_quantity":{{ variant.inventory_quantity }},
+"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"
+{% else %}null{% endif %},
+"inventory_policy":
+{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},
+"barcode":{% if variant.barcode %}"{{ variant.barcode }}"
+{% else %}null{% endif %}}{% unless forloop.last %},
+{% endunless %}{% endfor %}]
+</script>
+  {%- liquid
+    assign enable_dynamic_buttons = false
+    if show_dynamic_checkout and template != 'product.preorder'
+      assign enable_dynamic_buttons = true
+    endif
+  -%}
+{% if product.tags contains "falaknuma" %}
+<p class="fn-unst-note"></p>
+{% endif %}
+{% if product.tags contains "banaras" %}
+<p class="fn-unst-note"></p>
+{% endif %}
+
+{% if product.tags contains "maxi-style" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Maxi Style "> 
+    <label for="longshirt"> Maxi Style</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Sharara Frock Style"> 
+    <label for="shortshirt">Sharara Frock Style</label>
+  </li>
+</ul>
+{% endif %}
+
+
+
+{% if product.metafields.custom.delivery_time_2  != blank %}
+    <div class="hdr-custom-size-opt radio-size-options line-item-heading">{{ product.metafields.custom.delivery_time_2 }}</div>
+  {% endif %}
+<div class="line-item-property__field radio-size-options hhz" style="margin-bottom: 0px;margin-top: 0px;">
+<p>  <label style="font-style: normal;">Size</label> </p></div>
+<ul class="hdr-custom-size-opt radio-size-options">
+  <li>
+    <input type="radio" id="XS" name="properties[Size]" value="XS" />
+    <label for="XS">XS</label>
+  </li>
+  <li>
+    <input type="radio" id="S" name="properties[Size]" value="S" />
+    <label for="S">S</label>
+  </li>
+  <li>
+    <input type="radio" id="M" name="properties[Size]" value="M" />
+    <label for="M">M</label>
+  </li>
+  <li>
+    <input type="radio" id="L" name="properties[Size]" value="L" />
+    <label for="L">L</label>
+  </li>
+  <li>
+    <input type="radio" id="XL" name="properties[Size]" value="XL" />
+    <label for="XL">XL</label>
+  </li>
+  
+  <!-- <li>
+    <input type="radio" id="Custom-Size" name="properties[Size]" value="Custom Size"  />
+    <label for="Custom-Size">Custom Size</label>
+  </li> -->
+  
+</ul>
+
+{% for collection in product.collections %}
+    {% if collection.title contains 'RET' %}
+		{% assign pret = true  %}
+	{% endif %}
+{% endfor %}
+  
+<div class="radio-size-options {% if pret %}pret-sizechart {% endif %}" data-app="eastsideco_sizeGuides"
+     data-shop="{{ shop.permanent_domain }}"
+     data-tags="{{ product.tags | join:',' | escape }}"
+     data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+     data-popup="button">
+
+  
+</div>
+  {% if product.tags contains "size-chart-force" %}
+<div class="radio-size-optionss {% if pret %}pret-sizechart {% endif %}" data-app="eastsideco_sizeGuides"
+     data-shop="{{ shop.permanent_domain }}"
+     data-tags="{{ product.tags | join:',' | escape }}"
+     data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+     data-popup="button">
+
+  
+</div>
+  {% endif %}
+<br class="radio-size-options">
+<p class="line-item-property__field Additional-Information">
+  <div id="add-on">
+  <div class="cstm-size-diagram-container">
+
+
+<div class="custom_size_option_addon">
+        <h4>NOTE</h4>
+        <ul class="cst-policy">
+            <li>Please provide your final stitching measurements below (not body measurements).</li>
+            <li>You can provide the measurements that require alterations as rest of the measurements will be chosen from your nearest size.</li>
+            <li>Changes in custom stitched orders can only be made within 3 days of order placement and will require a confirmation from our end.</li>
+        </ul>
+        <div class="cst-main">
+          <p id="nearestSizeNote">Please select one option from nearest size*</p>
+            <span><b>*</b>Choose your nearest size: </span>
+            <ul class="cst-policy-sz">
+                <li>
+                    <input type="radio" name="properties[custom-stitch-size]" class="inner-size-input" id="xs" value="xs">
+              		<label for="xs">XS</label>
+              </li>
+                    <li>
+                    <input type="radio" name="properties[custom-stitch-size]" class="inner-size-input" id="s" value="s">
+              		<label for="s">S</label>
+              </li>
+                    <li>
+                    <input type="radio" name="properties[custom-stitch-size]" class="inner-size-input" id="m" value="m">
+              		<label for="m">M</label>
+              </li>
+              <li>
+                    <input type="radio" name="properties[custom-stitch-size]" class="inner-size-input" id="l" value="l">
+              		<label for="l">L</label>
+              </li>
+              <li>
+                    <input type="radio" name="properties[custom-stitch-size]" class="inner-size-input" id="xl" value="xl">
+              		<label for="xl">XL</label>
+                </li>
+            </ul>
+            
+        </div>
+           <div class="custom-size-diagram-wrap">
+            <div class="custom-size-diagram-top">
+                <div class="custom-size-diagram-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0011/0277/4316/files/Shirt-Outline.jpg?4503">
+
+                    <span data-size-name="shoulder"></span>
+                    <span data-size-name="chest"></span>
+                    <span data-size-name="waist"></span>
+                    <span data-size-name="shirt_hip"></span>
+                    <span data-size-name="shirt_bottom"></span>
+                    <span data-size-name="arm_hole"></span>
+                    <span data-size-name="sleeves_lining"></span>
+                    <span data-size-name="sleeve_length"></span>
+                    <span data-size-name="wrist"></span>
+                    <span data-size-name="shirt_length"></span>
+
+                </div>
+              
+                <div class="custom-size-diagram-input">
+
+                    <input name="properties[Shirt-length]" type="text" placeholder="Shirt length" id="add">
+                    <input name="properties[Sholuder]" type="text" placeholder="Sholuder" id="add">
+                    <input name="properties[Sleeve-Length]" type="text" id="add" placeholder="Sleeve Length">
+                    <input name="properties[Wrist]" type="text" placeholder="Wrist" id="add" >
+                    <input name="properties[Chest]" type="text" placeholder="Chest" id="add"  >
+                    <input name="properties[Waist]" type="text" placeholder="Waist" id="add">
+                    <input name="properties[Hip]" type="text" placeholder="Hip" id="add">
+                    <input name="properties[Shirt-Bottom]" type="text" placeholder="Bottom" id="add">
+                    <input name="properties[Arm-Hole]" type="text" placeholder="Arm Hole" id="add">
+
+                </div>
+              
+            </div>
+            <div class="custom-size-diagram-bottom">
+                <div class="custom-size-diagram-img">
+                    <img src="https://cdn.shopify.com/s/files/1/2277/5269/files/t1.jpg?v=1597842760">
+
+                    <span data-size-name="length"></span>
+                    <span data-size-name="hip"></span>
+                    <span data-size-name="thigh"></span>
+                    <span data-size-name="knee"></span>
+                    <span data-size-name="bottom"></span>
+                    <span data-size-name="trouser_waist"></span>
+
+
+                </div>
+              
+                <div class="custom-size-diagram-input">
+
+                    <input name="properties[Length]" type="text" placeholder="Length" id="add">
+                    <input name="properties[Trouser-Waist]" type="text" id="add" placeholder="Trouser Waist">
+                    <input name="properties[Trouser-Hip]" type="text" placeholder="Hip" id="add">
+                    <input name="properties[Thigh]" type="text" placeholder="Thigh" id="add">
+                    <input name="properties[Knee]" type="text" placeholder="Knee" id="add">
+                    <input name="properties[Trouser-Bottom]" type="text" placeholder="Bottom" id="add">
+                  <textarea data-name="comment" name="properties[note]" id="add" cols="50" rows="10" placeholder="Enter Note" maxlength="200"></textarea>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+ 
+</p>
+
+{% if product.tags contains "long-shirt" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Short Shirt With Gharara"> 
+    <label for="longshirt"> Short Shirt With Gharara</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Long Frock With Sharara"> 
+    <label for="shortshirt">Long Frock With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "frock" %}
+<label class="radio-size-options" style="margin-top: 19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Maxi"> 
+    <label for="longshirt"> Maxi</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Frock with Sharara"> 
+    <label for="shortshirt">Frock with Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "aline-frock" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Shirt With Trouser"> 
+    <label for="longshirt"> Shirt With Trouser</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Aline Frock with Sharara"> 
+    <label for="shortshirt">Aline Frock with Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "crushed-sharara" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Shirt&Crushed Sharara"> 
+    <label for="longshirt"> Shirt & Crushed Sharara</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Long Frock With Sharara"> 
+    <label for="shortshirt"> Long Frock  With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "short-frock" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Short Frock With Sharara"> 
+    <label for="longshirt"> Short Frock With Sharara</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Long Frock With Sharara"> 
+    <label for="shortshirt">Long Frock With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "frock-with-trouser" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Frock With Trouser"> 
+    <label for="longshirt"> Frock With Trouser</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Open Jacket With Trouser"> 
+    <label for="shortshirt">Open Jacket With Trouser</label>
+  </li>
+</ul>
+{% endif %}
+
+
+
+
+
+
+
+{% if product.tags contains "choli" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Maxi"> 
+    <label for="longshirt"> Maxi</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="shortshirt">Lehnga Choli</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "long-trouser" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Long Shirt With Trouser"> 
+    <label for="longshirt">Long Shirt With Trouser</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Short Shirt With Gharara"> 
+    <label for="shortshirt">Short Shirt With Gharara</label>
+  </li>
+</ul>
+{% endif %}
+
+
+
+{% if product.tags contains "long-lehnga" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Long Shirt With Lehnga"> 
+    <label for="longshirt">Long Shirt With Lehnga</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Short Shirt With Gharara"> 
+    <label for="shortshirt">Short Shirt With Gharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "gown" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Long shirt with Dhaka Pajama"> 
+    <label for="longshirt">Long shirt with Dhaka Pajama</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Open Gown With Sharara"> 
+    <label for="shortshirt">Open Gown With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+{% if product.tags contains "lehnga-saree" %}
+<label class="radio-size-options" style="margin-top: -19px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="longshirt">Lehnga Choli</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Saree"> 
+    <label for="shortshirt">Saree</label>
+  </li>
+</ul>
+{% endif %}
+ 
+{% if product.tags contains "shirt-with-gharara" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Shirt with Shalwar"> 
+    <label for="longshirt"> Shirt with Shalwar</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Shirt with Gharara"> 
+    <label for="shortshirt">Shirt with Gharara</label>
+  </li>
+</ul>
+{% endif %}
+
+
+
+{% if product.tags contains "jacket-maxi" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="  Maxi"> 
+    <label for="longshirt">  Maxi</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Jacket Maxi"> 
+    <label for="shortshirt"> Jacket Maxi</label>
+  </li>
+</ul>
+{% endif %}
+
+
+ 
+{% if product.tags contains "open-shirt-style" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Shirt with trouser "> 
+    <label for="longshirt"> Shirt with trouser</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value=" Open Shirt Style"> 
+    <label for="shortshirt">Open Shirt Style</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "shirt-with-lehenga" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Shirt with Trouser"> 
+    <label for="longshirt">   Shirt with Trouser</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value=" Shirt with  lehenga "> 
+    <label for="shortshirt"> Shirt with lehenga  </label>
+  </li>
+</ul>
+
+{% endif %}
+
+ 
+{% if product.tags contains "short-shirt-with-jacket" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Shirt with Trouser "> 
+    <label for="longshirt">  Shirt with Trouser</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Short Shirt With Jacket  "> 
+    <label for="shortshirt">Short Shirt With Jacket   </label>
+  </li>
+</ul>
+
+{% endif %}
+
+ 
+{% if product.tags contains "frock-style" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value=" Maxi "> 
+    <label for="longshirt"> Maxi</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value=" Frock Style With Sharara  "> 
+    <label for="shortshirt">Frock Style With Sharara   </label>
+  </li>
+</ul>
+
+{% endif %}
+{% if product.tags contains "long-short-shirt-chalk" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirtchalk">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Long Shirt with Chalk"> 
+    <label for="longshirt">Long Shirt with Chalk</label>
+  </li>
+  
+  <li class="shortshirtchalk">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Short Shirt"> 
+    <label for="shortshirt">Short Shirt</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "long-short-shirt" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longshirt">
+    <input type="radio" id="longshirt" name="properties[Style]" value="Long Shirt With Trouser"> 
+    <label for="longshirt">Long Shirt With Trouser</label>
+  </li>
+  
+  <li class="shortshirt">
+    <input type="radio" id="shortshirt" name="properties[Style]" value="Short Shirt With Shalwar"> 
+    <label for="shortshirt">Short Shirt With Shalwar</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "lehnga-maxi" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="lehngacholi">Lehnga Choli</label>
+  </li>
+  
+  <li class="maxi">
+    <input type="radio" id="maxi" name="properties[Style]" value="Maxi"> 
+    <label for="maxi">Maxi</label>
+  </li>
+</ul>
+{% endif %}
+{% if product.tags contains "shirt with trouser" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="shirtwithtrouser">
+    <input type="radio" id="shirtwithtrouser" name="properties[Style]" value="Shirt With Trouser"> 
+    <label for="shirtwithtrouser">shirt with trouser</label>
+  </li>
+  
+  <li class="maxi">
+    <input type="radio" id="maxi" name="properties[Style]" value="Maxi"> 
+    <label for="maxi">Maxi</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "front-open-maxi" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  <li class="frontopenmaxi">
+    <input type="radio" id="frontopenmaxi" name="properties[Style]" value="Front Open Maxi"> 
+    <label for="frontopenmaxi">Front Open Maxi</label>
+  </li>
+  <li class="maxi1">
+    <input type="radio" id="maxi" name="properties[Style]" value="Maxi"> 
+    <label for="maxi">Maxi</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "long-maxi-choli" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long Maxi"> 
+    <label for="longmaxi">Long Maxi</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="lehngacholi">Lehnga Choli</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "bag2500" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+<ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long Maxi"> 
+    <label for="longmaxi">Shirt With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="lehngacholi">Maxi</label>
+  </li>
+</ul>
+{% endif %}
+
+  {% if product.tags contains "ICC-01" %}
+               
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">
+  
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Maxi With Trouser"> 
+    <label for="longmaxi">Maxi With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="lehngacholi">Lehnga Choli</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-02" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long Shirt With Trouser"> 
+    <label for="longmaxi">Long Shirt With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Frock With Sharara"> 
+    <label for="lehngacholi">Frock With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "ICC-03" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Short Shirt With Capri"> 
+    <label for="longmaxi">Short Shirt With Capri</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long Shirt With Sharara"> 
+    <label for="lehngacholi">Long Shirt With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "ICC-04" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Open Gown With Straight Trouser"> 
+    <label for="longmaxi">Open Gown With Straight Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Maxi With Trouser"> 
+    <label for="lehngacholi">Maxi With Trouser</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "ICC-05" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Shirt With Trouser"> 
+    <label for="longmaxi">Shirt With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Frock With Sharara"> 
+    <label for="lehngacholi">Frock With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "ICC-06" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Short Shirt With Gharara"> 
+    <label for="longmaxi">Short Shirt With Gharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long Shirt With Sharara"> 
+    <label for="lehngacholi">Long Shirt With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-07" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Saree"> 
+    <label for="longmaxi">Saree</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Maxi With Trouser"> 
+    <label for="lehngacholi">Maxi With Trouser</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "ICC-08" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Open Gown With Sharara"> 
+    <label for="longmaxi">Open Gown With Sharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long Shirt With Bootcut Bottom"> 
+    <label for="lehngacholi">Long Shirt With Bootcut Bottom</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-09" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Short Shirt With Bootcut"> 
+    <label for="longmaxi">Short Shirt With Bootcut</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long Shirt With Sharara"> 
+    <label for="lehngacholi">Long Shirt With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-10" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Maxi With Trouser"> 
+    <label for="longmaxi">Maxi With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Lehnga Choli With Open Gown"> 
+    <label for="lehngacholi">Lehnga Choli With Open Gown</label>
+  </li>
+</ul>
+{% endif %}  
+
+
+{% if product.tags contains "ICC-011" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long Frock with Sharara"> 
+    <label for="longmaxi">Long Frock with Sharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Short Shirt with Bell bottom"> 
+    <label for="lehngacholi">Short Shirt with Bell bottom</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "ICC-012" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Frock with sharara"> 
+    <label for="longmaxi">Frock with sharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Maxi with straight trouser"> 
+    <label for="lehngacholi">Maxi with straight trouser</label>
+  </li>
+</ul>
+{% endif %}
+
+{% if product.tags contains "ICC-013" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long Shirt with bootcut"> 
+    <label for="longmaxi">Long Shirt with bootcut</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Open jacket with bell bottom"> 
+    <label for="lehngacholi">Open jacket with bell bottom</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-014" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long shirt with sharara"> 
+    <label for="longmaxi">Long shirt with sharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Shirt with straight trouser"> 
+    <label for="lehngacholi">Shirt with straight trouser</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-015" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Saree"> 
+    <label for="longmaxi">Saree</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long Frock with sharara"> 
+    <label for="lehngacholi">Long Frock with sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-016" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Short frock with sharara"> 
+    <label for="longmaxi">Short frock with sharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Maxi with straight trouser"> 
+    <label for="lehngacholi">Maxi with straight trouser</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-017" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Short shirt with bootcut pants"> 
+    <label for="longmaxi">Short shirt with bootcut pants</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long shirt with gharara"> 
+    <label for="lehngacholi">Long shirt with gharara</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-018" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Maxi with straight trouser"> 
+    <label for="longmaxi">Maxi with straight trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Short shirt with sharara"> 
+    <label for="lehngacholi">Short shirt with sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+
+{% if product.tags contains "ICC-019" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long shirt with culotte pants"> 
+    <label for="longmaxi">Long shirt with culotte pants</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long shirt with palazo"> 
+    <label for="lehngacholi">Long shirt with palazo</label>
+  </li>
+</ul>
+{% endif %}
+
+
+
+{% if product.tags contains "ICC-020" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Front open maxi with straight trouser"> 
+    <label for="longmaxi">Front open maxi with straight trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Maxi with straight trouser"> 
+    <label for="lehngacholi">Maxi with straight trouser</label>
+  </li>
+</ul>
+{% endif %}
+
+    {% if product.tags contains "CC-02" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Shirt With Sharara"> 
+    <label for="longmaxi">Shirt With Sharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Open Jacket With Bootcut"> 
+    <label for="lehngacholi">Open Jacket With Bootcut</label>
+  </li>
+</ul>
+{% endif %}  
+
+    {% if product.tags contains "CC-04" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Frock With Bell Bottom"> 
+    <label for="longmaxi">Frock With Bell Bottom</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long Jacket With Sharara"> 
+    <label for="lehngacholi">Long Jacket With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+   {% if product.tags contains "CC-06" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Shirt With Trouser"> 
+    <label for="longmaxi">Shirt With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Short Shirt With Sharara"> 
+    <label for="lehngacholi">Short Shirt With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+     {% if product.tags contains "CC-10" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Maxi With Sharara"> 
+    <label for="longmaxi">Maxi With Sharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="lehngacholi">Lehnga Choli</label>
+  </li>
+</ul>
+{% endif %}
+
+     {% if product.tags contains "CC-12" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Short Shirt With Shalwar"> 
+    <label for="longmaxi">Short Shirt With Shalwar</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Shirt With Sharara"> 
+    <label for="lehngacholi">Shirt With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+
+     {% if product.tags contains "CC-16" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long Shirt With Bootcut"> 
+    <label for="longmaxi">Long Shirt With Bootcut</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Front Open Jacket With Lehnga"> 
+    <label for="lehngacholi">Front Open Jacket With Lehnga</label>
+  </li>
+</ul>
+{% endif %}
+
+     {% if product.tags contains "CC-20" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Maxi with Sharara"> 
+    <label for="longmaxi">Maxi with Sharara</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="lehngacholi">Lehnga Choli</label>
+  </li>
+</ul>
+{% endif %}
+
+     {% if product.tags contains "IL-02" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Short Kurta With Shalwar"> 
+    <label for="longmaxi">Short Kurta With Shalwar</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Shirt With Trouser"> 
+    <label for="lehngacholi">Shirt With Trouser</label>
+  </li>
+</ul>
+{% endif %}
+  
+     {% if product.tags contains "IL-08" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Shirt With Trouser"> 
+    <label for="longmaxi">Shirt With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Long Frock With Trouser"> 
+    <label for="lehngacholi">Long Frock With Trouser</label>
+  </li>
+</ul>
+{% endif %}  
+  
+     {% if product.tags contains "IE-01" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long Shirt With Trouser"> 
+    <label for="longmaxi">Long Shirt With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Short Shirt With Gharara"> 
+    <label for="lehngacholi">Short Shirt With Gharara</label>
+  </li>
+</ul>
+{% endif %} 
+  
+     {% if product.tags contains "IE-09" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Long Shirt With Trouser"> 
+    <label for="longmaxi">Long Shirt With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Short Shirt With Sharara"> 
+    <label for="lehngacholi">Short Shirt With Sharara</label>
+  </li>
+</ul>
+{% endif %}
+  
+  {% if product.tags contains "CC-27" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Maxi With Straight Pant"> 
+    <label for="longmaxi">Maxi With Straight Pant</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Lehnga Choli"> 
+    <label for="lehngacholi">Lehnga Choli</label>
+  </li>
+</ul>
+{% endif %}
+
+    {% if product.tags contains "CC-22" %}
+<label class="radio-size-options" style="margin-top: 20px; font-style: normal;">Style</label>
+               <ul class="hdr-custom-size-opt radio-size-options hdr-custom-style-opt">   
+  <li class="longmaxi">
+    <input type="radio" id="longmaxi" name="properties[Style]" value="Frock With Trouser"> 
+    <label for="longmaxi">Frock With Trouser</label>
+  </li>
+  <li class="lehngacholi">
+    <input type="radio" id="lehngacholi" name="properties[Style]" value="Shirt With Trouser"> 
+    <label for="lehngacholi">Shirt With Trouser</label>
+  </li>
+</ul>
+{% endif %}
+  
+
+
+
+
+
+
+<div id="infiniteoptions-container"></div>
+<label class="lbl_errormsg" style="color: red;text-transform: none;"></label>
+
+
+<br>
+  {%- if enable_dynamic_buttons -%}
+    <div class="payment-buttons">
+  {%- endif -%}
+
+    {%- liquid
+      assign default_text = 'products.product.add_to_cart' | t
+      assign button_text = 'products.product.add_to_cart' | t
+      if template contains 'preorder'
+        assign default_text = 'products.product.preorder' | t
+        assign button_text = 'products.product.preorder' | t
+      endif
+      unless current_variant.available
+        assign button_text = 'products.product.sold_out' | t
+      endunless
+    -%}
+
+    {% if product.tags contains 'Shendi-Pre-Order' %}
+      <button
+         type="submit"
+        name="add"
+        data-add-to-cart
+        class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--secondary{% endif %}"
+        {% unless current_variant.available %} disabled="disabled"{% endunless %}>
+        <span data-add-to-cart-text data-default-text="Pre Book Now">Pre Book Now</span>
+      </button>
+    {% else %}
+      <button
+        {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
+        name="add"
+        data-add-to-cart
+        class="btn btn--full myc add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--secondary{% endif %}"
+        {% unless current_variant.available %} disabled="disabled"{% endunless %}>
+        <span data-add-to-cart-text data-default-text="{{ default_text }}">
+          {{ button_text }}
+        </span>
+      </button>
+      {%- if enable_dynamic_buttons -%}
+          {{ form | payment_button }}
+        {%- endif -%}
+
+  {%- if enable_dynamic_buttons -%}
+    </div>
+  {%- endif -%}
+    {% endif %}
+
+
+  <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
+
+  <select name="id" data-product-select class="product-single__variants no-js">
+    {%- for variant in product.variants -%}
+      {%- if variant.available -%}
+        <option {% if variant == product.selected_or_first_available_variant %}
+          selected="selected"{% endif %}
+          value="{{ variant.id }}">
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
+        </option>
+      {%- else -%}
+        <option disabled="disabled">
+          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+        </option>
+      {%- endif -%}
+    {%- endfor -%}
+  </select>
+{%- endform -%}

@@ -1,0 +1,313 @@
+{% comment %} {% assign class = section.settings.custom-class %}
+<div class="cust-{{ class }} mry-bottom-navbar  parent-section template-{{ section.id }} {{ section.index0 }}" id="mry-id">
+  <section class="splide" aria-label="Splide Basic HTML Example" id="splide">
+  <div class="splide__track">
+		<ul class="splide__list">
+            {% for block in section.blocks %}
+              {% case block.type %}
+              {% when 'slideshow' %}
+			<li class="splide__slide {% if block.type == 'slideshow' %} active-slideshow{% endif %} {% if block.settings.enable_js_header %}header-color-white{% else %}header-color-black{% endif %}" id="{% if block.type == 'slideshow' %}active-slideshow{% endif %}">
+              <a href="#" class="super-block">
+              {% assign image-pr = block.settings.image %}
+              {% assign mob-img = block.settings.mob-image %}
+              <img width="" height="" src="{{ image-pr | img_url: "master" }}" class="{% if mob-img != blank %}hide-dextop{% endif %}"/>
+              {% if mob-img != blank %}
+               <img width="" height="" src="{{ mob-img | img_url: "master" }}" class="{% if image-pr != blank %}hide-mobile{% endif %}"/>
+                {% endif %}
+                </a>
+              <div class="content-box-pr">
+                {% assign title = block.settings.title %}
+                {% assign paragraph = block.settings.paragrapgh %}
+                {% assign button = block.settings.btn-text %}
+                {% assign url  = block.settings.url %}
+                <h2>{{ title }}</h2>
+                <p>{{ paragraph }}</p>
+                <a class="btn-pr" href="{{ url }}">{{ button }} </a>
+              </div>
+            </li>
+          {% when 'video-section' %}
+                <li class="splide__slide {% if block.type == 'video-section' %} active-video-slide{% endif %}" id="{% if block.type == 'video-section' %}active-videio-slide{% endif %}">
+<div class="video-section">
+  <video width="100%" class="video-js" autoplay muted control>
+    <source src="{{ block.settings.video_url }}" type="video/mp4">
+    <source src="{{ block.settings.caption }}" type="video/ogg">
+  </video>
+  <div class="button_cont">
+    <button class="muteButton" type="button" onclick="toggleMute()"><img src="https://cdn.shopify.com/s/files/1/0562/8503/6605/files/untitled_27.png?v=1708413344" /></button>
+    <button class="playPauseButton" onclick="togglePlayback()">
+        <img src="https://cdn.shopify.com/s/files/1/0562/8503/6605/files/pause.png?v=1709029726" />
+    </button>
+  </div>
+</div>
+                </li>
+          {% when 'footer' %}
+          <li class="splide__slide {% if block.type == 'footer' %} active-footer {% endif %} {% if block.settings.enable_js_navigation %} hide-navigation-arrows {% endif %}" id="{% if block.type == 'footer' %}active-footer{% endif %}">
+            <!-- footer content newsletter part -->
+            <div class="container-footer" id="your-container-id"> </div>
+            </li>
+          {% endcase %}
+            {% endfor %}
+		</ul>
+  </div>
+</section>
+</div> 
+
+<style>
+  .splide__slide img {
+    vertical-align: bottom;
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+}
+div#your-container-id {
+    height: 100vh;
+    background: #000;
+}
+  {% if template == 'index' %}
+  div#your-container-id .section-padding.cust.site-footer {
+    display: block;
+}
+.section-padding.cust.site-footer {
+    display: none;
+}
+  {% else %}
+    div#your-container-id .section-padding.cust.site-footer {
+    display: none;
+}
+.section-padding.cust.site-footer {
+    display: block;
+}  
+  {% endif %}
+  @media (min-width: 768px){
+    div#your-container-id {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  }
+</style>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+  var splide = new Splide('.splide', {
+    direction: 'ttb',
+    height: '100vh',
+    perPage: 1, 
+    perMove: 1, 
+    autoplay: false, 
+    speed: 1200, 
+    pagination: false,
+    interval: 4000,
+    arrows: true,
+  });
+  splide.mount();
+  var isScrolling = false;
+  document.querySelector('.splide').addEventListener('wheel', function(event) {
+    if (splide.options.direction === 'ttb') {
+      event.preventDefault();
+      if (!isScrolling) {
+        isScrolling = true;
+        setTimeout(function() {
+          isScrolling = false;
+        }, 1000); 
+        if (event.deltaY < 0) {
+          splide.go('-1'); 
+        } else {
+          splide.go('+1');
+        }
+      }
+    }
+  });
+});
+
+
+
+
+</script>
+  
+{% schema %}
+  {
+    "name": "vertical slider-spotted",
+    "settings": [
+      {
+        "type": "text",
+        "id": "custom-class",
+        "label": "Custom Class"
+      },
+      {
+        "type": "range",
+        "id": "height",
+        "min": 320,
+        "max": 900,
+        "step": 10,
+        "unit": "px",
+        "label": "Banner Height",
+        "default": 400
+    },
+      {
+        "type": "text",
+        "id": "newsletter_heading1",
+        "label": "Newsletter Heading"
+      },
+      {
+        "type": "link_list",
+        "id": "bottom_navbar",
+        "label": "Bottom Navbar",
+        "default": "main-menu"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "slideshow",
+        "name": "slideshow",
+        "limit": 5,
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image"
+          },
+          {
+            "type": "image_picker",
+            "label": "mobile image",
+            "id": "mob-image"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "textarea",
+            "id": "paragrapgh",
+            "label": "paragrapgh"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "btn url"
+          },
+          {
+            "type": "text",
+            "id": "btn-text",
+            "label": "button"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_js_header",
+            "label": "Enable White Color For Header"
+         }
+        ]
+      },
+        {
+        "type": "video-section",
+        "name": "Video",
+        "settings": [
+          {
+        "type": "text",
+        "label": "Video URL",
+        "id": "video_url",
+        "default": "https://www.youtube.com/watch?v=VIDEO_ID"
+         },
+         {
+        "type": "text",
+        "label": "Caption (optional)",
+        "id": "caption",
+        "default": "Watch this amazing video!"
+         }
+        ]
+      },
+     {
+        "type": "footer",
+        "name": "footer",
+        "limit": 1,
+        "settings":[
+          {
+        "type": "text",
+        "id": "footer_column_heading1",
+        "label": "Heading"
+          },
+          {
+        "type": "link_list",
+        "id": "footer_menu1",
+        "label": "Footer Menu 1",
+        "default": "main-menu"
+          },
+          {
+        "type": "text",
+        "id": "footer_column_heading2",
+        "label": "Heading"
+          },
+           {
+        "type": "link_list",
+        "id": "footer_menu2",
+        "label": "Footer Menu 2",
+        "default": "main-menu"
+          },
+          {
+        "type": "text",
+        "id": "footer_column_heading3",
+        "label": "Heading"
+          },
+           {
+        "type": "link_list",
+        "id": "footer_menu3",
+        "label": "Footer Menu 3",
+        "default": "main-menu"
+          },
+          {
+        "type": "text",
+        "id": "footer_column_heading4",
+        "label": "Heading"
+          },
+          {
+          "type": "text",
+          "id": "footer_column_info_heading4",
+          "label": "Information"
+          },
+          {
+          "type": "text",
+          "id": "telephone",
+          "label": "Phone Number"
+          },
+          {
+          "type": "text",
+          "id": "email",
+          "label": "Email"
+          },
+          {
+          "type": "text",
+          "id": "address",
+          "label": "Address"
+          },
+          {
+        "type": "link_list",
+        "id": "footer_menu4",
+        "label": "Footer Menu 4",
+        "default": "main-menu"
+          },
+          {
+        "type": "checkbox",
+        "id": "enable_js_navigation",
+        "label": "Hide navigation and arrows",
+        "default": true
+         }
+        ]
+      }
+    ],
+      "presets": [
+    {
+      "name": "vertical slider-spotted",
+      "blocks": [
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %} {% endcomment %}

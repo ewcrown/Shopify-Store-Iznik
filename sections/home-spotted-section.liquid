@@ -1,0 +1,107 @@
+<script src="{{ 'jquery.main.js' | asset_url }}" defer="defer"></script>
+
+<div class="home-spotted-section">
+  <div class="index-section">
+    <div class="page-width feature-row-wrapper feature-row--50">
+      <div class="home-spotted-slider">
+        {% for block in section.blocks %}
+          <div class="slide">
+            <div class="feature-row">
+              <div
+                class="feature-row__item feature-row__images aos-init aos-animate"
+                data-aos
+              >
+                {{ block.settings.image | img_url: 'master' | img_tag: block.settings.image.alt }}
+              </div>
+              <div
+                class="feature-row__item feature-row__text feature-row__text--left text-center aos-init aos-animate"
+                data-aos
+              >
+                <h2 class="h1 appear-delay">{{ block.settings.heading }}</h2>
+                <div class="rte appear-delay-1">
+                  {{ block.settings.paragraph }}
+                  <div class="appear-delay-2">
+                    <a href="{{ block.settings.spotted_url }}" class="btn">{{ block.settings.button_text }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Spotted Section",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading Text"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph",
+      "label": "Paragraph"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Spotted Section",
+      "category": "Images"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "slide"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Add Heading"
+        },
+        {
+          "id": "paragraph",
+          "type": "text",
+          "label": "Add Text"
+        },
+        {
+          "id": "spotted_url",
+          "type": "url",
+          "label": "Add Link"
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "Add Button Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.home-spotted-slider img {
+    width: 100%;
+    height: auto;
+  }
+
+.home-spotted-slider .slick-list {
+    margin-bottom: 20px;
+  }  
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "spotted_scroll_section_B6EaVM": {
+      "type": "spotted-scroll-section",
+      "blocks": {
+        "image_picker_fJYhgh": {
+          "type": "image_picker",
+          "settings": {
+            "spotted-img": "shopify:\/\/shop_images\/IMG_5181.jpg",
+            "spotted-heading": "BAREEN",
+            "spotted-text": "The embroidered organza neckline, adorned with exquisite adda work, adds a touch of finesse to this enchanting ensemble."
+          }
+        },
+        "image_picker_mXifGc": {
+          "type": "image_picker",
+          "settings": {
+            "spotted-img": "shopify:\/\/shop_images\/IMG_5179.jpg",
+            "spotted-heading": "BAREEN",
+            "spotted-text": "Paired harmoniously with an embroidered organza dupatta and solid pants. Step into a world where every detail speaks of refined style and understated glamour."
+          }
+        }
+      },
+      "block_order": [
+        "image_picker_fJYhgh",
+        "image_picker_mXifGc"
+      ],
+      "settings": {
+        "testi-title": "Spotted"
+      }
+    },
+    "featured_product_EFeDjh": {
+      "type": "featured-product",
+      "blocks": {
+        "price_Hb6YLm": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "separator_n9gV3B": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "variant_picker_r4ahqB": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_xXwkaJ": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        },
+        "description_XkiVy7": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "price_Hb6YLm",
+        "separator_n9gV3B",
+        "variant_picker_r4ahqB",
+        "buy_buttons_xXwkaJ",
+        "description_XkiVy7"
+      ],
+      "settings": {
+        "featured_product": "cc-39-bareen",
+        "divider": false,
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "spotted_scroll_section_B6EaVM",
+    "featured_product_EFeDjh"
+  ]
+}

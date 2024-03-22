@@ -1,0 +1,115 @@
+<style>
+    * { box-sizing: border-box; }
+
+
+
+
+  .item {
+
+    &:after {
+      content: "";
+      display: block;
+      height: 100vh;
+      margin-bottom: -100vh;
+    }
+
+    position: relative;
+
+
+    &:last-of-type {
+      &:after { display: none; }
+      margin-bottom: 0;
+
+    }
+
+    .image-holder {
+      position: sticky;
+      top: 0;
+      float: left;
+      overflow: hidden;
+      width: 50%;
+      height: 100vh;
+      img {
+        position: relative;
+        height: 100%;
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .text-holder {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      min-height: 120vh;
+      margin-left: 50%;
+      padding: 1em;
+    }
+
+  }
+</style>
+
+<div class="scroll-reveal-section">
+  <!-- BEGIN Reveal panel section -->
+
+  <div class="item">
+    <div class="image-holder">
+      <img src="https://placekitten.com/600/800">
+    </div>
+
+    <div class="text-holder">
+      <h1>Heading 1</h1>
+      <p>Distinctively exploit optimal alignments for intuitive bandwidth.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="image-holder">
+      <img src="https://placekitten.com/600/801">
+    </div>
+
+    <div class="text-holder">
+      <h1>Heading 1</h1>
+      <p>Distinctively exploit optimal alignments for intuitive bandwidth.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="image-holder">
+      <img src="https://placekitten.com/601/800">
+    </div>
+
+    <div class="text-holder">
+      <h1>Heading 1</h1>
+      <p>Distinctively exploit optimal alignments for intuitive bandwidth.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="image-holder">
+      <img src="https://placekitten.com/601/801">
+    </div>
+
+    <div class="text-holder">
+      <h1>Heading 1</h1>
+      <p>Distinctively exploit optimal alignments for intuitive bandwidth.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="image-holder">
+      <img src="https://placekitten.com/600/802">
+    </div>
+
+    <div class="text-holder">
+      <h1>Heading 1</h1>
+      <p>Distinctively exploit optimal alignments for intuitive bandwidth.</p>
+    </div>
+  </div>
+</div>
+<!-- END Reveal panel section -->
+
+<div class="scroll-filler"></div>

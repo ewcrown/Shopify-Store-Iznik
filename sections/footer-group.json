@@ -1,0 +1,143 @@
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "footer-promotions-0": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "footer-promotions-1": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "footer-promotions-2": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "footer-promotions-0",
+        "footer-promotions-1",
+        "footer-promotions-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "hide_homepage": false,
+        "image_size": "wide"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-1": {
+          "type": "menu",
+          "disabled": true,
+          "settings": {
+            "show_footer_title": true,
+            "menu": "our-brand",
+            "container_width": 25
+          }
+        },
+        "25b4fc7c-e4a1-4682-b258-77106354e3ee": {
+          "type": "menu",
+          "disabled": true,
+          "settings": {
+            "show_footer_title": true,
+            "menu": "shop-with-us",
+            "container_width": 25
+          }
+        },
+        "fd6f5831-7360-4a7d-aeaa-925621a82d2e": {
+          "type": "menu",
+          "disabled": true,
+          "settings": {
+            "show_footer_title": false,
+            "menu": "footer",
+            "container_width": 25
+          }
+        },
+        "ecfa9363-2327-4977-b9a6-3daf216a09e8": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "about",
+            "container_width": 25
+          }
+        },
+        "a33bb941-b704-4bf2-aa54-5570226b8518": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "customer-service",
+            "container_width": 25
+          }
+        },
+        "1d6577a1-21b2-4096-80bb-2a20596adad3": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "polices",
+            "container_width": 25
+          }
+        },
+        "footer2": {
+          "type": "newsletter",
+          "settings": {
+            "show_footer_title": true,
+            "title": "SIGN UP AND GET 5% OFF",
+            "text": "<p>Subscribe to get special offers and new arrivals update.<\/p>",
+            "container_width": 25
+          }
+        }
+      },
+      "block_order": [
+        "footer-1",
+        "25b4fc7c-e4a1-4682-b258-77106354e3ee",
+        "fd6f5831-7360-4a7d-aeaa-925621a82d2e",
+        "ecfa9363-2327-4977-b9a6-3daf216a09e8",
+        "a33bb941-b704-4bf2-aa54-5570226b8518",
+        "1d6577a1-21b2-4096-80bb-2a20596adad3",
+        "footer2"
+      ],
+      "custom_css": [
+        ".doubly-wrapper.doubly-beta {display: none !important;}"
+      ],
+      "settings": {
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false,
+        "show_payment_icons": false,
+        "show_copyright": true,
+        "copyright_text": "Copyright - All Rights Reserved."
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
+}
