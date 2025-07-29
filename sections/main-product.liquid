@@ -22,6 +22,20 @@
   video_style: section.settings.product_video_style,
   context: 'main-product',
 -%}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.variant-input').forEach(button => {
+    button.addEventListener('click', () => {
+      // Add a timeout of 100 milliseconds before reloading the page
+      setTimeout(() => {
+        location.reload();
+      }, 500); // 100 milliseconds delay
+    });
+  });
+});
+
+</script>
+{{ 'he-custom.js' | asset_url | script_tag }}
 
 {% schema %}
 {
@@ -31,6 +45,11 @@
       "type": "checkbox",
       "id": "sku_enable",
       "label": "t:sections.main-product.settings.sku_enable.label"
+    },
+     {
+      "type": "text",
+      "id": "timer_heading",
+      "label": "Timer Heading"
     },
     {
       "type": "header",
@@ -306,9 +325,20 @@
       "type": "checkbox",
       "id": "is_tab",
       "label": "t:product_block.description.settings.is_tab.label"
+    },
+    {
+      "type": "text",
+      "id": "additional_text",
+      "label": "Additional Text",
+      "default": "All colours may vary due to shoot & light."
     }
   ]
 },
+    {
+      "type": "size_chart_popup",
+    "name": "Size Chart Popup",
+      "settings": []
+    },
 {
   "type": "buy_buttons",
   "name": "t:product_block.buy_buttons.name",

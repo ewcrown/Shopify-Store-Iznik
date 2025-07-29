@@ -72,7 +72,7 @@
   data-modal="{{ isModal }}"
 >
   {%- render 'product-template-variables', product: product, current_variant: current_variant -%}
-  <div class="page-content page-content--product {{ template.suffix }} {% if product.tags contains "PRET" or product.tags contains "Pret" %} iznik-pret{% endif %}">
+  <div class="page-content page-content--product {{ template.suffix }} {% if product.tags contains "PRET" or product.tags contains "Pret" %} iznik-pret {% elsif product.tags contains "ready-2-ship" %} iznik-ready-2-ship {% endif %}">
     <div class="page-width">
       <div class="grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %}">
         {%- if image_position == 'left' -%}
@@ -195,7 +195,7 @@
                       {{ block.shopify_attributes }}
                     >
                       {%- assign id = block.id | append: product.id -%}
-                      {%- render 'product-description', id: id, product: product, is_tab: block.settings.is_tab -%}
+                      {%- render 'product-description', id: id, product: product, is_tab: block.settings.is_tab, additional_text: block.settings.additional_text -%}
                     </div>
                   {%- when 'price' -%}
                     <div class="product-block product-block--price" {{ block.shopify_attributes }}>
@@ -215,7 +215,7 @@
                           <del>
                             <span data-compare-price class="money product__price product__price--compare">
                               {%- if current_variant.compare_at_price > current_variant.price -%}
-                                {{ current_variant.compare_at_price | money_with_currency }}
+                                {{ current_variant.compare_at_price | money }}
                               {%- endif -%}
                             </span></del
                           >
@@ -360,6 +360,19 @@
                       {%- endunless -%}
                     </div>
                     <div class="order-note">{{ product.metafields.custom.order_note }}</div>
+                        
+                  {%- when 'size_chart_popup' -%}
+                  <div class="ew-size-chart-block product-block" {{ block.shopify_attributes }}>
+                  <button id="ew-iznik-open-btn">Open Popup</button>
+                    <div id="ew-iznik-overlay" class="ew-iznik-overlay">
+                      <div class="ew-iznik-popup">
+                        <button id="ew-iznik-close-btn" class="ew-iznik-close-btn">&times;</button>
+                        <h2 class="ew-iznik-title">Popup Title</h2>
+                        <p class="ew-iznik-text">This is a simple popup modal window.</p>
+                      </div>
+                    </div>
+                  </div>
+
                   {%- when 'buy_buttons' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
                       {%- unless product.empty? -%}

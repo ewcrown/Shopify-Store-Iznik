@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,13 +14,11 @@
       "blocks": {
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "separator": {
           "type": "separator",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -23,9 +30,8 @@
           }
         },
         "2b9fddb2-6a71-42ae-ac1b-d1ace6abd1df": {
-          "type": "shopify:\/\/apps\/infinite-options\/blocks\/app-block\/7e73b6f9-82b0-45f5-9b9b-04f446ba1a9b",
-          "settings": {
-          }
+          "type": "shopify://apps/infinite-options/blocks/app-block/7e73b6f9-82b0-45f5-9b9b-04f446ba1a9b",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -44,7 +50,7 @@
           "type": "tab",
           "settings": {
             "title": "Delivery Details",
-            "content": "<p><strong>For Unstitched & Pret<\/strong><\/p><p><strong>Pakistan:<\/strong> 5 to 7 Working Days.<\/p><p><strong>International:<\/strong> 9 to 11 Working Days.<\/p><p><strong>For Stitched:<\/strong> 25 Working Days.<\/p><p>Customized stitching orders may require additional 7 business days for completion.<\/p><p><strong>Note:<\/strong> Any public holidays, Saturdays and Sundays in between the days are non working days.<\/p>",
+            "content": "<p><strong>For Unstitched & Pret</strong></p><p><strong>Pakistan:</strong> 5 to 7 Working Days.</p><p><strong>International:</strong> 9 to 11 Working Days.</p><p><strong>For Stitched:</strong> 25 Working Days.</p><p>Customized stitching orders may require additional 7 business days for completion.</p><p><strong>Note:</strong> Any public holidays, Saturdays and Sundays in between the days are non working days.</p>",
             "page": ""
           }
         },
@@ -57,8 +63,7 @@
         },
         "share": {
           "type": "share",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -98,7 +103,7 @@
       "settings": {
         "subtitle": "Impressive",
         "title": "About your brand",
-        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>",
         "button_label": "",
         "button_link": "",
         "layout": "left",
@@ -117,7 +122,7 @@
         "image2_mask": "none",
         "subtitle": "",
         "title": "About your brand",
-        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -138,7 +143,7 @@
         "image2_mask": "none",
         "subtitle": "",
         "title": "About your brand",
-        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -158,7 +163,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
             "author_info": "Los Angeles, CA"
           }
@@ -167,7 +172,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
             "author_info": "Los Angeles, CA"
           }
@@ -176,7 +181,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
             "author_info": "Los Angeles, CA"
           }
@@ -212,8 +217,7 @@
     },
     "collection-return": {
       "type": "collection-return",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

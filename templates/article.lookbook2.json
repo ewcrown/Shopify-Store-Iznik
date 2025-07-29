@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "8fc0a290-a83f-4def-a34d-9ec92a23e231": {
@@ -7,7 +16,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<h2><strong>Dahlia<\/strong><\/h2>"
+            "text": "<h2><strong>Dahlia</strong></h2>"
           }
         }
       },
@@ -58,7 +67,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/1800_2.jpg",
+            "image": "shopify://shop_images/1800_2.jpg",
             "video_url": "",
             "width": "50",
             "height": 620,
@@ -95,7 +104,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<p>'Whimsy': A chic blend of texture and charm. Our lawn shirt, boasting embroidered organza sleeves and a delicate necklace, pairs seamlessly with solid pants. Complete the look with a printed silk dupatta, featuring exquisite four-sided embroidered border lace. Effortlessly elegant, this ensemble is a must-have for the modern woman's wardrobe.<\/p>"
+            "text": "<p>'Whimsy': A chic blend of texture and charm. Our lawn shirt, boasting embroidered organza sleeves and a delicate necklace, pairs seamlessly with solid pants. Complete the look with a printed silk dupatta, featuring exquisite four-sided embroidered border lace. Effortlessly elegant, this ensemble is a must-have for the modern woman's wardrobe.</p>"
           }
         }
       },
@@ -113,9 +122,7 @@
     "main": {
       "type": "article-template",
       "disabled": true,
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "image_hero": false,
         "blog_show_tags": true,
@@ -128,13 +135,13 @@
     "text_and_image_EHtxXK": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/02_5f015253-c4b4-41b4-8981-79124d52d79a.jpg",
+        "image": "shopify://shop_images/02_5f015253-c4b4-41b4-8981-79124d52d79a.jpg",
         "image_mask": "rounded-top",
-        "image2": "shopify:\/\/shop_images\/MG_7722.jpg",
+        "image2": "shopify://shop_images/MG_7722.jpg",
         "image2_mask": "portrait",
         "subtitle": "",
         "title": "Whimsy",
-        "text": "<p>Discover elegance redefined in our deep green ensemble, featuring contrasted embroidered organza sleeves and a lace-adorned shirt front. With an embroidered neckline adding a touch of refinement, paired with solid cambric pants and a border-embroidered chiffon dupatta, this ensemble is the epitome of timeless sophistication.<\/p>",
+        "text": "<p>Discover elegance redefined in our deep green ensemble, featuring contrasted embroidered organza sleeves and a lace-adorned shirt front. With an embroidered neckline adding a touch of refinement, paired with solid cambric pants and a border-embroidered chiffon dupatta, this ensemble is the epitome of timeless sophistication.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -160,7 +167,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/MG_6594_94b8a9e5-6cf0-47af-ba41-4dc8849d965b.jpg",
+            "image": "shopify://shop_images/MG_6594_94b8a9e5-6cf0-47af-ba41-4dc8849d965b.jpg",
             "video_url": "",
             "width": "50",
             "height": 500,
@@ -181,7 +188,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/33_01dbd84e-05cf-400e-af53-3d83e71aa836.png",
+            "image": "shopify://shop_images/33_01dbd84e-05cf-400e-af53-3d83e71aa836.png",
             "video_url": "",
             "width": "50",
             "height": 500,
@@ -218,7 +225,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<p>Indulge in timeless sophistication with our exquisite lawn ensemble, showcasing an intricately embroidered shirt boasting delicate neckline embellishments and charming lace accents. Complemented by sleek solid pants, this ensemble exudes understated elegance, while a vibrant printed silk dupatta adds a touch of playful allure.<\/p>"
+            "text": "<p>Indulge in timeless sophistication with our exquisite lawn ensemble, showcasing an intricately embroidered shirt boasting delicate neckline embellishments and charming lace accents. Complemented by sleek solid pants, this ensemble exudes understated elegance, while a vibrant printed silk dupatta adds a touch of playful allure.</p>"
           }
         }
       },
@@ -240,7 +247,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/1_38723517-92c4-4281-875a-0876bd452919.jpg",
+            "image": "shopify://shop_images/1_38723517-92c4-4281-875a-0876bd452919.jpg",
             "image_mask": "portrait",
             "image_width": 650,
             "title": "",
@@ -253,7 +260,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/2_078e9dfc-b050-4b52-b400-f865532d12b1.jpg",
+            "image": "shopify://shop_images/2_078e9dfc-b050-4b52-b400-f865532d12b1.jpg",
             "image_mask": "portrait",
             "image_width": 650,
             "title": "",
@@ -300,7 +307,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<p>Step into spring with our exquisite lilac lawn ensemble, a celebration of elegance and sophistication. The centerpiece is a meticulously embroidered shirt front, embellished with intricate lace borders, adding a touch of opulence to every stitch. Paired effortlessly with solid pants, the ensemble is elevated with a printed silk dupatta, exuding charm and grace.<\/p>"
+            "text": "<p>Step into spring with our exquisite lilac lawn ensemble, a celebration of elegance and sophistication. The centerpiece is a meticulously embroidered shirt front, embellished with intricate lace borders, adding a touch of opulence to every stitch. Paired effortlessly with solid pants, the ensemble is elevated with a printed silk dupatta, exuding charm and grace.</p>"
           }
         }
       },
@@ -318,12 +325,12 @@
     "text_and_image_f9g7MH": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/MG_7037.jpg",
+        "image": "shopify://shop_images/MG_7037.jpg",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
         "title": "Tranquil",
-        "text": "<p>Dive into the dreamy hues of purple with this captivating lawn ensemble. The printed shirt is a canvas of artistry, adorned with exquisite embroidery on the neckline and delicate lace accents on the front and back. Paired with printed pants and a silk dupatta, this ensemble whispers of timeless charm.<\/p>",
+        "text": "<p>Dive into the dreamy hues of purple with this captivating lawn ensemble. The printed shirt is a canvas of artistry, adorned with exquisite embroidery on the neckline and delicate lace accents on the front and back. Paired with printed pants and a silk dupatta, this ensemble whispers of timeless charm.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -339,12 +346,12 @@
     "text_and_image_HYByAV": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/1_88364d95-e221-4584-b6d8-513549bdf6ef.jpg",
+        "image": "shopify://shop_images/1_88364d95-e221-4584-b6d8-513549bdf6ef.jpg",
         "image_mask": "portrait",
         "image2_mask": "none",
         "subtitle": "",
         "title": "Splendour",
-        "text": "<p>Our ethereal white lawn attire, a vision of pure elegance. The borer embroidered shirt boasts delicate floral prints, adorned with ethereal organza lace, adding a touch of whimsy to every detail. Paired with graceful straight pants featuring delicate lace accents, and complemented by a printed cotton dupatta, this ensemble embodies effortless sophistication and timeless charm.<\/p>",
+        "text": "<p>Our ethereal white lawn attire, a vision of pure elegance. The borer embroidered shirt boasts delicate floral prints, adorned with ethereal organza lace, adding a touch of whimsy to every detail. Paired with graceful straight pants featuring delicate lace accents, and complemented by a printed cotton dupatta, this ensemble embodies effortless sophistication and timeless charm.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -360,13 +367,13 @@
     "text_and_image_EFeAP3": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/2_3b973e31-e673-45f7-a075-0cac3e5c4562.jpg",
+        "image": "shopify://shop_images/2_3b973e31-e673-45f7-a075-0cac3e5c4562.jpg",
         "image_mask": "rounded-top",
-        "image2": "shopify:\/\/shop_images\/1_24799f48-1f7b-4a70-b67e-92e75e2ee016.jpg",
+        "image2": "shopify://shop_images/1_24799f48-1f7b-4a70-b67e-92e75e2ee016.jpg",
         "image2_mask": "portrait",
         "subtitle": "",
         "title": "Meadow",
-        "text": "<p>Experience the epitome of grace and charm in this exquisite lawn ensemble. With its captivating printed shirt, adorned with intricate embroidery and lace details, paired flawlessly with matching pants and a silk dupatta, you'll effortlessly exude elegance at every garden soirée. <\/p>",
+        "text": "<p>Experience the epitome of grace and charm in this exquisite lawn ensemble. With its captivating printed shirt, adorned with intricate embroidery and lace details, paired flawlessly with matching pants and a silk dupatta, you'll effortlessly exude elegance at every garden soirée. </p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -413,7 +420,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/1_f5a40d36-714d-440a-a12c-5bbf0fe86923.jpg",
+            "image": "shopify://shop_images/1_f5a40d36-714d-440a-a12c-5bbf0fe86923.jpg",
             "video_url": "",
             "width": "50",
             "height": 660,
@@ -450,7 +457,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<p>Embrace the charm of spring in this exquisite ensemble, where floral prints meet delicate lace accents. Paired with a printed silk dupatta, it's the perfect blend of elegance and grace. <\/p>"
+            "text": "<p>Embrace the charm of spring in this exquisite ensemble, where floral prints meet delicate lace accents. Paired with a printed silk dupatta, it's the perfect blend of elegance and grace. </p>"
           }
         }
       },
@@ -468,12 +475,12 @@
     "text_and_image_BeP4HX": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/MG_6866.jpg",
+        "image": "shopify://shop_images/MG_6866.jpg",
         "image_mask": "rounded-wave",
         "image2_mask": "none",
         "subtitle": "",
         "title": "Mirage",
-        "text": "<p>Flaunt your style with sophistication! Our borer embroidered lawn shirt is a blend of elegance and grace, embellished with delicate floral prints and intricate embroidered laces. Paired flawlessly with chic straight pants and a printed silk dupatta, this ensemble is a timeless masterpiece.<\/p>",
+        "text": "<p>Flaunt your style with sophistication! Our borer embroidered lawn shirt is a blend of elegance and grace, embellished with delicate floral prints and intricate embroidered laces. Paired flawlessly with chic straight pants and a printed silk dupatta, this ensemble is a timeless masterpiece.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -489,12 +496,12 @@
     "text_and_image_6DMByb": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/MG_7891.jpg",
+        "image": "shopify://shop_images/MG_7891.jpg",
         "image_mask": "rounded-top",
         "image2_mask": "none",
         "subtitle": "",
         "title": "Solistice",
-        "text": "<p>Elevate your style game with our stunning lawn ensemble featuring a borer embroidered shirt adorned with intricate lace on the neck and sleeves. Paired effortlessly with printed pants and a chiffon dupatta, this ensemble exudes elegance and charm, making it perfect for any occasion. Flaunt your impeccable taste and sophistication with this captivating outfit.<\/p>",
+        "text": "<p>Elevate your style game with our stunning lawn ensemble featuring a borer embroidered shirt adorned with intricate lace on the neck and sleeves. Paired effortlessly with printed pants and a chiffon dupatta, this ensemble exudes elegance and charm, making it perfect for any occasion. Flaunt your impeccable taste and sophistication with this captivating outfit.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",

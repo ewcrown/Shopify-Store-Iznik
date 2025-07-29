@@ -68,7 +68,7 @@ Snippet Arguments
     </div>
   </div>
 
-  <div class="grid grid--uniform{% if mobile_flush_grid %} small--grid--flush{% endif %}"{% unless enable_collection_count %} data-scroll-to{% endunless %}>
+  <div class="{{product.available}}-ai grid grid--uniform hello{% if mobile_flush_grid %} small--grid--flush{% endif %}"{% unless enable_collection_count %} data-scroll-to{% endunless %}>
     {%- for item in items -%}
       {%- if item.object_type == 'product' -%}
         {%- render 'product-grid-item',
@@ -85,6 +85,17 @@ Snippet Arguments
     {%- endfor -%}
   </div>
 </div>
+
+
+<div id="description-container">
+  <div id="full-description" class="description">
+    {{ collection.description }}
+  </div>
+  <button id="toggle-description" class="read-more">Read More</button>
+</div>
+
+
+
 
 {%- if enable_sidebar and filter_style != 'drawer' and collection.filters.size > 0 -%}
 {% comment %}
@@ -129,3 +140,45 @@ html[dir="rtl"] .collection-filter__item--count {
 }
 {% endstyle %}
 {%- endunless -%}
+
+            {% style  %}
+              .description {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+            {% endstyle  %}
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+  const fullDescription = document.getElementById("full-description");
+  const toggleButton = document.getElementById("toggle-description");
+
+  if (fullDescription && toggleButton) {
+    const originalContent = fullDescription.innerHTML;
+    const truncatedContent = originalContent.slice(0, 600); // Adjust character limit as needed
+
+    if (originalContent.length > 200) {
+      fullDescription.innerHTML = `${truncatedContent}...`;
+      toggleButton.style.display = "inline-block";
+
+      toggleButton.addEventListener("click", function () {
+        if (toggleButton.classList.contains("read-more")) {
+          fullDescription.innerHTML = originalContent;
+          toggleButton.innerHTML = "Read Less";
+          toggleButton.classList.remove("read-more");
+          toggleButton.classList.add("read-less");
+        } else {
+          fullDescription.innerHTML = `${truncatedContent}...`;
+          toggleButton.innerHTML = "Read More";
+          toggleButton.classList.remove("read-less");
+          toggleButton.classList.add("read-more");
+        }
+      });
+    } else {
+      toggleButton.style.display = "none"; // Hide button if the content is already short
+    }
+  }
+});
+
+            </script>

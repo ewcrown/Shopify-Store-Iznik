@@ -1,4 +1,5 @@
-{% liquid
+
+  {% liquid
   assign text_color_alpha = section.settings.text_color | color_extract: 'alpha'
   assign background_color_alpha = section.settings.background_color | color_extract: 'alpha'
   assign background_brightness = section.settings.background_color | brightness_difference: '#000'
@@ -159,7 +160,6 @@
     </div>
   </div>
 </div>
-
 {% schema %}
 {
   "name": "t:sections.countdown.name",

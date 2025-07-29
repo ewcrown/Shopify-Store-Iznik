@@ -13,7 +13,6 @@
     assign is_size = true
   endif
 -%}
-
 <div class="variant-wrapper js" data-type="button">
   <label
     class="variant__label iznik-{{ option.name }} {% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels %} hidden-label{% endunless %}"
@@ -66,6 +65,7 @@
         class="variant-input bg_css_{{ vh }}"
         data-index="option{{ option_index }}"
         data-value="{{ value | escape }}"
+        id="ai-{{ value }}-st"
       >
         <input
           type="radio"
@@ -86,6 +86,7 @@
           {% endif %}
           id="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
         >
+
         {%- if is_color -%}
           {%- liquid
             assign color_file_name = value | handle | append: '.' | append: swatch_file_extension
@@ -107,11 +108,15 @@
             {{- value | escape -}}
           </label>
         {%- endif -%}
+        {% if value == 'Stitched' %}
+          <span class="{{ option.name | prepend:'ai-' }} st-note"></span>
+        {% endif %}
       </div>
     {%- endfor -%}
   </fieldset>
 </div>
- {% comment %}   {% if product.metafields.custom.delivery_time != blank %}
-    <div class="iznik-line-item-heading" style="margin-top: 20px;{% if option.name == 'Unstitched' %}display: block;{% endif %}">{{ product.metafields.custom.delivery_time }}</div>
-    {% endif %} {% endcomment %}
-    
+{% comment %}
+  {% if product.metafields.custom.delivery_time != blank %}
+  <div class="iznik-line-item-heading" style="margin-top: 20px;{% if option.name == 'Unstitched' %}display: block;{% endif %}">{{ product.metafields.custom.delivery_time }}</div>
+  {% endif %}
+{% endcomment %}

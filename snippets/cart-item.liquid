@@ -1,4 +1,4 @@
-<div class="cart__item" data-key="{{ product.key }}">
+<div class="cart__item " data-key="{{ product.key }}">
   <div class="cart__image">
     <a href="{{ product.url }}" style="height: 0; padding-bottom: {{ 100 | divided_by: product.image.aspect_ratio }}%;">
       {%- render 'image-element',
@@ -23,11 +23,13 @@
           {%- endfor -%}
         </div>
       {%- endunless -%}
-      {%- if product.selling_plan_allocation != empty -%}
-        <div class="cart__item--variants">
-          {{ product.selling_plan_allocation.selling_plan.name }}
-        </div>
-      {%- endif -%}
+    {%- if product.selling_plan_allocation != empty -%}
+  <div class="cart__item--variants">
+    {{ product.selling_plan_allocation.selling_plan.name }}
+  </div>    
+
+{%- endif -%}
+      
       {%- assign property_size = product.properties | size -%}
       {% if property_size > 0 %}
         {% for p in product.properties %}
@@ -39,10 +41,14 @@
                 <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
               {% else %}
                 {{ p.last }}
+        
+                
               {% endif %}
             </div>
           {% endunless %}
         {% endfor %}
+      
+       
       {% endif %}
 
     </div>
@@ -70,13 +76,17 @@
               <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-plus" viewBox="0 0 20 20"><path fill="#444" d="M17.409 8.929h-6.695V2.258c0-.566-.506-1.029-1.071-1.029s-1.071.463-1.071 1.029v6.671H1.967C1.401 8.929.938 9.435.938 10s.463 1.071 1.029 1.071h6.605V17.7c0 .566.506 1.029 1.071 1.029s1.071-.463 1.071-1.029v-6.629h6.695c.566 0 1.029-.506 1.029-1.071s-.463-1.071-1.029-1.071z"/></svg>
               <span class="icon__fallback-text" aria-hidden="true">+</span>
           </button>
+  
         </div>
+                              <div class=remove-btn>
+  
+<a href="/cart/change?id={{ product.key }}&amp;quantity=0" class="button button--tertiary" >
+                              <span class="svg-wrapper">Remove
+</span>
+                      </a>
+</div>
 
-        <div class="cart__remove">
-          <a href="{{ routes.cart_change_url }}?id={{ product.key }}&amp;quantity=0" class="text-link">
-            {{ 'cart.general.remove' | t }}
-          </a>
-        </div>
+    
       </div>
 
       <div class="cart__item-price-col text-right">
@@ -115,6 +125,7 @@
 
           <div class="product__unit-price">{{ product.unit_price | money }}/{{ unit_price_base_unit }}</div>
         {%- endif -%}
+
       </div>
     </div>
   </div>

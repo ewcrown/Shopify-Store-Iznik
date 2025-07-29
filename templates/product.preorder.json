@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,13 +14,11 @@
       "blocks": {
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "separator": {
           "type": "separator",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -55,7 +62,7 @@
           "type": "tab",
           "settings": {
             "title": "Delivery Details",
-            "content": "<p><strong>For Unstitched & Pret<\/strong><\/p><p><strong>Pakistan:<\/strong> 5 to 7 Working Days.<\/p><p><strong>International:<\/strong> 9 to 11 Working Days.<\/p><p><strong>For Stitched:<\/strong> 25 Working Days.<\/p><p>Customized stitching orders may require additional 7 business days for completion.<\/p><p><strong>Note:<\/strong> Any public holidays, Saturdays and Sundays in between the days are non working days.<\/p>",
+            "content": "<p><strong>For Unstitched & Pret</strong></p><p><strong>Pakistan:</strong> 5 to 7 Working Days.</p><p><strong>International:</strong> 9 to 11 Working Days.</p><p><strong>For Stitched:</strong> 25 Working Days.</p><p>Customized stitching orders may require additional 7 business days for completion.</p><p><strong>Note:</strong> Any public holidays, Saturdays and Sundays in between the days are non working days.</p>",
             "page": ""
           }
         },
@@ -68,8 +75,7 @@
         },
         "share": {
           "type": "share",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -119,8 +125,7 @@
     },
     "collection-return": {
       "type": "collection-return",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

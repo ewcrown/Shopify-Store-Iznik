@@ -7,6 +7,31 @@
     "theme_documentation_url": "https:\/\/archetypethemes.co\/blogs\/impulse",
     "theme_support_url": "https:\/\/archetypethemes.co\/pages\/support#impulse"
   },
+    {
+    "name":"Timer",
+    "settings": [
+       {
+        "type": "header",
+        "content": "Launching Tomorrow"
+      },
+      {
+        "type": "text",
+        "id": "timer_1",
+        "label": "Date & timer",
+        "info": "Timer should be like this format: 2025-03-10 21:00:00"
+      },
+      {
+        "type": "header",
+        "content": "Launching Today"
+      },
+      {
+        "type": "text",
+        "id": "timer_2",
+        "label": "Date & timer",
+        "info": "Timer should be like this format: 2025-03-10 21:00:00"
+      }
+    ]
+  },
   {
     "name": "t:settings_schema.colors.name",
     "settings": [
@@ -1039,7 +1064,9 @@
         "type": "checkbox",
         "id": "disable_animations",
         "label": "t:settings_schema.extras.settings.disable_animations.label"
-      }
+      },
+      
+      
     ]
   }
 ]

@@ -47,11 +47,16 @@
 -%}
 
 <div
-  class="grid__item grid-product {{ gridView }} {% if quick_shop_enable %} grid-product__has-quick-shop{% endif %}"
+  class="{% unless product.available %} out-of-stock-ai {% endunless %}  grid__item grid-product {{ gridView }} {% if quick_shop_enable %} grid-product__has-quick-shop{% endif %}"
   data-aos="row-of-{{ per_row }}"
   data-product-handle="{{ product.handle }}"
   data-product-id="{{ product.id }}"
 >
+{% for variant in product.variants %}
+  <div style="display:none" class="hidden-variants {% if variant.available != true %}remove-product{% endif %}">
+    {{ variant.title }}
+  </div>
+{% endfor %}
   <div class="grid-product__content">
     {%- liquid
       assign imageRatio = settings.product_grid_image_size
@@ -112,14 +117,13 @@
                 {% unless settings.product_grid_image_fill %} grid__image-contain{% endunless %} image-style--{{ image_style }}
               {%- endcapture -%}
               {%- if preview_image != blank -%}
-                {%-
-                  render 'image-element',
+                {%- render 'image-element',
                   img: preview_image,
                   classes: image_classes,
                   sizes: sizes,
                   sizeVariable: sizeVariable,
                   fallback: fallback,
-                  widths: '360, 540, 720, 900, 1080',
+                  widths: '360, 540, 720, 900, 1080'
                 -%}
               {%- else -%}
                 {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
@@ -137,14 +141,13 @@
                 {%- capture image_classes -%}
                   grid-product__image image-style--{{ image_style }}
                 {%- endcapture -%}
-                {%-
-                  render 'image-element',
+                {%- render 'image-element',
                   img: preview_image,
                   classes: image_classes,
                   sizes: sizes,
                   sizeVariable: sizeVariable,
                   fallback: fallback,
-                  widths: '360, 540, 720, 900, 1080',
+                  widths: '360, 540, 720, 900, 1080'
                 -%}
               {%- else -%}
                 {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
@@ -161,14 +164,13 @@
               {%- capture image_classes -%}
                 image-style--{{ image_style }}
               {%- endcapture -%}
-              {%-
-                render 'image-element',
+              {%- render 'image-element',
                 img: second_image,
                 classes: image_classes,
                 sizes: sizes,
                 sizeVariable: sizeVariable,
                 fallback: fallback,
-                widths: '360, 540, 720, 1000',
+                widths: '360, 540, 720, 1000'
               -%}
             </div>
           {%- endif -%}
@@ -327,6 +329,7 @@
         <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
       {%- endif -%}
     </div>
+    
   </div>
   {%- if settings.enable_swatches and type == blank -%}
     {%- liquid

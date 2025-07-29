@@ -17,6 +17,9 @@
       {% if force_open %}style="height: auto;"{% endif %}>
       <div class="collapsible-content__inner rte">
         {{ content }}
+        {% if additional_text != blank %}
+          <b class="product-additional-text">{{ additional_text }}</b>
+        {% endif %}
       </div>
     </div>
   </div>

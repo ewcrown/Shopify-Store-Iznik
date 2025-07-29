@@ -1,10 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "slideshow": {
       "type": "slideshow",
@@ -19,52 +27,44 @@
       "block_order": [
         "slideshow-0"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
         "heading": {
           "type": "heading",
-          "settings": {
-          }
+          "settings": {}
         },
         "text": {
           "type": "text",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
         "heading",
         "text"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "map": {
       "type": "map",
-      "settings": {
-      }
+      "settings": {}
     },
     "text-columns": {
       "type": "text-columns",
       "blocks": {
         "column1": {
           "type": "text_block",
-          "settings": {
-          }
+          "settings": {}
         },
         "column2": {
           "type": "text_block",
-          "settings": {
-          }
+          "settings": {}
         },
         "column3": {
           "type": "text_block",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -72,18 +72,15 @@
         "column2",
         "column3"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "featured-collection": {
       "type": "featured-collection",
-      "settings": {
-      }
+      "settings": {}
     },
     "form": {
       "type": "contact-form",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

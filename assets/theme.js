@@ -11,6 +11,8 @@
   });
 */
 
+
+
 window.theme = window.theme || {};
 window.Shopify = window.Shopify || {};
 
@@ -8488,7 +8490,7 @@ $(document).ready(function(){
      //  $('.yard').show()
     
     if (optionType === 'Unstitched') {
-      $('#infiniteoptions-container div[role="group"]').hide()
+      $('#infiniteoptions-container div[role="group"]').show()
       $('.yard').show()
     } else if (optionType === 'Stitched with Embellishments' || optionType === 'Stitched') {
       $('#infiniteoptions-container div[role="group"]').show()
@@ -8505,5 +8507,3 @@ $(document).ready(function(){
 //         $(".yard").prop("checked", false);
 //     });
 }); 
-
- 

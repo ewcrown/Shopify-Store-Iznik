@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "t:sections.footer-group.name",
@@ -11,7 +20,7 @@
             "enable_image": true,
             "image_mask": "none",
             "title": "Site-wide promotion",
-            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
             "button_label": "Optional button",
             "button_link": ""
           }
@@ -22,7 +31,7 @@
             "enable_image": true,
             "image_mask": "none",
             "title": "Site-wide promotion",
-            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
             "button_label": "Optional button",
             "button_link": ""
           }
@@ -33,7 +42,7 @@
             "enable_image": true,
             "image_mask": "none",
             "title": "Site-wide promotion",
-            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
             "button_label": "Optional button",
             "button_link": ""
           }
@@ -109,7 +118,7 @@
           "settings": {
             "show_footer_title": true,
             "title": "SIGN UP AND GET 5% OFF",
-            "text": "<p>Subscribe to get special offers and new arrivals update.<\/p>",
+            "text": "<p>Subscribe to get special offers and new arrivals update.</p>",
             "container_width": 25
           }
         }

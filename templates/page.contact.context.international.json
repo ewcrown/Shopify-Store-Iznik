@@ -1,0 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.contact.json",
+  "context": {
+    "market": "international"
+  },
+  "sections": {
+    "rich_text_TjXHN": {
+      "type": "rich-text",
+      "disabled": false,
+      "settings": {
+        "class": "",
+        "align_text": "left",
+        "narrow_column": true,
+        "divider": false
+      },
+      "blocks": {
+        "text_U76pP": {
+          "type": "text",
+          "disabled": false,
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>You may find an answer in our <a href=\"https://iznikfashions.com/pages/faqs\">FAQs</a> or can contact us on our helpline or by leaving a message below.</p><p>Customer Care:</p><p>Monday to Saturday 10am - 6pm PKT<br/><strong>Call: </strong><a href=\"tel:923060412412\">0306 0412412 <br/></a><br/><strong>Email: </strong><a href=\"mailto:help@iznikfashions.com\">help@iznikfashions.com</a></p><p><strong>ZARRISH  EMBROIDERY  LIMITED<br/>Address: </strong> SUITE C, LEVEL 7, WORLD TRUST TOWER, 50 STANLEY STREET, CENTRAL HONG KONG</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_U76pP"
+      ]
+    },
+    "main": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    }
+  },
+  "order": [
+    "form",
+    "rich-text",
+    "main",
+    "rich_text_TjXHN"
+  ]
+}

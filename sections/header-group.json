@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "t:sections.header-group.name",
@@ -5,18 +14,28 @@
     "announcement": {
       "type": "announcement",
       "blocks": {
-        "announcement_cJG83k": {
+        "announcement_VYaQqi": {
           "type": "announcement",
           "settings": {
-            "text": "All international orders for unstitched or pret items placed before 12:00am (PST) - March 28, 2024, will be delivered prior to Eid.",
+            "text": "Sale items are non-exchangeable and non-refundable",
             "link_text": "",
             "link": ""
           }
         },
         "announcement_eRcGgn": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
-            "text": "All international & local STITCHED orders placed till 12:00am (PST) - 16th March 2024 are guaranteed to be delivered before eid.",
+            "text": "All international orders (Unstitched & Pret) placed by 20th May will be delivered before Eid",
+            "link_text": "",
+            "link": ""
+          }
+        },
+        "announcement_cJG83k": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Stitched Orders (Local & International) Placed by May 4th Will Be Delivered Before Eid!",
             "link_text": "",
             "link": ""
           }
@@ -34,13 +53,14 @@
           "settings": {
             "text": "TO EXCHANGE YOUR ORDER",
             "link_text": "CLICK HERE",
-            "link": "shopify:\/\/pages\/exchange-form"
+            "link": "shopify://pages/exchange-form"
           }
         }
       },
       "block_order": [
-        "announcement_cJG83k",
+        "announcement_VYaQqi",
         "announcement_eRcGgn",
+        "announcement_cJG83k",
         "announcement-0",
         "announcement_AMbCf3"
       ],
@@ -54,7 +74,7 @@
         "header-0": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/iznik-Logo-6.png",
+            "logo": "shopify://shop_images/Asset_3.png",
             "desktop_logo_width": 100,
             "mobile_logo_width": 100
           }
@@ -64,7 +84,7 @@
         "header-0"
       ],
       "settings": {
-        "main_menu_link_list": "main-menu",
+        "main_menu_link_list": "main-menu-copy",
         "hover_menu": true,
         "mega_menu_images": true,
         "main_menu_alignment": "center-drawer",

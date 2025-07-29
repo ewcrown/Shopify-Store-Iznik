@@ -6,113 +6,111 @@
   endfor
 -%}
 
-<div
-  class="collection-content"
-  data-section-id="{{ section.id }}"
-  data-section-type="collection-grid"
->
-  <h1 class="hidden">{{ collection.title }}</h1>
-  <div id="CollectionAjaxContent">
-    <div class="page-width">
-        <h2 style="text-align: center;padding: 30px 0;">{{ collection.title }}</h2>
-      <div class="grid">
-        <div class="grid__item medium-up--one-fifth grid__item--sidebar">
-          {%- render 'collection-grid-filters',
-            collection: collection,
-            enable_sidebar: section.settings.enable_sidebar,
-            filter_style: section.settings.filter_style,
-            collapsed: section.settings.collapsed,
-            enable_color_swatches: section.settings.enable_color_swatches
-          -%}
-        </div>
-        <div class="grid__item medium-up--four-fifths grid__item--content">
-          {%- liquid
-            for block in section.blocks
-              case block.type
-                when 'product_grid'
-                  assign paginate_by = block.settings.per_row | times: block.settings.rows_per_page
-              endcase
-            endfor
-          -%}
-          {%- paginate collection.products by paginate_by -%}
-            {%- for block in section.blocks -%}
-              <div
-                {{ block.shopify_attributes }}
-                {%- if block.type == 'product-grid' -%}
-                  data-scroll-to
-                {%- endif -%}
-              >
-                {%- case block.type -%}
-                  {%- when 'collection_description' -%}
-                    {%- if collection.description != blank and current_filter_size == 0 -%}
-                      <div class="rte collection__description">
-                        {% comment %} {{ collection.description }} {% endcomment %}
-                      </div>
-                    {%- endif -%}
-                  {%- when 'subcollections' -%}
-                    {%- if paginate.current_page == 1 and current_filter_size == 0 -%}
-                      {%- render 'subcollections', per_row: block.settings.subcollections_per_row -%}
-                    {%- endif -%}
-                  {%- when 'product_grid' -%}
-                    <div data-scroll-to>
-                      {% render 'collection-grid',
-                        collection: collection,
-                        items: collection.products,
-                        enable_sidebar: section.settings.enable_sidebar,
-                        filter_style: section.settings.filter_style,
-                        enable_sort: section.settings.enable_sort,
-                        enable_collection_count: block.settings.enable_collection_count,
-                        per_row: block.settings.per_row,
-                        mobile_flush_grid: block.settings.mobile_flush_grid,
-                        quick_shop_enable: settings.quick_shop_enable
-                      %}
-                      {%- if paginate.pages > 1 -%}
-                        {%- render 'pagination', paginate: paginate -%}
-                      {%- endif -%}
-                    </div>
-                {%- endcase -%}
+  <div
+        class="collection-content"
+        data-section-id="{{ section.id }}"
+        data-section-type="collection-grid"
+      >
+        <h1 class="hidden">{{ collection.title }}</h1>
+        <div id="CollectionAjaxContent">
+          <div class="page-width">
+            <h2 style="text-align: center;padding: 30px 0;">{{ collection.title }}</h2>
+            <div class="grid">
+              <div class="grid__item medium-up--one-fifth grid__item--sidebar">
+                {%- render 'collection-grid-filters',
+                  collection: collection,
+                  enable_sidebar: section.settings.enable_sidebar,
+                  filter_style: section.settings.filter_style,
+                  collapsed: section.settings.collapsed,
+                  enable_color_swatches: section.settings.enable_color_swatches
+                -%}
               </div>
-            {%- endfor -%}
-          {%- endpaginate -%}
+              <div class="grid__item medium-up--four-fifths grid__item--content">
+                {%- liquid
+                  for block in section.blocks
+                    case block.type
+                      when 'product_grid'
+                        assign paginate_by = block.settings.per_row | times: block.settings.rows_per_page
+                    endcase
+                  endfor
+                -%}
+                {%- paginate collection.products by paginate_by -%}
+                  {%- for block in section.blocks -%}
+                    <div
+                      {{ block.shopify_attributes }}
+                      {%- if block.type == 'product-grid' -%}
+                        data-scroll-to
+                      {%- endif -%}
+                    >
+                      {%- case block.type -%}
+                        {%- when 'collection_description' -%}
+                          {%- if collection.description != blank and current_filter_size == 0 -%}
+                            <div class="rte collection__description">
+                              {% comment %} {{ collection.description }} {% endcomment %}
+                            </div>
+                          {%- endif -%}
+                        {%- when 'subcollections' -%}
+                          {%- if paginate.current_page == 1 and current_filter_size == 0 -%}
+                            {%- render 'subcollections', per_row: block.settings.subcollections_per_row -%}
+                          {%- endif -%}
+                        {%- when 'product_grid' -%}
+                          <div data-scroll-to>
+                            {% render 'collection-grid',
+                              collection: collection,
+                              items: collection.products,
+                              enable_sidebar: section.settings.enable_sidebar,
+                              filter_style: section.settings.filter_style,
+                              enable_sort: section.settings.enable_sort,
+                              enable_collection_count: block.settings.enable_collection_count,
+                              per_row: block.settings.per_row,
+                              mobile_flush_grid: block.settings.mobile_flush_grid,
+                              quick_shop_enable: settings.quick_shop_enable
+                            %}
+                            {%- if paginate.pages > 1 -%}
+                              {%- render 'pagination', paginate: paginate -%}
+                            {%- endif -%}
+                          </div>
+                      {%- endcase -%}
+                    </div>
+                  {%- endfor -%}
+                {%- endpaginate -%}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-{%- if section.settings.enable_sidebar == false
-  or section.settings.filter_style == 'drawer'
-  or collection.filters.size == 0
--%}
-  {% comment %}
-    Override grid styles if sidebar is disabled
-  {% endcomment %}
-  {% style %}
-    .collection-content .grid__item--sidebar { width: 0; padding:0; }
-    .collection-content .grid__item--content { width: 100%; }
-    .grid__item--sidebar { position: static; overflow: hidden; }
-  {% endstyle %}
-{%- endif -%}
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "CollectionPage",
-    {% if collection.description != blank %}
-      "description": {{ collection.description | strip_html | json }},
-    {% endif %}
-    {% if page_image %}
-      {% assign image_size = page_image.width | append: 'x' %}
-      "image": {
-        "@type": "ImageObject",
-        "height": {{ page_image.height | json }},
-        "url": {{ page_image | img_url: image_size | prepend: "https:" | json }},
-        "width": {{ page_image.width | json }}
-      },
-    {% endif %}
-    "name": {{ collection.title | json }}
-  }
-</script>
+      {%- if section.settings.enable_sidebar == false
+        or section.settings.filter_style == 'drawer'
+        or collection.filters.size == 0
+      -%}
+        {% comment %}
+          Override grid styles if sidebar is disabled
+        {% endcomment %}
+        {% style %}
+          .collection-content .grid__item--sidebar { width: 0; padding:0; }
+          .collection-content .grid__item--content { width: 100%; }
+          .grid__item--sidebar { position: static; overflow: hidden; }
+        {% endstyle %}
+      {%- endif -%}
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "CollectionPage",
+          {% if collection.description != blank %}
+            "description": {{ collection.description | strip_html | json }},
+          {% endif %}
+          {% if page_image %}
+            {% assign image_size = page_image.width | append: 'x' %}
+            "image": {
+              "@type": "ImageObject",
+              "height": {{ page_image.height | json }},
+              "url": {{ page_image | img_url: image_size | prepend: "https:" | json }},
+              "width": {{ page_image.width | json }}
+            },
+          {% endif %}
+          "name": {{ collection.title | json }}
+        }
+      </script>
 
 {% schema %}
 {

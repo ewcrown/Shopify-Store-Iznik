@@ -1,0 +1,126 @@
+{% style %}
+/* Container Styling */
+.timer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    margin: 20px auto auto 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer Display Area */
+.timer-display {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1rem;
+}
+
+/* Individual Timer Block */
+.timer-block {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Number Styling */
+.timer-block__num {
+  font-size: 1.5rem; /* Larger font for numbers */
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+  letter-spacing: 1px; /* Slight spacing for clarity */
+}
+
+/* Unit Styling */
+.timer-block__unit {
+  font-size: 0.5rem;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover effect on blocks */
+.timer-block:hover .timer-block__num {
+  color: #555;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .timer {
+    max-width:100% !important;
+  }
+
+  .timer-block {
+    padding: 10px 15px;
+  }
+}
+
+{% endstyle %}
+
+	<div class="timer">
+		<div class="timer-display">
+			<div class="timer-block"><span class="timer-block__num js-timer-days">00</span> <span
+					class="timer-block__unit">Days</span></div>
+			<div class="timer-block"><span class="timer-block__num js-timer-hours">00</span> <span
+					class="timer-block__unit">Hours</span></div>
+			<div class="timer-block"><span class="timer-block__num js-timer-minutes">00</span> <span
+					class="timer-block__unit">Minutes</span></div>
+			<div class="timer-block"><span class="timer-block__num js-timer-seconds">00</span> <span
+					class="timer-block__unit">Seconds</span></div>
+		</div>
+	</div>
+
+	<script>
+	$(document).ready(function () {
+    // Initialize the timezone picker
+    $('#timezone-picker').timezonePicker();
+
+    // Default timezone
+    let targetTimezone = 'Asia/Karachi'; // Default timezone
+    let timer; // Declare timer variable
+
+    // Function to get the target end date in milliseconds
+    function getTargetDate() {
+        return moment.tz("{{ end_date }}", targetTimezone).toDate().getTime();
+    }
+
+    // Function to start countdown timer
+    function startTimer() {
+        if (timer) {
+            clearInterval(timer); // Clear any existing timer
+        }
+
+        const targetDate = getTargetDate();
+
+        timer = setInterval(function () {
+            const now = moment().tz(targetTimezone).toDate().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                $('.timer').hide(); // Hide the timer when countdown is over
+                return;
+            }
+
+            $('.js-timer-days').text(Math.floor(distance / (1000 * 60 * 60 * 24)));
+            $('.js-timer-hours').text(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            $('.js-timer-minutes').text(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+            $('.js-timer-seconds').text(Math.floor((distance % (1000 * 60)) / 1000));
+        }, 1000);
+    }
+
+    // Start timer initially
+    startTimer();
+
+    // Update timezone on picker change
+    $('#timezone-picker').on('change', function () {
+        targetTimezone = $(this).val();
+        startTimer(); // Restart timer with new timezone
+    });
+});
+
+	</script>
