@@ -77,22 +77,22 @@
       <div class="grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %}">
         {%- if image_position == 'left' -%}
           <div class="grid__item {{ product_image_width }} product-single__sticky">
-            {% if product.compare_at_price > product.price %}
+            {% assign product_price = product.selected_or_first_available_variant %}
+            {% if product_price.compare_at_price > product_price.price %}
               <div class="discount-price-off">
                 <span
                   >-
                   {{-
-                    product.compare_at_price
-                    | minus: product.price
+                    product_price.compare_at_price
+                    | minus: product_price.price
                     | times: 100.0
-                    | divided_by: product.compare_at_price
+                    | divided_by: product_price.compare_at_price
                     | round
                   }}
                   %</span
                 >
               </div>
             {% endif %}
-
             {%-
               render 'product-images',
               section_id: section_id,
