@@ -11,10 +11,181 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_yrwHW4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_L48cjV": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>IZNIK – Frequently Asked Questions (FAQs)</strong>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_L48cjV"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "collapsible_content_J6hzwy": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wNeWeY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is an account necessary to place an order?",
+            "icon": "none",
+            "row_content": "<p>No, you can check out as a guest. However, creating a SOLA account enhances your shopping experience by enabling faster checkout, saved addresses, order tracking, order history, and the ability to initiate exchange requests through the SOLA Customer Portal.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_FXXd4R": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if I forget my password?",
+            "icon": "none",
+            "row_content": "<p>Click on Forgot Password on the login page, enter your registered email address, and follow the reset link sent to your email.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WNjnJx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I update my shipping or billing address?",
+            "icon": "none",
+            "row_content": "<p>Sign in to your account and open the Addresses section to edit, delete, or add a new address before placing an order.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_H6AqBh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where can I view my order history?",
+            "icon": "none",
+            "row_content": "<p>Log in to your account and visit the Dashboard to view your complete order history.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wNeWeY",
+        "collapsible_row_FXXd4R",
+        "collapsible_row_WNjnJx",
+        "collapsible_row_H6AqBh"
+      ],
+      "custom_css": [
+        ".accordion summary {background: none;}",
+        ".collapsible-content__heading {margin-bottom: 0rem;}",
+        ".collapsible-content-wrapper-narrow {max-width: 1000px;}",
+        ".collapsible-content summary:hover .accordion__title {text-decoration: none;}",
+        ".accordion__title {font-size: 18px;}",
+        "@media (max-width: 768px) {.accordion__title {font-size: 16px; }}"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "<strong>My Account</strong>",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "collapsible_content_rwCfJ8": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_MbrkTC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is an account necessary to place an order?",
+            "icon": "none",
+            "row_content": "<p>No, you can check out as a guest. However, creating a SOLA account enhances your shopping experience by enabling faster checkout, saved addresses, order tracking, order history, and the ability to initiate exchange requests through the SOLA Customer Portal.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jV3wxx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if I forget my password?",
+            "icon": "none",
+            "row_content": "<p>Click on Forgot Password on the login page, enter your registered email address, and follow the reset link sent to your email.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_imhf8W": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I update my shipping or billing address?",
+            "icon": "none",
+            "row_content": "<p>Sign in to your account and open the Addresses section to edit, delete, or add a new address before placing an order.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_J38UWr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where can I view my order history?",
+            "icon": "none",
+            "row_content": "<p>Log in to your account and visit the Dashboard to view your complete order history.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_MbrkTC",
+        "collapsible_row_jV3wxx",
+        "collapsible_row_imhf8W",
+        "collapsible_row_J38UWr"
+      ],
+      "custom_css": [
+        ".accordion summary {background: none;}",
+        ".collapsible-content__heading {margin-bottom: 0rem;}",
+        ".collapsible-content-wrapper-narrow {max-width: 1000px;}",
+        ".collapsible-content summary:hover .accordion__title {text-decoration: none;}",
+        ".accordion__title {font-size: 18px;}",
+        "@media (max-width: 768px) {.accordion__title {font-size: 16px; }}"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "<strong>Order</strong>",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 4,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_yrwHW4",
+    "collapsible_content_J6hzwy",
+    "collapsible_content_rwCfJ8"
   ]
 }

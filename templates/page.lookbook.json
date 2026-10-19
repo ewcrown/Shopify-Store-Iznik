@@ -11,10 +11,116 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "lookbook_grid_XQPz4n": {
+      "type": "lookbook-grid",
+      "blocks": {
+        "lookbook_xCJiQA": {
+          "type": "lookbook",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_c062fc01-458d-4c7e-8fd2-bccbe65c6a34.webp",
+            "button_text": "View Catalog",
+            "link": "shopify://pages/lookbook-detail-test"
+          }
+        },
+        "lookbook_JhtXzb": {
+          "type": "lookbook",
+          "settings": {
+            "image": "shopify://shop_images/4_5456762c-bde5-4767-80d4-e37e79ab029c.webp",
+            "button_text": "View Catalog",
+            "link": ""
+          }
+        },
+        "lookbook_MN3QyQ": {
+          "type": "lookbook",
+          "settings": {
+            "image": "shopify://shop_images/5_4a34f4ee-9ddb-40e8-be10-ea5354b174a8.webp",
+            "button_text": "View Catalog",
+            "link": ""
+          }
+        },
+        "lookbook_aAwHL7": {
+          "type": "lookbook",
+          "settings": {
+            "image": "shopify://shop_images/400x500_5b677d96-c7ac-4c0f-a738-b8489a1e9ab9.webp",
+            "button_text": "View Catalog",
+            "link": ""
+          }
+        },
+        "lookbook_WPfLdg": {
+          "type": "lookbook",
+          "settings": {
+            "image": "shopify://shop_images/5_4a34f4ee-9ddb-40e8-be10-ea5354b174a8.webp",
+            "button_text": "View Catalog",
+            "link": ""
+          }
+        },
+        "lookbook_qmHQUJ": {
+          "type": "lookbook",
+          "settings": {
+            "image": "shopify://shop_images/4_5456762c-bde5-4767-80d4-e37e79ab029c.webp",
+            "button_text": "View Catalog",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "lookbook_xCJiQA",
+        "lookbook_JhtXzb",
+        "lookbook_MN3QyQ",
+        "lookbook_aAwHL7",
+        "lookbook_WPfLdg",
+        "lookbook_qmHQUJ"
+      ],
+      "name": "Lookbook grid",
+      "settings": {
+        "heading": "LOOKBOOK",
+        "heading_size": 24,
+        "mobile_heading_size": 20,
+        "heading_spacing": 30,
+        "mobile_heading_spacing": 20,
+        "max_width": 1400,
+        "grid_gap": 30,
+        "mobile_grid_gap": 10,
+        "side_padding": 20,
+        "tablet_side_padding": 20,
+        "mobile_side_padding": 10,
+        "image_ratio": "3 / 4",
+        "image_fit": "cover",
+        "enable_image_hover": false,
+        "card_background": "#ffffff",
+        "border_width": 1,
+        "border_color": "#e5e5e5",
+        "footer_height": 80,
+        "footer_padding": 10,
+        "mobile_footer_height": 55,
+        "mobile_footer_padding": 6,
+        "button_background": "#000000",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#000000",
+        "button_border_width": 0,
+        "button_width": 140,
+        "button_height": 40,
+        "button_font_size": 14,
+        "button_radius": 0,
+        "mobile_button_width": 60,
+        "mobile_button_height": 32,
+        "mobile_button_font_size": 11,
+        "background_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "lookbook_grid_XQPz4n"
   ]
 }

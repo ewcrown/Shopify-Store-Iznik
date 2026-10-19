@@ -1,0 +1,238 @@
+{% doc %}
+  Renders optional add-on products assigned to the currently selected variant.
+
+  @param {product} product - The product whose variant metafield supplies the add-ons.
+  @param {string} product_form_id - The id of the main product form.
+  @param {string} section_id - The product section id.
+
+  @example
+  {% render 'variant-add-on-products', product: product, product_form_id: product_form_id, section_id: section.id %}
+{% enddoc %}
+
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+{%- assign add_on_metafield = selected_variant.metafields.custom.add_on_product -%}
+{%- if add_on_metafield.value == blank -%}
+  {%- assign add_on_metafield = selected_variant.metafields.custom.add_on_products -%}
+{%- endif -%}
+{%- if add_on_metafield.value == blank -%}
+  {%- assign add_on_metafield = selected_variant.metafields.custom.addon_product -%}
+{%- endif -%}
+{%- if add_on_metafield.value == blank -%}
+  {%- assign add_on_metafield = selected_variant.metafields.custom.addon_products -%}
+{%- endif -%}
+{%- assign add_on_products = add_on_metafield.value -%}
+
+<variant-add-on-products
+  id="VariantAddOns-{{ section_id }}"
+  class="variant-add-ons"
+  data-section-id="{{ section_id }}"
+  data-form-id="{{ product_form_id }}"
+  data-selected-variant-id="{{ selected_variant.id }}"
+  data-add-on-count="{{ add_on_products.size | default: 0 }}"
+  {% if add_on_products == blank and request.design_mode == false %}hidden{% endif %}
+>
+  {%- if add_on_products != blank -%}
+    <div class="variant-add-ons__list">
+      {%- for add_on_product in add_on_products -%}
+        {%- assign add_on_variant = add_on_product.selected_or_first_available_variant -%}
+        {%- if add_on_variant != blank -%}
+          {%- assign input_id = 'AddOn-' | append: section_id | append: '-' | append: add_on_variant.id -%}
+          {%- assign add_on_price = add_on_variant.price | money_without_currency | replace: ',', '' -%}
+          {%- assign add_on_currency = cart.currency.iso_code | default: shop.currency -%}
+          {%- capture add_on_selection_label -%}
+            {{- 'products.product.add_ons.yes_with_price' | t: currency: add_on_currency, price: add_on_price -}}
+          {%- endcapture -%}
+          <fieldset class="variant-add-ons__item">
+            <legend class="variant-add-ons__heading">{{ add_on_product.title | escape }}</legend>
+            <div class="variant-add-ons__option">
+              <input
+                id="{{ input_id }}"
+                class="variant-add-ons__input"
+                type="checkbox"
+                value="{{ add_on_variant.id }}"
+                data-add-on-variant
+                data-add-on-property-name="{{ add_on_product.title | escape }}"
+                data-add-on-property-value="{{ add_on_selection_label | escape }}"
+                {% unless add_on_variant.available %}disabled{% endunless %}
+              >
+              <label class="variant-add-ons__label" for="{{ input_id }}">
+                {%- if add_on_variant.available -%}
+                  {{- add_on_selection_label -}}
+                {%- else -%}
+                  {{- 'products.product.sold_out' | t -}}
+                {%- endif -%}
+              </label>
+            </div>
+          </fieldset>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- elsif request.design_mode -%}
+    <p class="variant-add-ons__diagnostic">
+      {{-
+        'products.product.add_ons.empty_admin_html'
+        | t: variant: selected_variant.title, namespace: 'custom', key: 'add_on_product'
+      -}}
+    </p>
+  {%- endif -%}
+</variant-add-on-products>
+
+{% stylesheet %}
+  .variant-add-ons {
+    display: block;
+    margin: 0 0 2rem;
+  }
+
+  .variant-add-ons[hidden] {
+    display: none;
+  }
+
+  .variant-add-ons__list {
+    display: grid;
+    gap: 2.4rem;
+  }
+
+  .variant-add-ons__item {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .variant-add-ons__heading {
+    margin: 0 0 10px;
+    padding: 0;
+    color: #1C1C1C;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .variant-add-ons__option {
+    position: relative;
+  }
+
+  .variant-add-ons__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+
+  .variant-add-ons__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    border: 0;
+    background: #f1f1f1;
+    color: #1c1c1c;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    transition: background-color var(--duration-short) ease, color var(--duration-short) ease;
+  }
+
+  .variant-add-ons__label:hover {
+    background: #e5e5e5;
+  }
+
+  .variant-add-ons__input:focus-visible + .variant-add-ons__label {
+    outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+    outline-offset: 0.3rem;
+  }
+
+  .variant-add-ons__input:checked + .variant-add-ons__label {
+    background: #1c1c1c;
+    color: #fff;
+  }
+
+  .variant-add-ons__input:disabled + .variant-add-ons__label {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .variant-add-ons__diagnostic {
+    margin: 0 0 2rem;
+    padding: 1.2rem;
+    border: 1px dashed rgba(var(--color-foreground), 0.45);
+    color: rgba(var(--color-foreground), 0.75);
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('variant-add-on-products')) {
+    customElements.define(
+      'variant-add-on-products',
+      class VariantAddOnProducts extends HTMLElement {
+        connectedCallback() {
+          this.form = document.getElementById(this.dataset.formId);
+          this.onChange = this.updateDynamicCheckout.bind(this);
+          this.onSubmit = this.prepareCartItems.bind(this);
+          this.onVariantChange = this.updateForVariant.bind(this);
+
+          this.addEventListener('change', this.onChange);
+          this.form?.addEventListener('submit', this.onSubmit, true);
+
+          if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+            this.unsubscribeVariant = subscribe(PUB_SUB_EVENTS.variantChange, this.onVariantChange);
+          }
+        }
+
+        disconnectedCallback() {
+          this.removeEventListener('change', this.onChange);
+          this.form?.removeEventListener('submit', this.onSubmit, true);
+          this.unsubscribeVariant?.();
+        }
+
+        updateForVariant(event) {
+          const data = event?.data;
+          if (String(data?.sectionId) !== String(this.dataset.sectionId) || !data.html) return;
+          const source = data.html.getElementById(this.id);
+          this.innerHTML = source?.innerHTML || '';
+          this.hidden = !source || source.hidden;
+          this.updateDynamicCheckout();
+        }
+
+        updateDynamicCheckout() {
+          const hasSelectedAddOn = Boolean(this.querySelector('[data-add-on-variant]:checked'));
+          const dynamicCheckout = this.form?.querySelector('.shopify-payment-button');
+          if (dynamicCheckout) dynamicCheckout.hidden = hasSelectedAddOn;
+        }
+
+        prepareCartItems() {
+          const selectedAddOns = Array.from(this.querySelectorAll('[data-add-on-variant]:checked'));
+          if (!this.form || selectedAddOns.length === 0) return;
+
+          const temporaryFields = [];
+
+          selectedAddOns.forEach((checkbox) => {
+            const addOnId = document.createElement('input');
+            addOnId.type = 'hidden';
+            addOnId.name = 'iznik_add_on_id';
+            addOnId.value = checkbox.value;
+            this.form.appendChild(addOnId);
+            temporaryFields.push(addOnId);
+
+            const mainProductAddOnProperty = document.createElement('input');
+            mainProductAddOnProperty.type = 'hidden';
+            mainProductAddOnProperty.name = `properties[${checkbox.dataset.addOnPropertyName}]`;
+            mainProductAddOnProperty.value = checkbox.dataset.addOnPropertyValue;
+            this.form.appendChild(mainProductAddOnProperty);
+            temporaryFields.push(mainProductAddOnProperty);
+          });
+
+          setTimeout(() => {
+            temporaryFields.forEach((field) => field.remove());
+          });
+        }
+      }
+    );
+  }
+{% endjavascript %}

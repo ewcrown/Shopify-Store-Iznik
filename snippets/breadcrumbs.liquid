@@ -1,86 +1,143 @@
-{% if settings.show_breadcrumbs %}
+{%- comment -%}
+  Dynamic Breadcrumbs - Sitewide (page, collection, product, blog, article)
+  File: snippets/breadcrumbs.liquid
+  Usage: {% render 'breadcrumbs' %}  (sirf ek dafa render karein)
 
-{% unless template.name == 'index' or template.name == 'cart' %}
-  <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-    <a href="{{ routes.root_url }}" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+  Product logic:
+  - Collection page par collection sessionStorage mein save hoti hai.
+  - Product page par wahi collection dikhti hai (agar product us collection mein ho).
+  - Warna (direct URL) product ki pehli collection dikhti hai.
+  - Script link ke foran baad chalti hai, is liye flicker nahi hota.
+{%- endcomment -%}
 
-    {% if template.name == 'product' %}
+{%- assign t = template.name -%}
 
-      {% if collection %}
-        {% if settings.show_breadcrumbs_collection_link %}
-          <span class="breadcrumb__divider" aria-hidden="true">/</span>
-          <a href="{{ routes.collections_url }}">{{ 'general.search.collections' | t | replace: ':', ''}}</a>
-        {% endif %}
+{%- unless t == 'index' or t == 'cart' or t == 'list-collections' or t == '404' -%}
 
-        <span class="breadcrumb__divider" aria-hidden="true">/</span>
-        {% if collection.handle %}
-          {% capture url %}{{ routes.collections_url }}/{{ collection.handle }}{% endcapture %}
-          {{ collection.title | link_to: url }}
-        {% endif %}
-      {% endif %}
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
+<style>
+  .breadcrumb-nav { padding-block: 10px; }
+  .breadcrumb-list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-wrap: wrap; align-items: center;
+    font-size: 1.2rem; color: #888;
+    text-transform: capitalize;
+  }
+  .breadcrumb-nav [hidden] { display: none !important; }
+  .breadcrumb-item a { text-decoration: none; color: inherit; transition: color 0.2s ease; }
+  .breadcrumb-item a:hover { color: #000; }
+  .breadcrumb-separator { margin: 0 10px; font-size: 1rem; color: #ccc; display: flex; align-items: center; }
+  .breadcrumb-item.active { color: #333; font-weight: 400; }
+  .breadcrumb-item--product span {
+    display: inline-block;
+    max-width: 40ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+  }
+  @media (max-width: 749px) {
+    .breadcrumb-item--product span { max-width: 20ch; }
+  }
+</style>
 
-    {% elsif template.name == 'collection' and collection.handle %}
-      {% if settings.show_breadcrumbs_collection_link %}
-        <span class="breadcrumb__divider" aria-hidden="true">/</span>
-        <a href="{{ routes.collections_url }}">{{ 'general.search.collections' | t | replace: ':', ''}}</a>
-      {% endif %}
+<nav class="breadcrumb-nav page-width" role="navigation" aria-label="breadcrumbs">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item"><a href="{{ routes.root_url }}" title="Home">Home</a></li>
 
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
+    {%- case t -%}
 
-      {% if current_tags %}
+      {%- when 'page' -%}
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-item active"><span aria-current="page">{{ page.title }}</span></li>
 
-        {% capture url %}{{ routes.collections_url }}/{{ collection.handle }}{% endcapture %}
-        {{ collection.title | link_to: url }}
+      {%- when 'product' -%}
+        {%- assign bc_col = nil -%}
+        {%- assign bc_has_context = false -%}
 
-        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+        {%- if collection != blank and collection.handle != 'all' and collection.handle != 'frontpage' -%}
+          {%- assign bc_col = collection -%}
+          {%- assign bc_has_context = true -%}
+        {%- else -%}
+          {%- for c in product.collections -%}
+            {%- unless c.handle == 'all' or c.handle == 'frontpage' -%}
+              {%- if bc_col == nil -%}
+                {%- assign bc_col = c -%}
+              {%- endif -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endif -%}
 
-        {% for tag in current_tags %}
-          {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+        <li class="breadcrumb-separator" aria-hidden="true"{% if bc_col == blank %} hidden{% endif %}>/</li>
+        <li class="breadcrumb-item"{% if bc_col == blank %} hidden{% endif %}>
+          <a href="{{ bc_col.url }}" data-bc-link>{{ bc_col.title }}</a>
+          {%- unless bc_has_context or bc_col == blank -%}
+            <script>
+              (function () {
+                try {
+                  var raw = sessionStorage.getItem('bc_collection');
+                  if (!raw) return;
+                  var saved = JSON.parse(raw);
+                  var allowed = {{ product.collections | map: 'handle' | json }};
+                  if (!saved || !saved.handle || allowed.indexOf(saved.handle) === -1) return;
+                  var link = document.currentScript.parentNode.querySelector('[data-bc-link]');
+                  link.href = saved.url;
+                  link.textContent = saved.title;
+                } catch (e) {}
+              })();
+            </script>
+          {%- endunless -%}
+        </li>
 
-          {% assign tag_name = tag | strip %}
-          {% assign tag_text = tag_name | capitalize %}
-          <span>{{ tag_text }}</span>
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-item breadcrumb-item--product active"><span aria-current="page">{{ product.title }}</span></li>
 
-          {% unless forloop.last %}
-            <span>+</span>
-          {% endunless %}
+      {%- when 'collection' -%}
+        {%- if collection.handle -%}
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          {%- if current_tags -%}
+            {%- capture url -%}{{ routes.collections_url }}/{{ collection.handle }}{%- endcapture -%}
+            <li class="breadcrumb-item">{{ collection.title | link_to: url }}</li>
+            <li class="breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="breadcrumb-item active"><span aria-current="page">{{ current_tags | join: " + " }}</span></li>
+          {%- else -%}
+            <li class="breadcrumb-item active"><span aria-current="page">{{ collection.title }}</span></li>
+          {%- endif -%}
 
-        {% endfor %}
-      {% endif %}
+          {%- unless collection.handle == 'all' or collection.handle == 'frontpage' -%}
+            <script>
+              try {
+                sessionStorage.setItem('bc_collection', JSON.stringify({
+                  handle: {{ collection.handle | json }},
+                  title: {{ collection.title | json }},
+                  url: {{ routes.collections_url | append: '/' | append: collection.handle | json }}
+                }));
+              } catch (e) {}
+            </script>
+          {%- endunless -%}
+        {%- endif -%}
 
-    {% elsif template.name == 'blog' %}
+      {%- when 'blog' -%}
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        {%- if current_tags -%}
+          <li class="breadcrumb-item">{{ blog.title | link_to: blog.url }}</li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li class="breadcrumb-item active"><span aria-current="page">{{ current_tags | join: " + " }}</span></li>
+        {%- else -%}
+          <li class="breadcrumb-item active"><span aria-current="page">{{ blog.title }}</span></li>
+        {%- endif -%}
 
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
-      {% if current_tags %}
-        {{ blog.title | link_to: blog.url }}
-        <span class="breadcrumb__divider" aria-hidden="true">/</span>
-        <span>{{ current_tags | join: " + " }}</span>
-      {% endif %}
+      {%- when 'article' -%}
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-item">{{ blog.title | link_to: blog.url }}</li>
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-item active"><span aria-current="page">{{ article.title }}</span></li>
 
-    {% elsif template.name == 'article' %}
+      {%- else -%}
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-item active"><span aria-current="page">{{ page_title }}</span></li>
 
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
-      {{ blog.title | link_to: blog.url }}
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
+    {%- endcase -%}
+  </ol>
+</nav>
 
-    {% elsif template.name == 'page' %}
-
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
-      <span>{{ page.title }}</span>
-
-    {% elsif template.name == 'search' %}
-
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
-      <span>{{ page_title | replace: '*', '' }}</span>
-
-    {% else %}
-
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
-      <span>{{ page_title }}</span>
-
-    {% endif %}
-  </nav>
-{% endunless %}
-
-{% endif %}
+{%- endunless -%}

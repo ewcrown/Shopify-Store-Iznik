@@ -9,503 +9,339 @@
  */
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
+    "image_banner": {
+      "type": "image-banner",
       "blocks": {
-        "f5d05148-31fc-4a05-af0e-df90cd527d63": {
-          "type": "image",
+        "text_By7YU3": {
+          "type": "text",
           "settings": {
-            "top_subheading": "",
-            "title": "",
-            "title_size": 80,
-            "subheading": "",
-            "link": "shopify://collections/velvet-26",
-            "link_text": "",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "rgba(0,0,0,0)",
-            "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/WEB_BANNER_copy_cee60bed-9fb8-4a5b-be3b-e8db276a23b7.jpg",
-            "image_mobile": "shopify://shop_images/mobile_web_banner_copy_7bf7aea6-bb3f-49ea-ace4-44b6db1c12aa.jpg",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
+            "text": "New collection",
+            "text_style": "body"
           }
         },
-        "4bfcd714-a42f-4c9f-b9ce-853968331aa4": {
-          "type": "image",
-          "disabled": true,
+        "heading": {
+          "type": "heading",
           "settings": {
-            "top_subheading": "",
-            "title": "",
-            "title_size": 80,
-            "subheading": "",
-            "link": "shopify://collections/unstitched",
-            "link_text": "",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "rgba(0,0,0,0)",
-            "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/WEB_BANNER_copy_4bcd6e12-3c2d-40de-8c35-c08367e3f245.jpg",
-            "image_mobile": "shopify://shop_images/mobile_web_banner_copy_0e321565-da68-4db8-8c20-d177cbac2abb.jpg",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
+            "heading": "&nbsp;Luxury, Thoughtfully Crafted.&nbsp;",
+            "heading_size": "h2"
           }
         },
-        "slideshow-0": {
-          "type": "image",
-          "disabled": true,
+        "button": {
+          "type": "buttons",
           "settings": {
-            "top_subheading": "",
-            "title": "",
-            "title_size": 80,
-            "subheading": "",
-            "link": "shopify://collections/chinon-chiffon",
-            "link_text": "",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#000000",
-            "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/WEB-BANNER-2_8cea0500-2c7d-4039-b083-39526fc763b2.png",
-            "image_mobile": "shopify://shop_images/Mobile_Banner_chinon.jpg",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
-          }
-        },
-        "slideshow-1": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "top_subheading": "",
-            "title": "",
-            "title_size": 80,
-            "subheading": "",
-            "link": "shopify://collections/chinon-chiffon",
-            "link_text": "",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#000000",
-            "text_align": "vertical-bottom horizontal-left",
-            "image": "shopify://shop_images/WEB-BANNER-2_8cea0500-2c7d-4039-b083-39526fc763b2.png",
-            "image_mobile": "shopify://shop_images/Mobile_banner1.jpg",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
-          }
-        },
-        "37cb3932-d72a-4643-89a5-7e1265618b4b": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "top_subheading": "",
-            "title": "",
-            "title_size": 80,
-            "subheading": "",
-            "link": "shopify://collections/unstitched",
-            "link_text": "",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "rgba(0,0,0,0)",
-            "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/DESK_76d99d46-96b4-4231-b4d9-2413bc3a522f.jpg",
-            "image_mobile": "shopify://shop_images/MOB_f03a445c-a040-478c-88de-cd534e79b759.jpg",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/velvet-26",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "f5d05148-31fc-4a05-af0e-df90cd527d63",
-        "4bfcd714-a42f-4c9f-b9ce-853968331aa4",
-        "slideshow-0",
-        "slideshow-1",
-        "37cb3932-d72a-4643-89a5-7e1265618b4b"
+        "text_By7YU3",
+        "heading",
+        "button"
       ],
       "custom_css": [
-        ".hero--100vh {height: calc(100vh - 101px) !important; max-height: calc(100vh - 101px) !important;}"
+        "@media (max-width: 768px) {.banner__box {display: flex; flex-direction: column; justify-content: flex-end; height: 100%; margin-bottom: 10rem; }}",
+        ".banner__text,.banner__heading,.button {text-transform: uppercase;}",
+        ".banner__heading {margin-top: 0;}",
+        ".button {transition: 0.3s;}",
+        ".button:hover::after {box-shadow: 0 0 0 var(--buttons-border-width) rgba(var(--color-button), calc(1 - var(--buttons-border-opacity))) !important;}",
+        ".button:hover {--color-button: 255, 255, 255; --color-button-text: 0, 0, 0; --alpha-button-background: 1 !important;}"
       ],
       "settings": {
-        "section_height": "natural",
-        "mobile_height": "auto",
-        "parallax": false,
-        "style": "minimal",
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "lazyload_images": false
+        "image": "shopify://shop_images/web-banner_c2d29e2f-6c5f-41a4-b811-c6a28b08d40b.png",
+        "image_mobile": "shopify://shop_images/mobile-banner_42c5d6ab-68b0-45c0-bbd6-e18549ea5768.png",
+        "banner_link": "",
+        "image_overlay_opacity": 10,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "show_on_mobile": true,
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
       }
     },
-    "countdown_QWazYG": {
-      "type": "countdown",
+    "rich_text_dij64C": {
+      "type": "rich-text",
       "blocks": {
-        "content_HXyCGw": {
-          "type": "content",
-          "disabled": true,
+        "heading_UTKAwT": {
+          "type": "heading",
           "settings": {
-            "heading": "Nani Ka Ghar",
-            "heading_size": "h2",
-            "text": "<p>Luxury Lawn Launching Soon </p>",
-            "content_alignment": "left"
+            "heading": "&nbsp;VELVET ’26&nbsp;",
+            "heading_size": "h1"
           }
         },
-        "timer_EkDQaV": {
-          "type": "timer",
-          "disabled": true,
+        "text_E6CJfM": {
+          "type": "text",
           "settings": {
-            "year": "2024",
-            "month": "03",
-            "day": "16",
-            "hour": "16",
-            "minute": "00",
-            "hide_timer": false,
-            "text": ""
-          }
-        },
-        "button_UXRDHH": {
-          "type": "button",
-          "settings": {
-            "button_link": "shopify://collections/nani-ka-ghar",
-            "button": "Shop Collection",
-            "button_style": "solid"
+            "text": "<p>A collection of rich textures, intricate embroidery, and thoughtfully composed designs, bringing together timeless elegance and festive allure. Crafted for the wedding season.</p>"
           }
         }
       },
       "block_order": [
-        "content_HXyCGw",
-        "timer_EkDQaV",
-        "button_UXRDHH"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "banner",
-        "full_width": false,
-        "text_color": "#000000",
-        "background_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "lazyload_images": true
-      }
-    },
-    "scrolling_text_TYYkEc": {
-      "type": "scrolling-text",
-      "disabled": true,
-      "settings": {
-        "text": "All international orders (stitched/unstitched) will be delivered after Eid. All local order of stitched will be delivered after Eid.",
-        "link": "",
-        "text_size": 20,
-        "text_spacing": true,
-        "direction": "left",
-        "speed": 300
-      }
-    },
-    "9e00a84c-a83d-47bf-bf19-1ba47b500237": {
-      "type": "text-columns",
-      "blocks": {
-        "template--16793849233634__9e00a84c-a83d-47bf-bf19-1ba47b500237-1684156772f6b9349e-2": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/formal_d1df822f-d733-4a12-9a08-7e210efa7edf.jpg",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "FORMAL WEAR",
-            "text": "",
-            "button_label": "SHOP NOW",
-            "button_link": "https://iznikfashions.com/collections/formals"
-          }
-        },
-        "template--16793849233634__9e00a84c-a83d-47bf-bf19-1ba47b500237-1684156772f6b9349e-0": {
-          "type": "text_block",
-          "disabled": true,
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/summer_198b122a-fa2d-4662-b475-5accd4f20fcb.jpg",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "SUMMER COLLECTION",
-            "text": "",
-            "button_label": "SHOP NOW",
-            "button_link": "https://iznikfashions.com/collections/summer-collection-26"
-          }
-        },
-        "text_block_DhcA7R": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/winter_54e73c4a-6549-4060-b5aa-5961591bb815.jpg",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "WINTER COLLECTION",
-            "text": "",
-            "button_label": "SHOP NOW",
-            "button_link": "https://iznikfashions.com/collections/winter-collection"
-          }
-        },
-        "template--16793849233634__9e00a84c-a83d-47bf-bf19-1ba47b500237-1684156772f6b9349e-1": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/RTW_copy_f78dd477-2065-4080-802a-efb6cedd989e.jpg",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "READY TO WEAR",
-            "text": "",
-            "button_label": "SHOP NOW",
-            "button_link": "https://iznikfashions.com/collections/pret"
-          }
-        }
-      },
-      "block_order": [
-        "template--16793849233634__9e00a84c-a83d-47bf-bf19-1ba47b500237-1684156772f6b9349e-2",
-        "template--16793849233634__9e00a84c-a83d-47bf-bf19-1ba47b500237-1684156772f6b9349e-0",
-        "text_block_DhcA7R",
-        "template--16793849233634__9e00a84c-a83d-47bf-bf19-1ba47b500237-1684156772f6b9349e-1"
-      ],
-      "settings": {
-        "title": "",
-        "align_text": "center",
-        "divider": false
-      }
-    },
-    "2dd6651c-c3a1-401d-8d34-4f6d4414a444": {
-      "type": "hotspots",
-      "blocks": {
-        "template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444-product-2": {
-          "type": "product",
-          "settings": {
-            "featured_product": "ip-372",
-            "vertical": 37,
-            "horizontal": 29
-          }
-        },
-        "template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444-product-1": {
-          "type": "product",
-          "settings": {
-            "featured_product": "ip-382",
-            "vertical": 65,
-            "horizontal": 59
-          }
-        }
-      },
-      "block_order": [
-        "template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444-product-2",
-        "template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444-product-1"
+        "heading_UTKAwT",
+        "text_E6CJfM"
       ],
       "custom_css": [
-        ".template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444 .hotspot__button--template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444-product-1 {background-color: transparent !important;}",
-        ".template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444 .hotspot__button--template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444-product-2 {background-color: transparent !important;}",
-        ".template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444 .hotspot__button circle {fill: #fff !important;}"
+        ".rich-text__wrapper {width: unset;}",
+        ".rich-text__blocks > * + * {margin-top: 0rem;}"
       ],
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "title": "Shop the look",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 20
+      }
+    },
+    "collection_grid_m7Yd7y": {
+      "type": "collection-grid",
+      "blocks": {
+        "grid_item_hmxxgd": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/unstotched_7022d0c0-27a3-4fa8-a69d-fcf1eb8dcbe0.png",
+            "title": "Unstitched",
+            "button_label": "View Products",
+            "link": "shopify://collections/unstitched"
+          }
+        },
+        "grid_item_NrCpz8": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/formal-wearr_bc8ac93d-94f8-4e92-a436-3c9443e00b25.png",
+            "title": "Formal wear",
+            "button_label": "View Products",
+            "link": "shopify://collections/chinon-chiffon-vol-iii"
+          }
+        },
+        "grid_item_A9YWNz": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/winter_04117b11-0a27-4413-983b-59a755492788.png",
+            "title": "Winter Collection",
+            "button_label": "View Products",
+            "link": "shopify://collections/winter-collection"
+          }
+        },
+        "grid_item_74WUKN": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ready-to-wear_8034f961-97a0-409e-802c-703cc3bcd52d.png",
+            "title": "Ready to Wear",
+            "button_label": "View Products",
+            "link": "shopify://collections/pret"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_hmxxgd",
+        "grid_item_NrCpz8",
+        "grid_item_A9YWNz",
+        "grid_item_74WUKN"
+      ],
+      "name": "Collection Grid",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "velvet-26",
+        "products_to_show": 3,
+        "title": "New & Trending",
         "heading_size": "h2",
-        "heading_position": "center",
-        "image": "shopify://shop_images/shop_the_look_copy_b5b65523-f508-4e5d-af64-e76c3fbd5110.jpg",
-        "indent_image": false,
-        "image_position": "left",
-        "hotspot_style": "dot",
-        "hotspot_color": "#ffffff",
-        "lazyload_images": false
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "show_on_mobile": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 36
       }
     },
-    "69e9f03f-010e-46d0-8450-001bc0d3d750": {
-      "type": "text-and-image",
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/iznik_trends_42844cc5-a68f-4600-8fb5-c638aa823c51.jpg",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Iznik trends",
-        "text": "<p>Explore timeless sophistication with Iznik</p>",
-        "button_label": "Take a look",
-        "button_link": "shopify://collections/shendi-luxury-chiffon",
-        "button_style": "primary",
-        "align_text": "center",
-        "image_width": "50",
-        "layout": "right",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true,
-        "lazyload_images": true
-      }
-    },
-    "2faea656-10c3-4d38-8ed0-13ec30b7b873": {
-      "type": "home-spotted-section",
+    "image_banner_tLFNzY": {
+      "type": "image-banner",
       "blocks": {
-        "8af7f22c-7d30-4da4-84e9-fb1288edcfe7": {
-          "type": "image",
-          "disabled": true,
+        "text_7GeQzQ": {
+          "type": "text",
           "settings": {
-            "image": "shopify://shop_images/Spotted2-min-min.png",
-            "heading": "Iznik Spotted",
-            "paragraph": "Every piece tells a story of artistry & tradition.  We love how our influencers elegantly style Iznik outfits – A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-6",
-            "button_text": "Take A Look"
+            "text": "New collection",
+            "text_style": "body"
           }
         },
-        "ef2ab7ad-7445-4f4a-b7ce-4d835013bcd8": {
-          "type": "image",
-          "disabled": true,
+        "heading_BFiMQg": {
+          "type": "heading",
           "settings": {
-            "image": "shopify://shop_images/Spotted1-min_2e9bf641-ae3b-4df1-8477-a762b43fd94f.png",
-            "heading": "Iznik Spotted",
-            "paragraph": "Every piece tells a story of artistry & tradition.   We love how our influencers elegantly style Iznik outfits – A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-5",
-            "button_text": "Take A Look"
+            "heading": "Studio iznik",
+            "heading_size": "h1"
           }
         },
-        "9ee5f285-56e5-4122-a4e4-a886b066ad71": {
-          "type": "image",
-          "disabled": true,
+        "buttons_d9myUj": {
+          "type": "buttons",
           "settings": {
-            "image": "shopify://shop_images/aiesha_7e3a1d50-0fb7-410c-b54f-7598931a9e9f.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-4",
-            "button_text": "Take A Look"
-          }
-        },
-        "f9082c70-49fd-4485-901f-93abd0904c52": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/spotted1.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-3",
-            "button_text": "Take A Look"
-          }
-        },
-        "image_qmfz3D": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/spotted_UPscaled.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-2",
-            "button_text": "TAKE A LOOK"
-          }
-        },
-        "image_cpCzrM": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/spotted_0755eab8-e5c4-40d3-af4f-b8b8883ca776.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-2",
-            "button_text": "TAKE A LOOK"
-          }
-        },
-        "image_cQnaN3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/spotted_2893d5ab-a1a1-4b2d-b838-fdbb76ed5e7c.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-1",
-            "button_text": "TAKE A LOOK"
-          }
-        },
-        "image_4xCqM7": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/spotted_15b94e07-763c-4a4e-acdd-5beb4be06f6e.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-3",
-            "button_text": "TAKE A LOOK"
-          }
-        },
-        "image_Ac99rW": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/spotted_96fbf589-3307-4b72-9287-a6abd79bc7cb.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-4",
-            "button_text": "TAKE A LOOK"
+            "button_label_1": "View All Collection",
+            "button_link_1": "shopify://collections",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "shopify://collections/viscose",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "8af7f22c-7d30-4da4-84e9-fb1288edcfe7",
-        "ef2ab7ad-7445-4f4a-b7ce-4d835013bcd8",
-        "9ee5f285-56e5-4122-a4e4-a886b066ad71",
-        "f9082c70-49fd-4485-901f-93abd0904c52",
-        "image_qmfz3D",
-        "image_cpCzrM",
-        "image_cQnaN3",
-        "image_4xCqM7",
-        "image_Ac99rW"
+        "text_7GeQzQ",
+        "heading_BFiMQg",
+        "buttons_d9myUj"
       ],
+      "custom_css": [
+        ".banner__heading {text-transform: uppercase;}",
+        ".banner__box .banner__text {text-transform: uppercase;}",
+        ".button {transition: 0.3s; padding: 8px 14px;}",
+        ".button:hover::after {box-shadow: 0 0 0 var(--buttons-border-width) rgba(var(--color-button), calc(1 - var(--buttons-border-opacity))) !important;}",
+        ".button:hover {--color-button: 255, 255, 255; --color-button-text: 0, 0, 0; --alpha-button-background: 1 !important;}"
+      ],
+      "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "heading": "Heading Text",
-        "paragraph": "<p>Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.</p>"
+        "image": "shopify://shop_images/image-banner_copy_jpg.jpg",
+        "banner_link": "",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "show_on_mobile": false,
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
       }
     },
-    "text_columns_qffCUN": {
-      "type": "text-columns",
+    "style_edit_grid_atxbfG": {
+      "type": "style-edit-grid",
       "blocks": {
-        "text_block_LMdqmn": {
-          "type": "text_block",
+        "image_block_PUFiFK": {
+          "type": "image_block",
           "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/01_a941d90b-c238-47c4-919b-17b1779c80c1.jpg",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "EXPLORE MORE",
-            "button_link": "shopify://pages/spotted-2"
+            "image": "shopify://shop_images/Rectangle_715.png",
+            "link": "shopify://collections/best-sellers-1"
           }
         },
-        "text_block_KqUjYj": {
-          "type": "text_block",
+        "image_block_gyTKA9": {
+          "type": "image_block",
           "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/02_192e01d5-4a84-45ce-906c-79bb959db3d0.jpg",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "EXPLORE MORE",
-            "button_link": "shopify://pages/spotted-6"
+            "image": "shopify://shop_images/Rectangle_715_1.png",
+            "link": ""
           }
         },
-        "text_block_HEGaeG": {
-          "type": "text_block",
+        "image_block_rNLxPT": {
+          "type": "image_block",
           "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/03_10378158-4308-4138-9b5b-443a4ce4645a.jpg",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "EXPLORE MORE",
-            "button_link": "shopify://pages/spotted-4"
+            "image": "shopify://shop_images/Rectangle_715_2.png",
+            "link": "shopify://collections/chiffon-collection"
+          }
+        },
+        "image_block_rLmMwR": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_715_3.png",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "text_block_LMdqmn",
-        "text_block_KqUjYj",
-        "text_block_HEGaeG"
+        "image_block_PUFiFK",
+        "image_block_gyTKA9",
+        "image_block_rNLxPT",
+        "image_block_rLmMwR"
       ],
       "disabled": true,
+      "name": "Style Edit Grid",
       "settings": {
-        "title": "BE INSPIRED",
-        "align_text": "center",
-        "divider": false
+        "title": "THE STYLE EDIT",
+        "description": "From wardrobe essentials to statement pieces and accessories for every occasion, shop your favourites at irresistible prices.",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "style_edit_product_grid_iCPwpW": {
+      "type": "style-edit-product-grid",
+      "blocks": {
+        "product_Lt6hrF": {
+          "type": "product",
+          "settings": {
+            "product": "cc-100-embroidered-chiffon"
+          }
+        },
+        "product_mCy8wW": {
+          "type": "product",
+          "settings": {
+            "product": "cc-101-embroidered-chiffon"
+          }
+        },
+        "product_fKPmnq": {
+          "type": "product",
+          "settings": {
+            "product": "cc-102-embroidered-chiffon"
+          }
+        },
+        "product_YkL3jb": {
+          "type": "product",
+          "settings": {
+            "product": "cc-103-plain-chiffon"
+          }
+        }
+      },
+      "block_order": [
+        "product_Lt6hrF",
+        "product_mCy8wW",
+        "product_fKPmnq",
+        "product_YkL3jb"
+      ],
+      "name": "Style Edit Product Grid",
+      "settings": {
+        "title": "THE STYLE EDIT",
+        "description": "Your Style, Reimagined.\n\nExplore the Edit.",
+        "collection": "",
+        "products_to_show": 4,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "slideshow",
-    "countdown_QWazYG",
-    "scrolling_text_TYYkEc",
-    "9e00a84c-a83d-47bf-bf19-1ba47b500237",
-    "2dd6651c-c3a1-401d-8d34-4f6d4414a444",
-    "69e9f03f-010e-46d0-8450-001bc0d3d750",
-    "2faea656-10c3-4d38-8ed0-13ec30b7b873",
-    "text_columns_qffCUN"
+    "image_banner",
+    "rich_text_dij64C",
+    "collection_grid_m7Yd7y",
+    "featured_collection",
+    "image_banner_tLFNzY",
+    "style_edit_grid_atxbfG",
+    "style_edit_product_grid_iCPwpW"
   ]
 }
