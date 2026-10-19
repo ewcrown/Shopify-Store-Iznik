@@ -33,12 +33,35 @@
           "type": "shopify://apps/infinite-options/blocks/app-block/7e73b6f9-82b0-45f5-9b9b-04f446ba1a9b",
           "settings": {}
         },
+        "pushowl_brevo_bis_form_JqEP3c": {
+          "type": "shopify://apps/brevo-pushowl/blocks/bis-form/fa20c3ba-38bf-43e0-ba5c-431f6ae07d95",
+          "disabled": true,
+          "settings": {}
+        },
+        "esc_size_charts_app_block_7pdNhD": {
+          "type": "shopify://apps/esc-size-charts/blocks/app-block/daa9a1f8-04ef-4369-ae22-966a9c435d5f",
+          "settings": {
+            "widget_type": "button",
+            "force_background": false,
+            "btn_text": "Size Guide"
+          }
+        },
+        "pushowl_brevo_bis_form_XQf7bf": {
+          "type": "shopify://apps/brevo-pushowl/blocks/bis-form/fa20c3ba-38bf-43e0-ba5c-431f6ae07d95",
+          "disabled": true,
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "surface_pickup_enable": true
           }
+        },
+        "sc_back_in_stock_app_block_3GhM4c": {
+          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "disabled": true,
+          "settings": {}
         },
         "description": {
           "type": "description",
@@ -51,7 +74,7 @@
           "type": "tab",
           "settings": {
             "title": "Delivery Details",
-            "content": "<p><strong>For Unstitched, Pret & Ready To Ship</strong></p><p><strong>Pakistan:</strong> 5 to 7 Working Days.</p><p><strong>International:</strong> 9 to 11 Working Days.</p><p><strong>For Stitched:</strong> 25 Working Days.</p><p><strong>Note:</strong> Any public holidays, Saturdays and Sundays in between the days are non working days.</p>",
+            "content": "<p><strong>Unstitched, Pret & Ready-to-Ship</strong></p><ul><li>Pakistan: Within 1 week</li><li>International: Within 2 weeks</li></ul><p><strong>Stitched Orders</strong></p><ul><li>Dispatch timeline: Within 5 weeks</li></ul><p><strong>Note:</strong> Public holidays, Saturdays, and Sundays are non-working days and are not included in the delivery timeframe.</p>",
             "page": ""
           }
         },
@@ -72,11 +95,18 @@
         "separator",
         "variant_picker",
         "2b9fddb2-6a71-42ae-ac1b-d1ace6abd1df",
+        "pushowl_brevo_bis_form_JqEP3c",
+        "esc_size_charts_app_block_7pdNhD",
+        "pushowl_brevo_bis_form_XQf7bf",
         "buy_buttons",
+        "sc_back_in_stock_app_block_3GhM4c",
         "description",
         "tab",
         "contact",
         "share"
+      ],
+      "custom_css": [
+        "div#esc-out-of-stock-inputs {display: none;}"
       ],
       "settings": {
         "sku_enable": false,

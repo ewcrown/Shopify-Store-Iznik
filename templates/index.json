@@ -12,26 +12,26 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "4bfcd714-a42f-4c9f-b9ce-853968331aa4": {
+        "f5d05148-31fc-4a05-af0e-df90cd527d63": {
           "type": "image",
           "settings": {
             "top_subheading": "",
             "title": "",
             "title_size": 80,
             "subheading": "",
-            "link": "shopify://collections/sale-1",
+            "link": "shopify://collections/velvet-26",
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/sale_web_banner.png",
-            "image_mobile": "shopify://shop_images/sale-mobile-web-banner.png",
+            "image": "shopify://shop_images/WEB_BANNER_copy_cee60bed-9fb8-4a5b-be3b-e8db276a23b7.jpg",
+            "image_mobile": "shopify://shop_images/mobile_web_banner_copy_7bf7aea6-bb3f-49ea-ace4-44b6db1c12aa.jpg",
             "parallax_direction": "top",
             "overlay_opacity": 0
           }
         },
-        "f5d05148-31fc-4a05-af0e-df90cd527d63": {
+        "4bfcd714-a42f-4c9f-b9ce-853968331aa4": {
           "type": "image",
           "disabled": true,
           "settings": {
@@ -45,8 +45,8 @@
             "link_text_2": "",
             "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/WEB-BANNER-Recovered-1.jpg",
-            "image_mobile": "shopify://shop_images/mobile-web-banners-Recovered_78168699-7103-400a-a4af-12bdb44f367e.png",
+            "image": "shopify://shop_images/WEB_BANNER_copy_4bcd6e12-3c2d-40de-8c35-c08367e3f245.jpg",
+            "image_mobile": "shopify://shop_images/mobile_web_banner_copy_0e321565-da68-4db8-8c20-d177cbac2abb.jpg",
             "parallax_direction": "top",
             "overlay_opacity": 0
           }
@@ -113,13 +113,15 @@
         }
       },
       "block_order": [
-        "4bfcd714-a42f-4c9f-b9ce-853968331aa4",
         "f5d05148-31fc-4a05-af0e-df90cd527d63",
+        "4bfcd714-a42f-4c9f-b9ce-853968331aa4",
         "slideshow-0",
         "slideshow-1",
         "37cb3932-d72a-4643-89a5-7e1265618b4b"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".hero--100vh {height: calc(100vh - 101px) !important; max-height: calc(100vh - 101px) !important;}"
+      ],
       "settings": {
         "section_height": "natural",
         "mobile_height": "auto",
@@ -185,7 +187,7 @@
       "type": "scrolling-text",
       "disabled": true,
       "settings": {
-        "text": "All international orders (stitched/unstitched) will be delivered after Eid. <br>All local order of stitched will be delivered after Eid.",
+        "text": "All international orders (stitched/unstitched) will be delivered after Eid. All local order of stitched will be delivered after Eid.",
         "link": "",
         "text_size": 20,
         "text_spacing": true,
@@ -200,34 +202,34 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/formalll.png",
+            "image": "shopify://shop_images/formal_d1df822f-d733-4a12-9a08-7e210efa7edf.jpg",
             "image_mask": "none",
             "image_width": 650,
             "title": "FORMAL WEAR",
             "text": "",
             "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/chinon-chiffon-vol-iii"
+            "button_link": "https://iznikfashions.com/collections/formals"
           }
         },
         "template--16793849233634__9e00a84c-a83d-47bf-bf19-1ba47b500237-1684156772f6b9349e-0": {
           "type": "text_block",
+          "disabled": true,
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/lawnnn.png",
+            "image": "shopify://shop_images/summer_198b122a-fa2d-4662-b475-5accd4f20fcb.jpg",
             "image_mask": "none",
             "image_width": 650,
-            "title": "LAWN COLLECTION",
+            "title": "SUMMER COLLECTION",
             "text": "",
             "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/lawn-collection-1"
+            "button_link": "https://iznikfashions.com/collections/summer-collection-26"
           }
         },
         "text_block_DhcA7R": {
           "type": "text_block",
-          "disabled": true,
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/winter-collection-a_296b0ac1-1e62-4760-999b-fe5e36246cfb.png",
+            "image": "shopify://shop_images/winter_54e73c4a-6549-4060-b5aa-5961591bb815.jpg",
             "image_mask": "none",
             "image_width": 650,
             "title": "WINTER COLLECTION",
@@ -240,13 +242,13 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/rtw_96674b53-ec9c-4d40-89e8-9d1edbf94562.png",
+            "image": "shopify://shop_images/RTW_copy_f78dd477-2065-4080-802a-efb6cedd989e.jpg",
             "image_mask": "none",
             "image_width": 650,
             "title": "READY TO WEAR",
             "text": "",
             "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/pret"
+            "button_link": "https://iznikfashions.com/collections/pret"
           }
         }
       },
@@ -268,17 +270,17 @@
         "template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444-product-2": {
           "type": "product",
           "settings": {
-            "featured_product": "ue-443-borer-embroidered-printed-lawn",
-            "vertical": 40,
-            "horizontal": 39
+            "featured_product": "ip-372",
+            "vertical": 37,
+            "horizontal": 29
           }
         },
         "template--16804608639202__2dd6651c-c3a1-401d-8d34-4f6d4414a444-product-1": {
           "type": "product",
           "settings": {
-            "featured_product": "ue-442-borer-embroidered-printed-lawn",
-            "vertical": 42,
-            "horizontal": 69
+            "featured_product": "ip-382",
+            "vertical": 65,
+            "horizontal": 59
           }
         }
       },
@@ -295,7 +297,7 @@
         "title": "Shop the look",
         "heading_size": "h2",
         "heading_position": "center",
-        "image": "shopify://shop_images/shop-the-look-aa._0bcb8244-c0c1-414b-93ef-725aeedf403a.jpg",
+        "image": "shopify://shop_images/shop_the_look_copy_b5b65523-f508-4e5d-af64-e76c3fbd5110.jpg",
         "indent_image": false,
         "image_position": "left",
         "hotspot_style": "dot",
@@ -328,17 +330,6 @@
     "2faea656-10c3-4d38-8ed0-13ec30b7b873": {
       "type": "home-spotted-section",
       "blocks": {
-        "image_cpCzrM": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/spotted1_7870b52c-c288-42da-9849-a3ed941da2ca.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-6",
-            "button_text": "TAKE A LOOK"
-          }
-        },
         "8af7f22c-7d30-4da4-84e9-fb1288edcfe7": {
           "type": "image",
           "disabled": true,
@@ -383,57 +374,68 @@
             "button_text": "Take A Look"
           }
         },
-        "image_Ac99rW": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/spottedd_7.1dsd.jpg",
-            "heading": "BE INSPIRED",
-            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "shopify://pages/spotted-1",
-            "button_text": "TAKE A LOOK"
-          }
-        },
         "image_qmfz3D": {
           "type": "image",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/spottedd_7.1s.jpg",
+            "image": "shopify://shop_images/spotted_UPscaled.jpg",
             "heading": "BE INSPIRED",
             "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
             "spotted_url": "shopify://pages/spotted-2",
             "button_text": "TAKE A LOOK"
           }
         },
-        "image_4xCqM7": {
+        "image_cpCzrM": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/33_8aaf90a8-c62c-4321-8964-e83bc9616c30.jpg",
+            "image": "shopify://shop_images/spotted_0755eab8-e5c4-40d3-af4f-b8b8883ca776.jpg",
             "heading": "BE INSPIRED",
             "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "https://iznikfashions.com/pages/spotted-3",
+            "spotted_url": "shopify://pages/spotted-2",
             "button_text": "TAKE A LOOK"
           }
         },
         "image_cQnaN3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/spottedd_7.1gf.jpg",
+            "image": "shopify://shop_images/spotted_2893d5ab-a1a1-4b2d-b838-fdbb76ed5e7c.jpg",
             "heading": "BE INSPIRED",
             "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
-            "spotted_url": "https://iznikfashions.com/pages/spotted-4",
+            "spotted_url": "shopify://pages/spotted-1",
+            "button_text": "TAKE A LOOK"
+          }
+        },
+        "image_4xCqM7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/spotted_15b94e07-763c-4a4e-acdd-5beb4be06f6e.jpg",
+            "heading": "BE INSPIRED",
+            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
+            "spotted_url": "shopify://pages/spotted-3",
+            "button_text": "TAKE A LOOK"
+          }
+        },
+        "image_Ac99rW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/spotted_96fbf589-3307-4b72-9287-a6abd79bc7cb.jpg",
+            "heading": "BE INSPIRED",
+            "paragraph": "Every piece tells a story of artistry & tradition. We love how our influencers elegantly style Iznik outfits - A statement of elegance & grace.",
+            "spotted_url": "shopify://pages/spotted-4",
             "button_text": "TAKE A LOOK"
           }
         }
       },
       "block_order": [
-        "image_cpCzrM",
         "8af7f22c-7d30-4da4-84e9-fb1288edcfe7",
         "ef2ab7ad-7445-4f4a-b7ce-4d835013bcd8",
         "9ee5f285-56e5-4122-a4e4-a886b066ad71",
         "f9082c70-49fd-4485-901f-93abd0904c52",
-        "image_Ac99rW",
         "image_qmfz3D",
+        "image_cpCzrM",
+        "image_cQnaN3",
         "image_4xCqM7",
-        "image_cQnaN3"
+        "image_Ac99rW"
       ],
       "settings": {
         "heading": "Heading Text",

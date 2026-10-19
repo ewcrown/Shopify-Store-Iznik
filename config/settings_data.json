@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "timer_1": "2025-05-17 16:00:00",
-    "timer_2": "2025-05-17 16:00:00",
+    "timer_1": "2026-10-16 16:00:00",
+    "timer_2": "2026-10-16 16:00:00",
     "color_body_bg": "#ffffff",
     "color_body_text": "#000000",
     "color_price": "#1c1d1d",
@@ -70,6 +70,7 @@
     "collection_grid_gutter": true,
     "cart_type": "drawer",
     "cart_icon": "bag",
+    "cart_additional_buttons": false,
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "social_facebook_link": "https://www.facebook.com/iznikfashion",
@@ -139,17 +140,17 @@
           "c7e9fb91-0307-471c-920a-08ef08fcd9ba": {
             "type": "image_picker",
             "settings": {
-              "spotted-img": "shopify://shop_images/21_5f1860b1-52a0-4258-841b-7e50064c1eb6.jpg",
-              "spotted-heading": "The Ultimate Chic Frock with a Twist",
-              "spotted-text": "This chic frock combines tradition and modernity with a borer-embroidered textured lawn bodice and sleeves, giving it an elegant yet contemporary feel. The front and back are crafted from dyed textured lawn, while the intricate borer-embroidered organza lace on the front, back, and sleeves adds a refined touch."
+              "spotted-img": "shopify://shop_images/2_792a8705-93e1-4586-b4d9-8f25de1e4a41.jpg",
+              "spotted-heading": "THE RED EDIT",
+              "spotted-text": "Make a statement in timeless red with this elegant chiffon frock. Embroidered organza details on the neckline and delicate laces add a refined touch, while embroidered chiffon sleeves and a beautifully detailed net dupatta complete the look with effortless elegance."
             }
           },
           "9fffd56c-4c22-47a0-a601-1134339bb6c0": {
             "type": "image_picker",
             "settings": {
-              "spotted-img": "shopify://shop_images/111_9fc15109-017e-43e0-a192-f0f20ed21b89.jpg",
+              "spotted-img": "shopify://shop_images/1_301b1845-fcfb-4378-8f8d-e47488a7841c.jpg",
               "spotted-heading": "",
-              "spotted-text": "With a minimalist \"less is more\" vibe, this outfit is elevated by a fresh, modern look—perfectly styled with minimal makeup and loose curls. A stunning ensemble for those who appreciate subtle beauty and timeless elegance."
+              "spotted-text": "Style it with: Soft waves, delicate statement earrings and embellished heels for an effortlessly elegant festive look. Keep the makeup warm and radiant to let the rich red hue take centre stage."
             }
           }
         },
@@ -225,7 +226,7 @@
           "e1aa0e4c-afc5-4f26-add6-827917d4b735"
         ],
         "settings": {
-          "featured_product": "ife-05-embroidered-lawn",
+          "featured_product": "cc-111-embroidered-chiffon",
           "divider": false,
           "sku_enable": false,
           "image_position": "left",
@@ -244,17 +245,17 @@
           "84d635ff-e7a2-4c58-bce9-94d751e0d9a0": {
             "type": "image_picker",
             "settings": {
-              "spotted-img": "shopify://shop_images/IMG_1355a.jpg",
-              "spotted-heading": "Summer Looks, Twice the Charm",
-              "spotted-text": "One stuns in a refreshing off-white ensemble adorned with soft floral prints and breezy cuts. Styled with loose curls, minimal makeup, and delicate jewelry, her look is all about grace, softness, and effortless charm — ideal for golden hour hangouts and garden get-togethers. 🤍"
+              "spotted-img": "shopify://shop_images/2_eee54d13-e6ee-4568-8563-48c5ea14773c.jpg",
+              "spotted-heading": "THE EVENING EDIT",
+              "spotted-text": "Embrace effortless elegance in this rich chocolate brown ensemble, featuring an intricately embroidered chiffon shirt adorned with delicate organza details, laces and 3D tassels. Paired with a beautifully embroidered net dupatta and a flowing raw silk sharara, the look brings together rich textures and refined details for a graceful festive statement."
             }
           },
           "ee6c5edb-da17-4b75-9ce4-5445378693f8": {
             "type": "image_picker",
             "settings": {
-              "spotted-img": "shopify://shop_images/IMG_13553.jpg",
+              "spotted-img": "shopify://shop_images/1_9fd68fc3-7697-4606-88b2-8b681c3dd109.jpg",
               "spotted-heading": "",
-              "spotted-text": "The other turns up the heat in a rich plum outfit with bold, intricate patterns that speak confidence. Her look is elevated with soft waves, glowing skin, and dainty accessories, giving off a striking yet elegant vibe — made for making memories and turning heads"
+              "spotted-text": "Style it with: Soft glam makeup, statement earrings and elegant heels to complement the rich chocolate brown hue and elevate the overall look."
             }
           }
         },
@@ -325,7 +326,7 @@
           "74105db7-8bd0-498b-a87a-a1ca83f9afd7"
         ],
         "settings": {
-          "featured_product": "sfl-04-embroidered-lawn",
+          "featured_product": "cc-113-embroidered-chiffon",
           "divider": false,
           "sku_enable": false,
           "image_position": "left",
@@ -344,17 +345,17 @@
           "792178b1-5e31-4ae2-8e8d-b357b7910a4a": {
             "type": "image_picker",
             "settings": {
-              "spotted-img": "shopify://shop_images/22_9bc2df06-3124-440d-99d2-9706d520cd8a.jpg",
-              "spotted-heading": "Blush Elegance – A Breath of Summer",
-              "spotted-text": "Soft, feminine, and effortlessly graceful — this pink ensemble is designed for the woman who finds beauty in simplicity. The borer embroidered textured lawn on the shirt front and sleeves adds a delicate charm, Accents of embroidered organza on the neckline and laces subtly elevate the look with refined detail."
+              "spotted-img": "shopify://shop_images/2_1d2943bd-6825-4fd4-85b8-ce5a75307591.jpg",
+              "spotted-heading": "A WHISPER OF LILAC",
+              "spotted-text": "A soft lilac ensemble featuring embroidered chiffon with delicate organza detailing throughout. The embroidered chiffon dupatta and sharara create a graceful, flowing silhouette, finished with intricate organza laces for an elegant festive look"
             }
           },
           "86f8ce29-cecc-44eb-bb44-f5d72417f453": {
             "type": "image_picker",
             "settings": {
-              "spotted-img": "shopify://shop_images/11_e3306d3a-e439-4ba2-9fe4-22d678276701.jpg",
+              "spotted-img": "shopify://shop_images/1_06a6be38-6952-48f6-8c03-7e70cf081347.jpg",
               "spotted-heading": "",
-              "spotted-text": "The printed silk dupatta brings a touch of fluid vibrance, finished with embroidered lace for a polished feel. Paired with a dyed textured lawn trouser, the outfit offers all-day comfort without compromising style. Style Tip: Keep it fresh and fuss-free — loose wavy hair, no-makeup makeup, dainty flats, and a hint of minimal jewelry. Let the outfit speak for itself."
+              "spotted-text": "Style it with: Soft waves, delicate jewellery and luminous makeup for a fresh, feminine finish."
             }
           }
         },
@@ -415,7 +416,7 @@
           "f3848f69-eb41-4b9c-8e7b-1bad304db6be"
         ],
         "settings": {
-          "featured_product": "ife-07-embroidered-lawn",
+          "featured_product": "cc-100-embroidered-chiffon",
           "divider": false,
           "sku_enable": false,
           "image_position": "left",
@@ -434,17 +435,17 @@
           "d690f7ab-1e01-4daa-a46a-1a6e6f952be8": {
             "type": "image_picker",
             "settings": {
-              "spotted-img": "shopify://shop_images/IMG_13555dssafs.jpg",
-              "spotted-heading": "Sunlit Grace in Butter Yellow",
-              "spotted-text": "Step into summer elegance with our standout ensemble in butter yellow — the softest hue of the season. This graceful outfit features a short shirt paired with a flowing farshi shalwar, creating a look that blends tradition with contemporary ease.  The shirt front and sleeves are crafted from embroidered lawn, delicately detailed to add just the right touch of sophistication. The back in plain dyed lawn keeps the silhouette breezy, while borer embroidered organza lace on the sleeves lends a subtle texture. A printed silk dupatta completes the look with a graceful flair, adding movement and colour harmony."
+              "spotted-img": "shopify://shop_images/1_d98e7322-cb2c-49f2-b2d9-c04b2cefd572.jpg",
+              "spotted-heading": "The Perfect Ivory Ensemble",
+              "spotted-text": "A soft ivory ensemble in embroidered chiffon, detailed with adda work on the neckline and sleeves. Paired with a flowing embroidered chiffon dupatta and sharara, finished with organza lace for a light, graceful touch."
             }
           },
           "128199db-c87c-4078-9787-4cfb13c52988": {
             "type": "image_picker",
             "settings": {
-              "spotted-img": "shopify://shop_images/IMG_13555dssafds.jpg",
+              "spotted-img": "shopify://shop_images/2_bbaf40b5-84c0-48d1-b2ee-10de4ecc5645.jpg",
               "spotted-heading": "",
-              "spotted-text": "Keep the overall vibe minimal — soft makeup, effortless hair, and little to no jewelry let the colour and silhouette speak for themselves. Ideal for daytime events, festive brunches, or intimate summer gatherings, this look is your go-to for refined charm."
+              "spotted-text": "Styling: Pair with loose waves, minimal makeup, and classic studs to highlight the light, ethereal charm of the outfit. Perfect for festive occasions, intimate celebrations, or elegant daytime events where understated style meets finesse."
             }
           }
         },
@@ -520,7 +521,7 @@
           "365f0ba8-10dc-4708-9ca7-c3a389f7f888"
         ],
         "settings": {
-          "featured_product": "ue-473-embroidered-lawn",
+          "featured_product": "ue-620-embroidered-chiffon",
           "divider": false,
           "sku_enable": false,
           "image_position": "left",
@@ -746,42 +747,10 @@
     },
     "content_for_index": [],
     "blocks": {
-      "6279071938380501511": {
-        "type": "shopify://apps/powerful-form-builder/blocks/app-embed/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
-        "disabled": false,
-        "settings": {}
-      },
-      "6610233760104865948": {
-        "type": "shopify://apps/pushowl/blocks/pushowl-app-embed-3d2ff2b5/fa20c3ba-38bf-43e0-ba5c-431f6ae07d95",
-        "disabled": false,
-        "settings": {}
-      },
       "14060646107696862457": {
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
-      },
-      "12393684417940924814": {
-        "type": "shopify://apps/pushbot/blocks/app-embed/14d8aa7e-a16e-43d4-a2a0-80fade091ca1",
-        "disabled": false,
-        "settings": {}
-      },
-      "18423266570658624584": {
-        "type": "shopify://apps/best-currency-converter/blocks/doubly/267afa86-a419-4d5b-a61b-556038e7294d",
-        "disabled": false,
-        "settings": {}
-      },
-      "15683396631634586217": {
-        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
-        "disabled": false,
-        "settings": {
-          "button_color": "#202a36",
-          "button_icon": "chat_bubble",
-          "button_text": "no_text",
-          "button_horizontal_position": "bottom_left",
-          "button_vertical_position": "lowest",
-          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
-        }
       },
       "13951170544780599758": {
         "type": "shopify://apps/tapita-seo-speed/blocks/app-embed/cd37ca7a-40ad-4fdc-afd3-768701482209",
@@ -798,8 +767,30 @@
         "disabled": false,
         "settings": {}
       },
-      "17676059084223943535": {
-        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!",
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_text": "no_text",
+          "button_horizontal_position": "bottom_left",
+          "button_vertical_position": "lowest"
+        }
+      },
+      "15134163510845626300": {
+        "type": "shopify://apps/geoip-country-redirect/blocks/speeedup_link/a3fa1a12-9aad-4707-ab56-45ccf9191aa7",
+        "disabled": false,
+        "settings": {}
+      },
+      "6610233760104865948": {
+        "type": "shopify://apps/brevo-pushowl/blocks/pushowl-app-embed-3d2ff2b5/fa20c3ba-38bf-43e0-ba5c-431f6ae07d95",
+        "disabled": false,
+        "settings": {}
+      },
+      "8764476057892802672": {
+        "type": "shopify://apps/stoq/blocks/main/4bb73be2-b7c2-4870-949f-c528145452a3",
         "disabled": false,
         "settings": {}
       }

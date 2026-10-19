@@ -8,9 +8,9 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "popup-group.json",
-  "context": {
-    "market": "international"
-  },
-  "sections": {}
+  "markets": {
+    "international": {
+      "parent": "@default"
+    }
+  }
 }

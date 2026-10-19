@@ -1,0 +1,265 @@
+{%- comment -%}
+  Snippet: size-chart-popup.liquid
+  Renders the Size Guide button + popup using the
+  product.metafields.custom.size_chart_images metafield (List of Image/File).
+
+  The Size Guide button auto-hides whenever the product's "Type" option
+  (or whatever option name contains "Unstitched"/"Stitched" values) is
+  currently set to "Unstitched", and re-appears once a stitched value
+  is selected.
+
+  Usage:
+    {% render 'size-chart-popup', product: product %}
+{%- endcomment -%}
+
+{%- assign size_data = product.metafields.custom.size_chart_images.value -%}
+
+{%- if size_data != blank -%}
+  {%- assign scp_uid = product.id -%}
+
+  {%- comment -%} Find which option position controls Unstitched/Stitched {%- endcomment -%}
+  {%- assign scp_type_position = 0 -%}
+  {%- for option in product.options_with_values -%}
+    {%- assign scp_down_name = option.name | downcase -%}
+    {%- if scp_down_name contains 'type' -%}
+      {%- assign scp_type_position = forloop.index -%}
+    {%- endif -%}
+    {%- if scp_type_position == 0 -%}
+      {%- for val in option.values -%}
+        {%- assign scp_down_val = val | downcase -%}
+        {%- if scp_down_val contains 'unstitched' or scp_down_val contains 'stitched' -%}
+          {%- assign scp_type_position = forloop.parentloop.index -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} Determine initial visibility from the currently selected/first variant {%- endcomment -%}
+  {%- assign scp_current_variant = product.selected_or_first_available_variant -%}
+  {%- assign scp_current_type_value = '' -%}
+  {%- if scp_type_position == 1 -%}
+    {%- assign scp_current_type_value = scp_current_variant.option1 -%}
+  {%- elsif scp_type_position == 2 -%}
+    {%- assign scp_current_type_value = scp_current_variant.option2 -%}
+  {%- elsif scp_type_position == 3 -%}
+    {%- assign scp_current_type_value = scp_current_variant.option3 -%}
+  {%- endif -%}
+  {%- assign scp_current_type_value_down = scp_current_type_value | downcase -%}
+  {%- assign scp_start_hidden = false -%}
+  {%- if scp_current_type_value_down contains 'unstitched' -%}
+    {%- assign scp_start_hidden = true -%}
+  {%- endif -%}
+
+  <div
+    class="scp-size-chart-block"
+    data-scp-id="{{ scp_uid }}"
+    data-scp-type-position="{{ scp_type_position }}"
+  >
+    <button
+      type="button"
+      class="scp-open-btn{% if scp_start_hidden %} scp-hidden{% endif %}"
+      data-scp-open="{{ scp_uid }}"
+      data-scp-toggle-target="{{ scp_uid }}"
+    >
+      Size Guide
+    </button>
+
+    <div class="scp-overlay" data-scp-overlay="{{ scp_uid }}">
+      <div class="scp-popup">
+        <button type="button" class="scp-close-btn" data-scp-close="{{ scp_uid }}" aria-label="Close">
+          &times;
+        </button>
+        <h2 class="scp-title">{{ product.title }}</h2>
+
+        <div class="scp-images">
+          {%- for media_id in size_data -%}
+            {%- assign scp_img = media_id.preview_image | default: media_id -%}
+            {%- if scp_img -%}
+              <img
+                class="scp-image"
+                src="{{ scp_img | image_url: width: 800 }}"
+                alt="{{ product.title }} Size Chart"
+                loading="lazy"
+                width="{{ scp_img.width }}"
+                height="{{ scp_img.height }}"
+              >
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .scp-open-btn {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      margin: 10px 0;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    .scp-open-btn.scp-hidden {
+      display: none !important;
+    }
+    .scp-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .scp-overlay.scp-active {
+      display: flex;
+    }
+    .scp-popup {
+      background: #fff;
+      width: 95vw;
+      max-width: max-content;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 20px;
+      position: relative;
+    }
+    .scp-images {
+      text-align: center;
+    }
+    .scp-image {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 20px;
+    }
+    .scp-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      line-height: 1;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: inherit;
+    }
+    .scp-title {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  </style>
+
+  <script>
+    (function () {
+      // --- Popup open/close logic (binds once even if snippet renders multiple times) ---
+      if (!window.__scpInitialized) {
+        window.__scpInitialized = true;
+
+        document.addEventListener('click', function (e) {
+          var openTrigger = e.target.closest('[data-scp-open]');
+          if (openTrigger && !openTrigger.classList.contains('scp-hidden')) {
+            var id = openTrigger.getAttribute('data-scp-open');
+            var overlay = document.querySelector('[data-scp-overlay="' + id + '"]');
+            if (overlay) {
+              overlay.classList.add('scp-active');
+              document.body.style.overflow = 'hidden';
+            }
+            return;
+          }
+
+          var closeTrigger = e.target.closest('[data-scp-close]');
+          if (closeTrigger) {
+            var closeId = closeTrigger.getAttribute('data-scp-close');
+            var closeOverlay = document.querySelector('[data-scp-overlay="' + closeId + '"]');
+            if (closeOverlay) {
+              closeOverlay.classList.remove('scp-active');
+              document.body.style.overflow = '';
+            }
+            return;
+          }
+
+          if (e.target.hasAttribute('data-scp-overlay')) {
+            e.target.classList.remove('scp-active');
+            document.body.style.overflow = '';
+          }
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') {
+            document.querySelectorAll('.scp-overlay.scp-active').forEach(function (el) {
+              el.classList.remove('scp-active');
+            });
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      // --- Unstitched/Stitched toggle logic ---
+      // Runs its own delegated listeners every time the snippet renders,
+      // scoped to this product's block, so multiple products on one page
+      // (e.g. product grid) each track their own Type option independently.
+      var scpBlocks = document.querySelectorAll('.scp-size-chart-block[data-scp-type-position]');
+
+      scpBlocks.forEach(function (block) {
+        if (block.__scpToggleBound) return;
+        block.__scpToggleBound = true;
+
+        var uid = block.getAttribute('data-scp-id');
+        var typePos = block.getAttribute('data-scp-type-position');
+        var btn = block.querySelector('.scp-open-btn');
+        if (!btn || typePos === '0') return;
+
+        var optionName = 'option' + typePos;
+
+        function applyVisibility(rawValue) {
+          if (typeof rawValue !== 'string') return;
+          var isUnstitched = rawValue.toLowerCase().indexOf('unstitched') !== -1;
+          btn.classList.toggle('scp-hidden', isUnstitched);
+        }
+
+        // Radio / pill style inputs: <input name="option1" value="Unstitched" ...>
+        document.addEventListener('change', function (e) {
+          var target = e.target;
+          if (!target || !target.name) return;
+
+          if (target.name === optionName && typeof target.value === 'string') {
+            applyVisibility(target.value);
+            return;
+          }
+
+          // Some themes use a single variant <select name="id"> with option text
+          // in the label; fall back to reading selected option's text/dataset.
+          if (target.tagName === 'SELECT' && target.name === 'id') {
+            var selectedOption = target.options[target.selectedIndex];
+            if (selectedOption) {
+              var label = selectedOption.getAttribute('data-' + optionName) || selectedOption.textContent;
+              applyVisibility(label);
+            }
+          }
+        });
+
+        // Also catch pill/button style selectors implemented as <label> clicks
+        // wrapping a hidden radio input, common in Dawn-based themes.
+        document.addEventListener('click', function (e) {
+          var label = e.target.closest('label[for]');
+          if (!label) return;
+          var input = document.getElementById(label.getAttribute('for'));
+          if (input && input.name === optionName && typeof input.value === 'string') {
+            // Wait a tick for the input's checked state to update
+            setTimeout(function () {
+              applyVisibility(input.value);
+            }, 0);
+          }
+        });
+      });
+    })();
+  </script>
+{%- endif -%}

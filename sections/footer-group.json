@@ -117,8 +117,8 @@
           "type": "newsletter",
           "settings": {
             "show_footer_title": true,
-            "title": "SIGN UP AND GET 5% OFF",
-            "text": "<p>Subscribe to get special offers and new arrivals update.</p>",
+            "title": "SIGN UP",
+            "text": "<p>Join our mailing list for special offers & updates<br/></p>",
             "container_width": 25
           }
         }

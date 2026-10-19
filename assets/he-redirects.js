@@ -7,3 +7,4 @@ if(window.location.pathname == "/collections/luxury-winter-23") window.location.
 if(window.location.pathname == "/collections/riwayat-luxury-winter-collection") window.location.href = '/collections/winter-collection'
 if(window.location.pathname == "/collections/unstitched-exclusive-winter-23") window.location.href = '/collections/winter-collection'
 if(window.location.pathname == "/collections/winter-collection-22") window.location.href = '/collections/winter-collection'
+if(window.location.pathname == "/collections/best-sellers-2") window.location.href = '/collections/best-sellers-1'

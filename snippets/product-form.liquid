@@ -2,6 +2,7 @@
   {% render 'iznik-timer-snpt', title: '', end_date: settings.timer_1 %}
   <div class="iz-conut-down-pre-book">
     <h3>{{ section.settings.timer_heading }}</h3>
+  </div>
 {% endif %}
 {% if product.tags contains 'launching-today' %}
   {% render 'iznik-timer-snpt', title: '', end_date: settings.timer_2 %}
@@ -64,6 +65,7 @@
       {{ product.metafields.custom.delivery_time_2 }}
     </div>
   {% endif %}
+  {% render 'sleeve-style-selector' %}
   <div class="line-item-property__field radio-size-options hhz" style="margin-bottom: 0px;margin-top: 0px;">
     <p><label style="font-style: normal;">Size</label></p>
   </div>
@@ -1052,7 +1054,7 @@
   <label class="lbl_errormsg" style="color: red;text-transform: none;"></label>
   <br>
 
-             {% assign size_data = product.metafields.custom.size_chart_images.value %}
+            {% comment %} {% assign size_data = product.metafields.custom.size_chart_images.value %}
 
 
   {% if size_data != blank %}
@@ -1073,9 +1075,9 @@
       </div>
     </div>
   </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
 
-
+{% render 'size-chart-popup', product: product %}
   
   {%- if enable_dynamic_buttons -%}
     <div class="payment-buttons  {% if product.tags contains 'launching-tomorrow' %} buttons-wrapper{% endif %}  {% if product.tags contains 'launching-today' %} buttons-wrapper{% endif %} ">
@@ -1157,11 +1159,24 @@
         </span>
       </span>
     </button>
+
+          <div class="cart__checkout-wrapper">
+      <button  style="padding:16px 0;" type="button" id="buy-now-btn" class="btn cart__checkout">
+  Buy It Now
+</button>
+          </div> 
+
+
+
+
+<script>
+document.getElementById('buy-now-btn').addEventListener('click', function () {
+  document.querySelector('form[action="/cart/add"]').submit();
+});
+</script>
+    
     {%- if enable_dynamic_buttons -%}
       {{ form | payment_button }}
-    {%- endif -%}
-
-    {%- if enable_dynamic_buttons -%}
       </div>
     {%- endif -%}
   {% endif %}

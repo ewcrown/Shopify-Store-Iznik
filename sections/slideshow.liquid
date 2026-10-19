@@ -31,13 +31,23 @@
           Get first image's aspect ratio
         {% endcomment %}
         {%- for block in section.blocks limit: 1 -%}
-          {%- if block.settings.image != blank -%}
+          {%- if block.settings.video != blank -%}
+            {%- if section.settings.section_height == 'natural' %}
+              {%- assign natural_height = true -%}
+              {%- capture natural_height_ratio -%}{{ 100 | divided_by: block.settings.video.aspect_ratio }}%{% endcapture %}
+            {%- endif -%}
+          {%- elsif block.settings.image != blank -%}
             {%- if section.settings.section_height == 'natural' %}
               {%- assign natural_height = true -%}
               {%- capture natural_height_ratio -%}{{ 100 | divided_by: block.settings.image.aspect_ratio }}%{% endcapture %}
             {%- endif -%}
           {%- endif -%}
-          {%- if block.settings.image_mobile != blank -%}
+          {%- if block.settings.video_mobile != blank -%}
+            {%- if section.settings.mobile_height == 'auto' -%}
+              {%- assign natural_mobile_height = true -%}
+              {%- capture natural_mobile_height_ratio -%}{{ 100 | divided_by: block.settings.video_mobile.aspect_ratio }}%{% endcapture %}
+            {%- endif -%}
+          {%- elsif block.settings.image_mobile != blank -%}
             {%- if section.settings.mobile_height == 'auto' -%}
               {%- assign natural_mobile_height = true -%}
               {%- capture natural_mobile_height_ratio -%}{{ 100 | divided_by: block.settings.image_mobile.aspect_ratio }}%{% endcapture %}
@@ -139,6 +149,15 @@
                     opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
                   }
                 {% endif %}
+
+                .slideshow__slide--{{ block.id }} .hero__video {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
               {%- endstyle -%}
 
               {%- liquid
@@ -152,8 +171,12 @@
                 endif
 
                 assign has_mobile_image = false
+                assign has_mobile_video = false
                 if block.settings.image_mobile != blank
                   assign has_mobile_image = true
+                endif
+                if block.settings.video_mobile != blank
+                  assign has_mobile_video = true
                 endif
               -%}
 
@@ -164,9 +187,9 @@
                     <div class="parallax-image" data-movement="15%" data-parallax-image data-angle="{{ block.settings.parallax_direction }}">
                 {%- endif -%}
 
-                  {%- if block.settings.image != blank -%}
+                  {%- if block.settings.image != blank or block.settings.video != blank -%}
 
-                    {% comment %} Full width images so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+                    {% comment %} Full width images/videos so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
                     {%- liquid
                       if forloop.index == 1
                         assign loading = section.settings.lazyload_images
@@ -175,20 +198,44 @@
                       endif
                     -%}
 
-                    {% if has_mobile_image %}
-                      {% assign desktop_classes = 'small--hide hero__image hero__image--' | append: block.id %}
-                    {% else %}
-                      {% assign desktop_classes = 'hero__image hero__image--' | append: block.id %}
-                    {% endif %}
+                    {%- if block.settings.video != blank -%}
+                      {% comment %} Render desktop video (priority) {% endcomment %}
+                      {% if has_mobile_image or has_mobile_video %}
+                        {% assign desktop_classes = 'small--hide hero__video hero__video--' | append: block.id %}
+                      {% else %}
+                        {% assign desktop_classes = 'hero__video hero__video--' | append: block.id %}
+                      {% endif %}
 
-                    {%- render 'image-element',
-                      img: block.settings.image,
-                      img_width: 2400,
-                      loading: loading,
-                      classes: desktop_classes,
-                    -%}
+                      <video class="{{ desktop_classes }}" autoplay loop playsinline>
+                        <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    {%- elsif block.settings.image != blank -%}
+                      {% comment %} Render desktop image (fallback) {% endcomment %}
+                      {% if has_mobile_image or has_mobile_video %}
+                        {% assign desktop_classes = 'small--hide hero__image hero__image--' | append: block.id %}
+                      {% else %}
+                        {% assign desktop_classes = 'hero__image hero__image--' | append: block.id %}
+                      {% endif %}
 
-                    {%- if has_mobile_image -%}
+                      {%- render 'image-element',
+                        img: block.settings.image,
+                        img_width: 2400,
+                        loading: loading,
+                        classes: desktop_classes,
+                      -%}
+                    {%- endif -%}
+
+                    {%- if has_mobile_video -%}
+                      {% comment %} Render mobile video (priority) {% endcomment %}
+                      {% assign mobile_classes = 'medium-up--hide hero__video hero__video--' | append: block.id %}
+
+                      <video class="{{ mobile_classes }}" autoplay loop playsinline>
+                        <source src="{{ block.settings.video_mobile.sources[1].url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    {%- elsif has_mobile_image -%}
+                      {% comment %} Render mobile image (fallback) {% endcomment %}
                       {% assign mobile_classes = 'medium-up--hide hero__image hero__image--' | append: block.id %}
 
                       {%- render 'image-element',
@@ -508,6 +555,16 @@
           "type": "image_picker",
           "id": "image_mobile",
           "label": "t:sections.slideshow.blocks.slide.settings.image_mobile.label"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Desktop Video"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "Mobile Video"
         },
         {
           "type": "select",

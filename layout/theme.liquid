@@ -1,6 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
+<html
+  class="no-js {{ localization.market.handle }}"
+  lang="{{ request.locale.iso_code }}"
+  dir="{{ settings.text_direction }}"
+>
   <head>
+   {%- include 'tapita-seo-schema' -%}   
+
+
     <meta name="google-site-verification" content="uYely7lodSD5mBncYjT6VawsjRHXfcSGttmqb0xkVeY" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-625901421"></script>
@@ -11,14 +18,16 @@
 
       gtag('config', 'AW-625901421');
     </script>
-
+    <script>
+      
+      </script>
     {{ 'he-redirects.js' | asset_url | script_tag }}
     <script>
       {% comment %}
       /* start spd config */window._spt_delay_keywords=["/gtag/js,gtag(,/checkouts,/tiktok-track.js,/hotjar-,/smile-,/adoric.js,/wpm/,fbq("];/* end spd config */
       {% endcomment %}
     </script>
-    {%- if content_for_header contains 'tapita-seo-script-tags' -%}{%- include 'tapita-seo-schema' -%}{%- endif -%}
+    
 
     <!-- Added by TAPITA SEO SCHEMA -->
     {% if content_for_header contains 'tapita-seo-script-tags' %}
@@ -116,46 +125,7 @@
     </script>
 
     {% comment %}{{content_for_header}}{% endcomment %}
-    <!-- Start of Shopioso speed boost -->
-    {% capture modified_content_for_header %}{{ content_for_header }}{% endcapture %}
-    {% assign domcontentloadeda = "document.addEventListener('DOMContentLoaded'" %}
-    {% assign startasyncLoadinga = "document.addEventListener('StartAsyncLoading'" %}
-    {% assign domcontentloaded = 'e.addEventListener("DOMContentLoaded"' %}
-    {% assign startasyncLoading = "e.addEventListener('StartAsyncLoading'" %}
-    {% assign rapp = ', asyncLoad' %}
-    {% assign napp = ', function(){}' %}
-    {% assign rappload = 'if(window.attachEvent)' %}
-    {% assign nappload = "document.addEventListener('StartAsyncLoading',function(event){asyncLoad();});if(window.attachEvent)" %}
-    {% assign rstorefrontload = 'var customDocumentWrite = function(content)' %}
-    {% assign nstorefrontload = "document.addEventListener('StartKernelLoading', function() { document.dispatchEvent(new CustomEvent('StartShopifyLoading')); var customDocumentWrite = function(content)" %}
-    {% assign rstorefront = "document.getElementsByTagName('head')[0].appendChild(eventsListenerScript)" %}
-    {% assign nstorefront = "document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);})" %}
-    {% if template == 'cart' %}
-      {{
-        modified_content_for_header
-        | replace: 'src=', 'data-src='
-        | replace: domcontentloadeda, startasyncLoadinga
-        | replace: domcontentloaded, startasyncLoading
-        | replace: rapp, napp
-        | replace: rappload, nappload
-      }}
-    {% else %}
-      {{
-        modified_content_for_header
-        | replace: 'src=', 'data-src='
-        | replace: domcontentloadeda, startasyncLoadinga
-        | replace: domcontentloaded, startasyncLoading
-        | replace: rapp, napp
-        | replace: rappload, nappload
-        | replace: rstorefrontload, nstorefrontload
-        | replace: rstorefront, nstorefront
-      }}
-    {% endif %}
-
-    <script>
-      var script_loaded=!1;function loadJSscripts(){setTimeout(function(){if(!script_loaded){script_loaded=!0;var t=document.getElementsByTagName("script");for(i=0;i<t.length;i++)null!==t[i].getAttribute("data-src")&&(t[i].setAttribute("src",t[i].getAttribute("data-src")),delete t[i].dataset.src);var e=document.getElementsByTagName("link");for(i=0;i<e.length;i++)null!==e[i].getAttribute("data-href")&&(e[i].setAttribute("href",e[i].getAttribute("data-href")),delete e[i].dataset.href);setTimeout(function(){document.dispatchEvent(new CustomEvent("StartAsyncLoading")),document.dispatchEvent(new CustomEvent("StartKernelLoading"))},400)}console.log("Shopioso 12s wait")},12e3)}function loadJSscriptsNow(){if(!script_loaded){console.log("Shopioso scripts have loaded."),script_loaded=!0;var t=document.getElementsByTagName("script");for(i=0;i<t.length;i++)null!==t[i].getAttribute("data-src")&&(t[i].setAttribute("src",t[i].getAttribute("data-src")),delete t[i].dataset.src);var e=document.getElementsByTagName("link");for(i=0;i<e.length;i++)null!==e[i].getAttribute("data-href")&&(e[i].setAttribute("href",e[i].getAttribute("data-href")),delete e[i].dataset.href);setTimeout(function(){document.dispatchEvent(new CustomEvent("StartAsyncLoading")),document.dispatchEvent(new CustomEvent("StartKernelLoading"))},400)}}var activityEvents=["mousedown","mousemove","keydown","scroll","touchstart","click","keypress","touchmove"];activityEvents.forEach(function(t){window.addEventListener(t,loadJSscriptsNow,!1)}),document.addEventListener("DOMContentLoaded",loadJSscripts),window.addEventListener?window.addEventListener("load",loadJSscripts):window.attachEvent?window.attachEvent("onload",loadJSscripts):window.onload=loadJSscripts;
-    </script>
-    <!-- End of Shopioso speed boost -->
+    
 
     <script src="{{ 'vendor-scripts-v11.js' | asset_url | split: '?' | first }}" defer="defer"></script>
 
@@ -181,30 +151,124 @@
       async
     >
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+	   
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timezone-picker@1.0.2/timezone-picker.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/timezone-picker@1.0.2/timezone-picker.min.js"></script>
 
     <meta name="facebook-domain-verification" content="ybn9u5ptc8jaxirk05u16gk03tjijo">
 
-<script>
-fetch("https://api.country.is/")
-  .then(res => res.json())
-  .then(({ country }) => {
-    // Skip redirect for Pakistani visitors or anyone already on the global site
-    if (country === 'PK' || location.hostname.startsWith('global.')) return;
 
-    // Preserve everything after the domain (path -> ?query -> #hash)
-    const destination = 'https://global.iznikfashions.com' +
-                        location.pathname +
-                        location.search +
-                        location.hash;
 
-    // Use replace() so the original URL isn’t kept in browser history
-    window.location.replace(destination);
-  })
-  .catch(console.error);     // fail silently if the geo-lookup ever errors
-</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+
+
+
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+      .background-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        background-image: var(--def-background-img);
+        background-color: var(--def-background);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      #openChatButton {
+        display: flex;
+        justify-content: center;
+        align-item: center;
+        min-width: 65px;
+        max-width: 65px;
+        min-height: 65px;
+        max-height: 65px;
+        border: none;
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: block;
+        z-index: 1000;
+        border-radius: 100%;
+        padding: 12px;
+        background-color: #67C15E;
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s;
+      }
+      #chat-container {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 355px;
+        height: 65vh;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: transparent;
+        z-index: 1000;
+        margin-bottom: 11vh;
+      }
+      #appFrame {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      #loadingSpinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #000000;
+        border-radius: 40px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      #closeChatButton {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: #dc656533;
+        color: #dc6565;
+        font-size: 20px;
+        padding: 0 9px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+      }
+      .chat-icon {
+        width: 34px;
+        height: 34px;
+      }  
+    </style>
 
      <style>
 
@@ -340,8 +404,24 @@ fetch("https://api.country.is/")
 </script>
 
 <!-- TikTok Pixel Code End -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timezone-picker@1.0.2/timezone-picker.min.css">
+<script src="https://cdn.jsdelivr.net/npm/timezone-picker@1.0.2/timezone-picker.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js" defer></script>
+
+{%- comment -%} Canonical and Hreflang for Pakistan store {%- endcomment -%}
+
+<link rel="canonical" href="{{ canonical_url }}" />
+
+
+{% unless request.page_type == 'article' or request.page_type == 'blog' %}
+<link rel="alternate" hreflang="en-pk" href="https://iznikfashions.com{{ request.path }}" />
+<link rel="alternate" hreflang="en" href="https://global.iznikfashions.com{{ request.path }}" />
+<link rel="alternate" hreflang="x-default" href="https://global.iznikfashions.com{{ request.path }}" />
+{% endunless %}
+{% render 'schema-jsonld' %}
+
   </head>
   <body
     class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}  iznik-{{ collection.title | handleize }}"
@@ -398,14 +478,108 @@ fetch("https://api.country.is/")
       </image-element>
     </template>
 
+    <div class="background-container">
+      <div id="root"></div>
+    </div>
+ 
+
+
     {% if template.name == 'collection' %}
       {{ 'iznik-filter.js' | asset_url | script_tag }}
     {% endif %}
 
     {{ 'iznik-custom.js' | asset_url | script_tag }}
 
-    <!-- AOD_OrderLimit Start -->
-    {% include 'aodLimitValidator' %}
-    <!-- AOD_OrderLimit End -->
+
+ 
+ 
+    <script>
+      (() => {
+  const form = document.querySelector('.contact-form');
+  const email = form?.querySelector('input[type="email"]');
+  const button = form?.querySelector('button[type="submit"]');
+
+  if (!form || !email || !button) {
+    console.error('Newsletter elements not found');
+    return;
+  }
+
+  const protectedDomains = [
+    'gmail.com',
+    'outlook.com',
+    'hotmail.com',
+    'yahoo.com',
+    'icloud.com',
+    'gmx.de',
+    'web.de'
+  ];
+
+  function levenshtein(a, b) {
+    const dp = Array.from({ length: b.length + 1 }, (_, i) => [i]);
+
+    for (let j = 0; j <= a.length; j++) dp[0][j] = j;
+
+    for (let i = 1; i <= b.length; i++) {
+      for (let j = 1; j <= a.length; j++) {
+        dp[i][j] =
+          b[i - 1] === a[j - 1]
+            ? dp[i - 1][j - 1]
+            : Math.min(
+                dp[i - 1][j - 1] + 1,
+                dp[i - 1][j] + 1,
+                dp[i][j - 1] + 1
+              );
+      }
+    }
+
+    return dp[b.length][a.length];
+  }
+
+  function validate() {
+    const value = email.value.trim().toLowerCase();
+    const domain = value.split('@')[1] || '';
+
+    email.setCustomValidity('');
+
+    if (!email.checkValidity()) {
+      button.disabled = true;
+      return false;
+    }
+
+    const typo = protectedDomains.some(
+      d => d !== domain && levenshtein(domain, d) <= 2
+    );
+
+    if (typo) {
+      button.disabled = true;
+      email.setCustomValidity(
+        'Please enter a valid email address.'
+      );
+      return false;
+    }
+
+    button.disabled = false;
+    return true;
+  }
+
+  email.addEventListener('input', validate);
+
+  form.addEventListener('submit', e => {
+    if (!validate()) {
+      e.preventDefault();
+      email.reportValidity();
+    }
+  });
+
+  validate();
+
+  console.log('✅ Newsletter validation initialized');
+})();
+
+</script>
+
+ 
+ 
   </body>
 </html>
+

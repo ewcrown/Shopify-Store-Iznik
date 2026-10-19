@@ -8,7 +8,7 @@
       {%- if cart.item_count == 0 -%}
         <p>{{ 'cart.general.empty' | t }}</p>
       {%- endif -%}
-      <p>{{ 'cart.general.continue_browsing_html' | t: url: routes.all_products_collection_url }}</p>
+      <p><a href="/collections/unstitched">Continue shopping</a></p>
     </div>
   </header>
 
@@ -78,10 +78,10 @@
             </small>
           </div>
 
-          <div class="ew-special-text">
+          {% comment %} <div class="ew-special-text">
             <span>Stitched Orders (Local & International) Placed by May 4th Will Be Delivered Before Eid!</span>
             <span>All international orders (Unstitched & Pret) placed by 20th May will be delivered before Eid</span>
-          </div>
+          </div> {% endcomment %}
            
         </div>
       </div>

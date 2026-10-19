@@ -54,7 +54,7 @@ if (document.querySelector("#ai-Stitched-st")) {
   document.querySelector("#ai-Stitched-st").addEventListener("click", () => {
     const orderNotes = document.getElementsByClassName("order-note");
 
-    const note = '<b class="note-variant">Note : All stitched orders require 25 working days to be dispatched</b>';
+    const note = '<b class="note-variant"> Note: Stitched orders require up to 5 weeks for dispatch.</b>';
 
     // Save the note in localStorage
     localStorage.setItem('stitchedOrderNote', note);
@@ -64,7 +64,8 @@ if (document.querySelector("#ai-Stitched-st")) {
       e.innerHTML = localStorage.getItem('stitchedOrderNote');
     });
 
-    // Hide elements with classes 'hdr-custom-size-opt' and 'line-item-property__field'
+    // Hide elements with classes 'hdr-custom-size-opt' and '
+    // -item-property__field'
     document.querySelectorAll(".hdr-custom-size-opt, .line-item-property__field").forEach((el) => {
       el.style.display = "none !important";
     });
@@ -199,4 +200,47 @@ document.addEventListener("DOMContentLoaded", function() {
   if (stitchedRadio?.checked) {
     showAddTrousers();
   }
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+    function toggleLining() {
+        const yardField = document.querySelector("#infiniteoptions-container .yard");
+        const selectedType = document.querySelector('input[name="Type"]:checked');
+
+        if (!yardField || !selectedType) return;
+
+        if (selectedType.value.trim().toLowerCase() === "unstitched") {
+            yardField.style.setProperty("display", "block", "important");
+        } else {
+            yardField.style.setProperty("display", "none", "important");
+
+            // Clear Infinite Options selection
+            yardField.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+                input.checked = false;
+            });
+        }
+    }
+
+    // Wait until Infinite Options injects its HTML
+    const waitForInfiniteOptions = setInterval(function () {
+
+        const yardField = document.querySelector("#infiniteoptions-container .yard");
+
+        if (yardField) {
+            clearInterval(waitForInfiniteOptions);
+
+            // Initial check (default selected variant)
+            toggleLining();
+
+            // Listen for variant changes
+            document.addEventListener("change", function (e) {
+                if (e.target.matches('input[name="Type"]')) {
+                    // Small delay because Shopify updates variants asynchronously
+                    setTimeout(toggleLining, 100);
+                }
+            });
+        }
+
+    }, 200);
+
 });
